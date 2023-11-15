@@ -2,18 +2,18 @@
   "GameObjects": [
     {
       "Id": "f4f6d222-0222-419b-9f3a-2d2b84b5eafd",
-      "Name": "Plane",
+      "Name": "Floor",
       "Enabled": true,
-      "Position": "0,0,0",
+      "Position": "123.2257,53.79208,0.000007344823",
       "Rotation": "0,0,0,1",
-      "Scale": "10,10,10",
+      "Scale": "2.5,2.5,2.5",
       "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/generic/concrete_simple.vmat",
+          "MaterialOverride": "materials/generic/floor_parquet_herringbone_a.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "0.36232,0.43685,0.47525,1"
@@ -26,23 +26,484 @@
           "Static": true,
           "Surface": null
         }
-      ]
-    },
-    {
-      "Id": "5da1999b-7443-4e20-9665-42cf04d0e971",
-      "Name": "Directional Light",
-      "Enabled": true,
-      "Position": "0,0,247.767",
-      "Rotation": "0.5594212,0.2306654,-0.5470847,0.5783944",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
+      ],
+      "Children": [
         {
-          "__type": "DirectionalLightComponent",
-          "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
+          "Id": "10431f66-4639-4307-90a8-7360f28c0af8",
+          "Name": "Cubemap",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "EnvmapComponent",
+              "__enabled": true,
+              "Bounds": {
+                "Mins": "-125,-125,0",
+                "Maxs": "125,125,200"
+              },
+              "Projection": "Sphere",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "TintColor": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "aab99363-9b6a-4822-a889-a010efc5075f",
+          "Name": "cigarettemachine",
+          "Enabled": true,
+          "Position": "35.0768,-37.64021,12.48008",
+          "Rotation": "-0.0000004130843,-0.00000005424262,-0.9998175,0.01907423",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "materials/models/cigarettemachine/cigarettemachine.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ColliderBoxComponent",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Scale": "28.39998,29.79994,63.1334",
+              "Static": true,
+              "Surface": null
+            }
+          ],
+          "Children": [
+            {
+              "Id": "c341bc1b-18e7-4c75-84a9-668fc50b1e71",
+              "Name": "Point Light",
+              "Enabled": true,
+              "Position": "23.55946,1.598071,15.97068",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Components": [
+                {
+                  "__type": "PointLightComponent",
+                  "__enabled": true,
+                  "LightColor": "0.89604,0.86392,0.36374,1",
+                  "Radius": 16.932783
+                }
+              ]
+            },
+            {
+              "Id": "f84222b9-1439-4628-90db-94994a105f08",
+              "Name": "duck_decoration",
+              "Enabled": true,
+              "Position": "5.082137,-0.618843,30.9302",
+              "Rotation": "-0.0000001950214,-0.0000003191825,-0.5655777,-0.8246971",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/duck_decoration/duck_decoration.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "92cc44e5-05d5-49b8-8216-cd35eb69664e",
+                  "Name": "cigarette_ultraslim",
+                  "Enabled": true,
+                  "Position": "2.754499,-2.519701,10.18869",
+                  "Rotation": "0.3599703,-0.05163368,0.9220965,0.1322641",
+                  "Scale": "0.2,0.2,0.2",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/cigarettes/cigarette_ultraslim.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "Id": "d55cf316-056b-44fb-a336-d585065af248",
+                      "Name": "Point Light",
+                      "Enabled": true,
+                      "Position": "-0.001041424,-0.06338921,9.138818",
+                      "Rotation": "0,0,0,1",
+                      "Scale": "1,1,1",
+                      "Tags": "",
+                      "Components": [
+                        {
+                          "__type": "PointLightComponent",
+                          "__enabled": true,
+                          "LightColor": "0.5,0.23,0,1",
+                          "Radius": 17.799673
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "c7df108f-28df-4bc3-a112-063f7c5aa13e",
+          "Name": "arcademachine_01",
+          "Enabled": true,
+          "Position": "36.29416,22.17467,-0.2757187",
+          "Rotation": "-0.00000005959767,-0.00000000000000553983,-0.9998828,0.01531788",
+          "Scale": "0.2,0.2,0.2",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/arcadecabinet/arcademachine_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/arcadecabinet/arcademachine_01.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3eb9ddf8-d6d3-4275-8330-5e9be4081d6c",
+          "Name": "cafe_table",
+          "Enabled": true,
+          "Position": "35.37212,-5.801752,-0.1171295",
+          "Rotation": "0.0000000005975728,-0.000000000000001388552,0.01002569,0.9999497",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/city_props/cafe/cafe_table.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/city_props/cafe/cafe_table.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ],
+          "Children": [
+            {
+              "Id": "ef7044c6-2206-4cb4-876a-2a91b992193a",
+              "Name": "tv",
+              "Enabled": true,
+              "Position": "2.51422,0.5520607,36.85032",
+              "Rotation": "-0.00000005960463,0.0000000000000204587,-0.9999995,0.00101544",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/tv/tv.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/tv/tv.vmdl",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "11f13c16-b131-4db7-b75c-65bf8a4b651d",
+          "Name": "potted_plant_02",
+          "Enabled": true,
+          "Position": "36.93408,5.413009,0.4999962",
+          "Rotation": "-0.00000005894147,0.000000000000009390687,-0.9888738,0.148757",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/potted_plant_02.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/potted_plant_02.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "4e279d6f-2845-4044-8bf9-987d32d07d4d",
+          "Name": "metal_bin",
+          "Enabled": true,
+          "Position": "36.88428,-23.5162,0.5000042",
+          "Rotation": "-0.00000003401615,0.000000000000001766904,-0.5706965,0.8211606",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/metal_bin/metal_bin.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "0.18096,0.19802,0.16861,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/metal_bin/metal_bin.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f079b2d0-62f6-4d76-9994-ba76526cf01f",
+          "Name": "wall_300x600",
+          "Enabled": true,
+          "Position": "45.73428,-47.03336,-0.000003251383",
+          "Rotation": "0.0000002089392,0.0000002509185,-0.707107,0.7071065",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "caa43cd5-3a3b-4fba-93a1-a9814b408b57",
+          "Name": "wall_300x600",
+          "Enabled": true,
+          "Position": "-53.64771,-47.03335,0.000002648724",
+          "Rotation": "0.0000002089392,0.0000002509185,-0.707107,0.7071065",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5994789c-686e-47ad-b8be-d5c709f68a6a",
+          "Name": "wall_300x600",
+          "Enabled": true,
+          "Position": "45.73428,-50.6991,-0.000005844182",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0f9ee19a-b51b-4291-b3c7-ed3987166575",
+          "Name": "wall_300x600",
+          "Enabled": true,
+          "Position": "45.73428,52.00299,0.00006679776",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "edd15471-68db-4e3d-bbfd-cf763a02922d",
+          "Name": "carpet001",
+          "Enabled": true,
+          "Position": "-2.19928,-3.852052,-0.000002525534",
+          "Rotation": "-0.000000001321935,-0.000000000000000004551525,-0.02217839,0.9997539",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/props/carpet001.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "9d3dfde5-4dd3-4dfb-91fa-4cf114fcfb29",
+          "Name": "couch",
+          "Enabled": true,
+          "Position": "-36.9969,-2.158504,-0.000002937929",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/unity stuff/1/old_couch/couch.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/unity stuff/1/old_couch/couch.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b74a4b30-63d2-41c3-bdbe-ee580ae2d8c3",
+          "Name": "Point Light",
+          "Enabled": true,
+          "Position": "0,0,66.76057",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "PointLightComponent",
+              "__enabled": true,
+              "LightColor": "0.98515,0.95969,0.84372,1",
+              "Radius": 400
+            }
+          ]
+        },
+        {
+          "Id": "72e8af7b-aac6-454e-b1cd-3dc509a79a7d",
+          "Name": "modern_coffee_table_01",
+          "Enabled": true,
+          "Position": "-3.436234,-0.854808,0.1250001",
+          "Rotation": "-0.000000001403642,-0.00000000000000003339285,-0.02354921,0.9997225",
+          "Scale": "0.6133335,0.6133335,0.6133335",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/modern_coffee_table_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/modern_coffee_table_01.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         }
       ]
     },
@@ -50,8 +511,8 @@
       "Id": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
       "Name": "Player",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "-0.000000003352894,0.000000000000000003903012,-0.05625222,0.9984165",
+      "Position": "35.76592,144.1131,-0.00004650118",
+      "Rotation": "-0.000000025116,0.000000000000000872022,-0.4213766,0.9068857",
       "Scale": "1,1,1",
       "Tags": "",
       "Components": [
@@ -145,308 +606,19 @@
       ]
     },
     {
-      "Id": "aab99363-9b6a-4822-a889-a010efc5075f",
-      "Name": "cigarettemachine",
+      "Id": "745fce65-bc3f-485a-8d94-b433812c53aa",
+      "Name": "Sky",
       "Enabled": true,
-      "Position": "180.8942,15.10609,31.2002",
-      "Rotation": "-0.0000004157886,-0.00000003142192,-0.9989774,-0.04519457",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
       "Components": [
         {
-          "__type": "ModelComponent",
+          "__type": "SkyBox2D",
           "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "materials/models/cigarettemachine/cigarettemachine.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "28.39998,29.79994,63.1334",
-          "Static": true,
-          "Surface": null
-        }
-      ],
-      "Children": [
-        {
-          "Id": "c341bc1b-18e7-4c75-84a9-668fc50b1e71",
-          "Name": "Point Light",
-          "Enabled": true,
-          "Position": "23.55946,1.598071,20.11408",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "PointLightComponent",
-              "__enabled": true,
-              "LightColor": "0.28218,0.281,0.26262,1",
-              "Radius": 65.99953
-            }
-          ]
-        },
-        {
-          "Id": "f84222b9-1439-4628-90db-94994a105f08",
-          "Name": "duck_decoration",
-          "Enabled": true,
-          "Position": "5.082137,-0.618843,30.9302",
-          "Rotation": "-0.0000001950214,-0.0000003191825,-0.5655777,-0.8246971",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "ModelComponent",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": null,
-              "Model": "models/duck_decoration/duck_decoration.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
-            }
-          ],
-          "Children": [
-            {
-              "Id": "92cc44e5-05d5-49b8-8216-cd35eb69664e",
-              "Name": "cigarette_ultraslim",
-              "Enabled": true,
-              "Position": "2.754499,-2.519701,10.18869",
-              "Rotation": "0.3599703,-0.05163368,0.9220965,0.1322641",
-              "Scale": "0.2,0.2,0.2",
-              "Tags": "",
-              "Components": [
-                {
-                  "__type": "ModelComponent",
-                  "__enabled": true,
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialOverride": null,
-                  "Model": "models/cigarettes/cigarette_ultraslim.vmdl",
-                  "ShouldCastShadows": true,
-                  "Tint": "1,1,1,1"
-                }
-              ],
-              "Children": [
-                {
-                  "Id": "d55cf316-056b-44fb-a336-d585065af248",
-                  "Name": "Point Light",
-                  "Enabled": true,
-                  "Position": "-0.001041424,-0.06338921,9.138818",
-                  "Rotation": "0,0,0,1",
-                  "Scale": "1,1,1",
-                  "Tags": "",
-                  "Components": [
-                    {
-                      "__type": "PointLightComponent",
-                      "__enabled": true,
-                      "LightColor": "0.9703,0.44893,0.0048,1",
-                      "Radius": 17.799673
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "c7df108f-28df-4bc3-a112-063f7c5aa13e",
-      "Name": "arcademachine_01",
-      "Enabled": true,
-      "Position": "193.806,152.4127,-0.6892894",
-      "Rotation": "-0.00000005944724,-0.00000000000000482863,-0.997359,-0.07262778",
-      "Scale": "0.5,0.5,0.5",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/arcadecabinet/arcademachine_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/arcadecabinet/arcademachine_01.vmdl",
-          "Static": true,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "3eb9ddf8-d6d3-4275-8330-5e9be4081d6c",
-      "Name": "cafe_table",
-      "Enabled": true,
-      "Position": "169.0135,-41.80891,-0.2928163",
-      "Rotation": "-0.00000001141656,-0.0000000000000002268864,-0.1915379,0.9814852",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/city_props/cafe/cafe_table.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/city_props/cafe/cafe_table.vmdl",
-          "Static": true,
-          "Surface": null
-        }
-      ],
-      "Children": [
-        {
-          "Id": "ef7044c6-2206-4cb4-876a-2a91b992193a",
-          "Name": "tv",
-          "Enabled": true,
-          "Position": "1.471358,0.5729746,36.85032",
-          "Rotation": "-0.00000005960463,0.0000000000000204587,-0.9999995,0.00101544",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "ModelComponent",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": null,
-              "Model": "models/sbox_props/tv/tv.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "ModelCollider",
-              "__enabled": true,
-              "IsTrigger": false,
-              "Model": "models/sbox_props/tv/tv.vmdl",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "92ce3201-53b3-477e-8fb8-ec767751fc7f",
-      "Name": "Cube",
-      "Enabled": true,
-      "Position": "-148.1766,-261.9856,-112.284",
-      "Rotation": "-0.4638783,-0.1865938,-0.4694291,0.727761",
-      "Scale": "6,6,6",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/generic/wall_brick_new.vmat",
-          "Model": "models/dev/box.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "11f13c16-b131-4db7-b75c-65bf8a4b651d",
-      "Name": "potted_plant_02",
-      "Enabled": true,
-      "Position": "181.5679,79.34405,1.249998",
-      "Rotation": "-0.00000005894147,0.000000000000009390687,-0.9888738,0.148757",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/potted_plant_02.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/potted_plant_02.vmdl",
-          "Static": true,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "4e279d6f-2845-4044-8bf9-987d32d07d4d",
-      "Name": "metal_bin",
-      "Enabled": true,
-      "Position": "182.9324,50.35591,1.250018",
-      "Rotation": "-0.00000003401615,0.000000000000001766904,-0.5706965,0.8211606",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/metal_bin/metal_bin.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "0.18096,0.19802,0.16861,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/metal_bin/metal_bin.vmdl",
-          "Static": true,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "f079b2d0-62f6-4d76-9994-ba76526cf01f",
-      "Name": "wall_300x600",
-      "Enabled": true,
-      "Position": "199.6685,-62.58634,1.249974",
-      "Rotation": "0.0000002199285,0.0000002413442,-0.737958,0.6748465",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/rust_structures/fences_walls/wall_300x600.vmdl",
-          "Static": true,
-          "Surface": null
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "0,0,0,1"
         }
       ]
     }
@@ -461,15 +633,17 @@
   "Title": "test_movement",
   "Description": "",
   "__references": [
+    "caro.oldcouch",
     "duccsoft.duck_decoration",
-    "facepunch.concrete_simple",
+    "facepunch.floor_parquet_herringbone_a",
     "facepunch.tv",
-    "facepunch.wall_brick_new",
     "jammie.metal_bin",
+    "polyhaven.modern_coffee_table_01",
     "polyhaven.potted_plant_02",
     "rust.wall_300x600",
     "sundayservice.arcademachine_01",
     "sundayservice.cigarette_ultraslim",
-    "svin.cafe_table"
+    "svin.cafe_table",
+    "svin.carpet001"
   ]
 }

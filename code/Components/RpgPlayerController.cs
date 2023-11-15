@@ -65,10 +65,22 @@ public class RpgPlayerController : BaseComponent
 
 			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
 
-			if ( FirstPerson ) 
+			if ( FirstPerson )
+			{
 				camPos = Eye.Transform.Position;
+			}
 			else
+			{
 				camPos += ThirdPersonCameraOffset;
+				var tr = Scene.PhysicsWorld
+					.Trace
+					.Ray( Eye.Transform.Position, camPos )
+					.Run();
+				if ( tr.Hit )
+				{
+					camPos = tr.HitPosition;
+				}
+			}
 
 			camera.Transform.Position = camPos;
 			camera.Transform.Rotation = EyeAngles.ToRotation();
