@@ -6,17 +6,25 @@
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
+      "Scale": "10,10,10",
       "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/generic/concrete_simple.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
+          "Tint": "0.36232,0.43685,0.47525,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "100,100,0.25",
+          "Static": true,
+          "Surface": null
         }
       ]
     },
@@ -37,6 +45,252 @@
           "SkyColor": "0.05882,0.07451,0.08235,1"
         }
       ]
+    },
+    {
+      "Id": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
+      "Name": "Player",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "-0.000000003352894,0.000000000000000003903012,-0.05625222,0.9984165",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "RpgPlayerController",
+          "__enabled": true,
+          "AnimationHelper": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
+          "AutoWalkEnabled": false,
+          "Body": "974fe036-08ad-42d1-979c-a83188eaa304",
+          "CameraDistance": 100,
+          "Eye": "50a23b7f-616d-472b-a1f1-063d553260fc",
+          "FirstPerson": true,
+          "FirstPersonFov": 100,
+          "Gravity": "0,0,800",
+          "ShouldWalk": false,
+          "ThirdPersonCameraOffset": "0,0,-20",
+          "ThirdPersonFov": 80
+        },
+        {
+          "__type": "CitizenAnimation",
+          "__enabled": true,
+          "Height": 1,
+          "Target": "974fe036-08ad-42d1-979c-a83188eaa304"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "50a23b7f-616d-472b-a1f1-063d553260fc",
+          "Name": "Eye",
+          "Enabled": true,
+          "Position": "0,0,72",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": ""
+        },
+        {
+          "Id": "482a16c8-1165-4fb4-9317-4bbe400d06b0",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "0,0,60",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 100,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "TargetEye": "None",
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        },
+        {
+          "Id": "974fe036-08ad-42d1-979c-a83188eaa304",
+          "Name": "Body",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "AnimatedModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "aab99363-9b6a-4822-a889-a010efc5075f",
+      "Name": "cigarettemachine",
+      "Enabled": true,
+      "Position": "166.4155,-14.01067,31.2002",
+      "Rotation": "-0.0000004163076,-0.0000000237978,-0.997782,-0.06654341",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "materials/models/cigarettemachine/cigarettemachine.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "28.39998,29.79994,63.1334",
+          "Static": true,
+          "Surface": null
+        }
+      ],
+      "Children": [
+        {
+          "Id": "c341bc1b-18e7-4c75-84a9-668fc50b1e71",
+          "Name": "Point Light",
+          "Enabled": true,
+          "Position": "23.55946,1.598071,20.11408",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "PointLightComponent",
+              "__enabled": true,
+              "LightColor": "0.28218,0.281,0.26262,1",
+              "Radius": 65.99953
+            }
+          ]
+        },
+        {
+          "Id": "f84222b9-1439-4628-90db-94994a105f08",
+          "Name": "duck_decoration",
+          "Enabled": true,
+          "Position": "5.082137,-0.618843,30.9302",
+          "Rotation": "-0.0000001950214,-0.0000003191825,-0.5655777,-0.8246971",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": [
+            {
+              "Id": "92cc44e5-05d5-49b8-8216-cd35eb69664e",
+              "Name": "cigarette_ultraslim",
+              "Enabled": true,
+              "Position": "2.754499,-2.519701,10.18869",
+              "Rotation": "0.3599703,-0.05163368,0.9220965,0.1322641",
+              "Scale": "0.2,0.2,0.2",
+              "Tags": "",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/cigarettes/cigarette_ultraslim.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "d55cf316-056b-44fb-a336-d585065af248",
+                  "Name": "Point Light",
+                  "Enabled": true,
+                  "Position": "-0.001041424,-0.06338921,9.138818",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "PointLightComponent",
+                      "__enabled": true,
+                      "LightColor": "0.9703,0.44893,0.0048,1",
+                      "Radius": 17.799673
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c7df108f-28df-4bc3-a112-063f7c5aa13e",
+      "Name": "arcademachine_01",
+      "Enabled": true,
+      "Position": "147.6438,45.58492,-0.6892918",
+      "Rotation": "-0.00000005665161,-0.000000000000004703807,-0.9504561,0.3108591",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/arcadecabinet/arcademachine_01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "3eb9ddf8-d6d3-4275-8330-5e9be4081d6c",
+      "Name": "cafe_table",
+      "Enabled": true,
+      "Position": "142.4604,-59.59558,-0.2928114",
+      "Rotation": "-0.00000001501351,-0.000000000000000008677527,-0.2518848,0.9677573",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/city_props/cafe/cafe_table.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -48,5 +302,11 @@
   },
   "Title": "test_movement",
   "Description": "",
-  "__references": []
+  "__references": [
+    "duccsoft.duck_decoration",
+    "facepunch.concrete_simple",
+    "sundayservice.arcademachine_01",
+    "sundayservice.cigarette_ultraslim",
+    "svin.cafe_table"
+  ]
 }
