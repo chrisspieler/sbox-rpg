@@ -1,0 +1,52 @@
+{
+  "GameObjects": [
+    {
+      "Id": "f4f6d222-0222-419b-9f3a-2d2b84b5eafd",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "5da1999b-7443-4e20-9665-42cf04d0e971",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "0,0,86.60942",
+      "Rotation": "-0.3208132,-0.5251779,0.6726347,-0.4108893",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "TimeScale": 1,
+    "ThreadedAnimation": true,
+    "UseFixedUpdate": true
+  },
+  "Title": "test_movement",
+  "Description": "",
+  "__references": []
+}
