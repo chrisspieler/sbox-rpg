@@ -13,7 +13,7 @@ public class RpgPlayerController : BaseComponent
 	[Property] bool FirstPerson { get; set; }
 	[Property, Range( 20f, 150f )] float FirstPersonFov { get; set; } = 100.0f;
 	[Property, Range( 20f, 150f )] float ThirdPersonFov { get; set; } = 60.0f;
-	[Property, Range( 50, 200 )] public float CameraDistance { get; set; } = 200.0f;
+	[Property, Range( 50, 400 )] public float CameraDistance { get; set; } = 200.0f;
 	[Property] public Vector3 ThirdPersonCameraOffset { get; set; } = Vector3.Zero.WithZ( -20f );
 	[Property] public Vector3 Gravity { get; set; } = Vector3.Zero.WithZ( 800f );
 	[Property] GameObject Body { get; set; }
@@ -58,7 +58,7 @@ public class RpgPlayerController : BaseComponent
 			else
 			{
 				CameraDistance -= mouseInput;
-				CameraDistance = CameraDistance.Clamp( 49f, 200f );
+				CameraDistance = CameraDistance.Clamp( 49f, 400f );
 				if ( CameraDistance < 50f )
 					FirstPerson = true;
 			}
