@@ -36,13 +36,13 @@
       {
         "__type": "FootstepSoundPlayerComponent",
         "__enabled": true,
-        "DebugDraw": true,
+        "DebugDraw": false,
         "Source": "974fe036-08ad-42d1-979c-a83188eaa304"
       },
       {
         "__type": "InteractableTraceComponent",
         "__enabled": true,
-        "DebugDraw": true,
+        "DebugDraw": false,
         "Range": 90,
         "TraceStart": "50a23b7f-616d-472b-a1f1-063d553260fc"
       }
@@ -109,6 +109,29 @@
             "__enabled": true,
             "Height": 1,
             "Target": "974fe036-08ad-42d1-979c-a83188eaa304"
+          }
+        ]
+      },
+      {
+        "Id": "52044279-2bfc-471d-a9de-a504c9f91fc0",
+        "Name": "Screen UI",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Components": [
+          {
+            "__type": "ScreenPanel",
+            "__enabled": true,
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ZIndex": 100
+          },
+          {
+            "__type": "CrosshairPanel",
+            "__enabled": true
           }
         ]
       }

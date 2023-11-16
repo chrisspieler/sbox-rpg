@@ -75,8 +75,8 @@
           "Id": "aab99363-9b6a-4822-a889-a010efc5075f",
           "Name": "cigarettemachine",
           "Enabled": true,
-          "Position": "35.0768,1.838071,12.48008",
-          "Rotation": "-0.0000004130843,-0.00000005424262,-0.9998175,0.01907423",
+          "Position": "-7.411427,41.90528,12.48009",
+          "Rotation": "-0.0000003349244,0.0000002054925,-0.7084829,0.7057279",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
           "Components": [
@@ -103,7 +103,7 @@
           "Id": "3eb9ddf8-d6d3-4275-8330-5e9be4081d6c",
           "Name": "cafe_table",
           "Enabled": true,
-          "Position": "-41.15452,-30.56695,-0.1171329",
+          "Position": "-41.15452,-33.80019,-0.1171329",
           "Rotation": "0.0000000005975728,-0.000000000000001388552,0.01002569,0.9999497",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
@@ -131,10 +131,10 @@
               "Id": "6623480a-5ea3-486c-bd00-db8fd524015f",
               "Name": "cigarettepackage",
               "Enabled": true,
-              "Position": "1.774635,1.777359,36.85318",
+              "Position": "1.774635,1.777359,37.12193",
               "Rotation": "-0.0000000007697155,0.000000000000009370206,-0.01291385,0.9999164",
               "Scale": "0.35,0.35,0.35",
-              "Tags": "",
+              "Tags": "interactable",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -144,6 +144,19 @@
                   "Model": "models/!dead island 2/cigarettes/cigarettepackage.vmdl",
                   "ShouldCastShadows": true,
                   "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/!dead island 2/cigarettes/cigarettepackage.vmdl",
+                  "Static": false,
+                  "Surface": null
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
                 }
               ]
             },
@@ -151,10 +164,10 @@
               "Id": "67c73bc5-a2d0-4895-bb13-1f05dc1e2dce",
               "Name": "cigarettepackage (1)",
               "Enabled": true,
-              "Position": "1.60643,6.254511,36.85318",
+              "Position": "1.60643,6.254511,36.98384",
               "Rotation": "0.0000000009417712,0.000000000000009364781,0.01580014,0.9998753",
               "Scale": "0.35,0.35,0.35",
-              "Tags": "",
+              "Tags": "interactable",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -164,6 +177,19 @@
                   "Model": "models/!dead island 2/cigarettes/cigarettepackage.vmdl",
                   "ShouldCastShadows": true,
                   "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/!dead island 2/cigarettes/cigarettepackage.vmdl",
+                  "Static": false,
+                  "Surface": null
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
                 }
               ]
             },
@@ -174,7 +200,7 @@
               "Position": "-8.240406,-6.69867,36.85032",
               "Rotation": "-0.0000000005975729,0.000000000000001388552,-0.01002569,0.9999498",
               "Scale": "1,1,1",
-              "Tags": "",
+              "Tags": "interactable",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -220,8 +246,8 @@
           "Id": "4e279d6f-2845-4044-8bf9-987d32d07d4d",
           "Name": "metal_bin",
           "Enabled": true,
-          "Position": "36.88428,16.68118,0.5000042",
-          "Rotation": "-0.00000003401615,0.000000000000001766904,-0.5706965,0.8211606",
+          "Position": "-20.79263,42.61831,0.500035",
+          "Rotation": "0.00000005859056,0.000000000000005352641,0.9829867,-0.1836767",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
           "Components": [
@@ -268,7 +294,7 @@
           "Id": "9d3dfde5-4dd3-4dfb-91fa-4cf114fcfb29",
           "Name": "couch",
           "Enabled": true,
-          "Position": "-39.65626,-2.158504,-0.000002937929",
+          "Position": "-39.65626,-4.213706,-0.000002937929",
           "Rotation": "0,0,0,1",
           "Scale": "0.3333333,0.3333333,0.3333333",
           "Tags": "",
@@ -299,7 +325,7 @@
               "Position": "3.574119,-26.20545,24.85139",
               "Rotation": "0.00000004757554,0.0000000000001016551,0.7981837,0.6024141",
               "Scale": "1.2,1.2,1.2",
-              "Tags": "",
+              "Tags": "interactable",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -309,6 +335,14 @@
                   "Model": "models/duck_decoration/duck_decoration.vmdl",
                   "ShouldCastShadows": true,
                   "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/duck_decoration/duck_decoration.vmdl",
+                  "Static": false,
+                  "Surface": null
                 }
               ],
               "Children": [
@@ -357,10 +391,10 @@
               "Id": "7d652872-f5fa-409a-a920-153b4408143a",
               "Name": "cigarettepack",
               "Enabled": true,
-              "Position": "9.741158,-14.48146,25.6999",
+              "Position": "6.796947,-15.59709,25.76153",
               "Rotation": "0.6582223,-0.2583489,-0.658222,-0.2583484",
               "Scale": "0.42,0.42,0.42",
-              "Tags": "",
+              "Tags": "interactable",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -370,25 +404,16 @@
                   "Model": "models/cigarettepack/cigarettepack.vmdl",
                   "ShouldCastShadows": true,
                   "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/cigarettepack/cigarettepack.vmdl",
+                  "Static": false,
+                  "Surface": null
                 }
               ]
-            }
-          ]
-        },
-        {
-          "Id": "b74a4b30-63d2-41c3-bdbe-ee580ae2d8c3",
-          "Name": "Point Light",
-          "Enabled": true,
-          "Position": "0,0,44.03809",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "PointLightComponent",
-              "__enabled": true,
-              "LightColor": "0.06931,0.06656,0.06656,1",
-              "Radius": 400
             }
           ]
         },
@@ -403,7 +428,7 @@
           "Children": [
             {
               "Id": "f079b2d0-62f6-4d76-9994-ba76526cf01f",
-              "Name": "wall_300x600",
+              "Name": "Wall N",
               "Enabled": true,
               "Position": "45.73428,-47.03336,-0.000003251383",
               "Rotation": "0.0000002089392,0.0000002509185,-0.707107,0.7071065",
@@ -427,11 +452,33 @@
                   "Static": true,
                   "Surface": null
                 }
+              ],
+              "Children": [
+                {
+                  "Id": "595da39a-62c9-4f1b-8f74-2e98a8bc1671",
+                  "Name": "windowframe_metal_a",
+                  "Enabled": true,
+                  "Position": "-60.38018,-7.866775,0.3124682",
+                  "Rotation": "-0.0000004210925,0.000000003291854,0.7071071,0.7071065",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/props/frames/windowframe_metal_a.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                }
               ]
             },
             {
               "Id": "caa43cd5-3a3b-4fba-93a1-a9814b408b57",
-              "Name": "wall_300x600",
+              "Name": "Wall S",
               "Enabled": true,
               "Position": "-53.64771,-47.03335,0.000002648724",
               "Rotation": "0.0000002089392,0.0000002509185,-0.707107,0.7071065",
@@ -455,11 +502,89 @@
                   "Static": true,
                   "Surface": null
                 }
+              ],
+              "Children": [
+                {
+                  "Id": "861fe6e6-4ced-4e64-93a3-99bf4040c4e3",
+                  "Name": "light_switch",
+                  "Enabled": true,
+                  "Position": "-159.9618,10.3064,52.71912",
+                  "Rotation": "-0.0000002963517,0.0000000001024176,1,-0.0000007152557",
+                  "Scale": "1,1,1",
+                  "Tags": "interactable",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/light_switch/light_switch.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ColliderBoxComponent",
+                      "__enabled": true,
+                      "IsTrigger": false,
+                      "Scale": "6,2,6",
+                      "Static": false,
+                      "Surface": null
+                    }
+                  ]
+                },
+                {
+                  "Id": "1505f7b8-3ba7-4d47-a45c-9f23d2e2b9dd",
+                  "Name": "hanging_picture_frame_02_1k",
+                  "Enabled": true,
+                  "Position": "-113.1073,10.47165,84.62616",
+                  "Rotation": "-0.0000004163333,-0.00000003620202,0.7071071,0.7071065",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/rug/hanging_picture_frame_02_1k.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ColliderBoxComponent",
+                      "__enabled": true,
+                      "IsTrigger": false,
+                      "Scale": "5.000011,74.99994,60",
+                      "Static": false,
+                      "Surface": null
+                    }
+                  ]
+                },
+                {
+                  "Id": "f10f4604-08b9-46da-bad6-0bf00ba355ef",
+                  "Name": "door_frame",
+                  "Enabled": true,
+                  "Position": "-166.9506,11.05032,0.3123934",
+                  "Rotation": "-0.0000004618204,0.000000001962462,0.7071071,0.7071065",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/doors/door_frame.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                }
               ]
             },
             {
               "Id": "5994789c-686e-47ad-b8be-d5c709f68a6a",
-              "Name": "wall_300x600",
+              "Name": "Wall E",
               "Enabled": true,
               "Position": "45.73428,-50.6991,-0.000005844182",
               "Rotation": "0,0,0,1",
@@ -487,7 +612,7 @@
             },
             {
               "Id": "0f9ee19a-b51b-4291-b3c7-ed3987166575",
-              "Name": "wall_300x600",
+              "Name": "Wall W",
               "Enabled": true,
               "Position": "45.73428,52.00299,0.00006679776",
               "Rotation": "0,0,0,1",
@@ -539,6 +664,67 @@
                   "Static": true,
                   "Surface": null
                 }
+              ],
+              "Children": [
+                {
+                  "Id": "f26de1cf-691e-4f41-8fe4-3c16b9f353d9",
+                  "Name": "lightbulb_fixture",
+                  "Enabled": true,
+                  "Position": "0.4937485,0.6956198,0.07784863",
+                  "Rotation": "-0.0000003576352,0.000000000001705303,1,0.000004824007",
+                  "Scale": "0.4,0.4,0.4",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/lightbulb_fixture/lightbulb_fixture.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "Id": "b74a4b30-63d2-41c3-bdbe-ee580ae2d8c3",
+                      "Name": "Ceiling Light",
+                      "Enabled": true,
+                      "Position": "-0.3782984,-0.3067782,6.692046",
+                      "Rotation": "1,0.000003707412,0.0000003576279,-0.000001235803",
+                      "Scale": "2.5,2.5,2.5",
+                      "Tags": "",
+                      "Components": [
+                        {
+                          "__type": "PointLightComponent",
+                          "__enabled": true,
+                          "LightColor": "0.94554,0.91708,0.87065,1",
+                          "Radius": 400
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Id": "a39d3829-8bab-43d7-a123-cd86df5269ce",
+                  "Name": "smoke_detector_a",
+                  "Enabled": true,
+                  "Position": "37.92364,31.11849,-0.3691779",
+                  "Rotation": "-0.0000003576352,0.000000000001705303,1,0.000004824007",
+                  "Scale": "0.4,0.4,0.4",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "ModelComponent",
+                      "__enabled": true,
+                      "BodyGroups": 18446744073709551615,
+                      "MaterialOverride": null,
+                      "Model": "models/props/office_fixtures/smoke_detector_a.vmdl",
+                      "ShouldCastShadows": true,
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -547,7 +733,7 @@
           "Id": "b22f5222-820f-4fab-be1b-3b75a75a1103",
           "Name": "toilet_a",
           "Enabled": true,
-          "Position": "33.13548,34.43515,0.1249939",
+          "Position": "33.13548,38.11594,0.1249939",
           "Rotation": "-0.00000005960441,-0.00000000000000394775,-0.9999961,0.002798961",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
@@ -687,6 +873,138 @@
                   "Tint": "1,1,1,1"
                 }
               ]
+            },
+            {
+              "Id": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-11.9148,17.84755,22.26047",
+              "Rotation": "0.0000002850547,0.0000001035869,-0.9609205,0.2768241",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                }
+              ]
+            },
+            {
+              "Id": "f6a5bc52-1e73-4060-b9ce-05e32deda1cc",
+              "Name": "beer_bottle (1)",
+              "Enabled": true,
+              "Position": "-7.621639,13.00538,22.2605",
+              "Rotation": "-0.0000002954201,0.0000001411785,0.5569438,-0.8305503",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                }
+              ]
+            },
+            {
+              "Id": "1a32045d-a1b0-40d5-9230-ce85170f7a5f",
+              "Name": "beer_bottle (2)",
+              "Enabled": true,
+              "Position": "-5.954601,18.19709,22.26049",
+              "Rotation": "-0.00000003278157,0.0000003455671,0.9971249,-0.07577351",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                }
+              ]
+            },
+            {
+              "Id": "53ceacac-167f-4f48-99d4-68daf6548a84",
+              "Name": "beer_bottle (3)",
+              "Enabled": true,
+              "Position": "2.89111,20.1214,6.38764",
+              "Rotation": "-0.148597,0.6490562,0.7320849,-0.1438612",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                }
+              ]
             }
           ]
         },
@@ -694,7 +1012,7 @@
           "Id": "51271afb-3fcc-4a85-a432-2aaf4b9bf54c",
           "Name": "sink",
           "Enabled": true,
-          "Position": "16.95141,44.22755,2.88494",
+          "Position": "10.69453,44.22755,2.88494",
           "Rotation": "0.00000005946723,0.000000002769758,0.9999956,0.002955985",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
@@ -719,38 +1037,10 @@
           ]
         },
         {
-          "Id": "1505f7b8-3ba7-4d47-a45c-9f23d2e2b9dd",
-          "Name": "hanging_picture_frame_02_1k",
-          "Enabled": true,
-          "Position": "41.87121,-25.64011,33.8505",
-          "Rotation": "-0.000000298477,0.000000005177685,1,-0.0000006397578",
-          "Scale": "0.4,0.4,0.4",
-          "Tags": "",
-          "Components": [
-            {
-              "__type": "ModelComponent",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": null,
-              "Model": "models/rug/hanging_picture_frame_02_1k.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "ColliderBoxComponent",
-              "__enabled": true,
-              "IsTrigger": false,
-              "Scale": "5.000011,74.99994,60",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
           "Id": "988f3b39-eba1-4960-b8b6-2e91f2d6769e",
           "Name": "plant_pot",
           "Enabled": true,
-          "Position": "28.47472,-34.65928,0.1250133",
+          "Position": "11.54675,-39.31927,0.1250303",
           "Rotation": "-0.00000001548564,0.000000000000001155011,-0.259806,0.9656608",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
@@ -778,8 +1068,8 @@
           "Id": "ed4fe83c-c5a5-48e4-99db-32d47bdf3f60",
           "Name": "wooden_bookshelf_worn",
           "Enabled": true,
-          "Position": "9.820597,-41.84881,0.1250001",
-          "Rotation": "-0.0000000424855,-0.0000000000000007032019,-0.7127884,0.701379",
+          "Position": "-11.98277,-41.90126,0.124947",
+          "Rotation": "-0.00000009032494,-0.00000003769905,-0.7117972,0.7023844",
           "Scale": "0.4,0.4,0.4",
           "Tags": "",
           "Components": [
@@ -863,6 +1153,34 @@
               ]
             }
           ]
+        },
+        {
+          "Id": "fa3f3733-226b-4c61-a829-0782b4d3a3e8",
+          "Name": "plain_bed",
+          "Enabled": true,
+          "Position": "31.5942,-26.42665,-0.00001429871",
+          "Rotation": "-0.000001082267,-0.0000006235523,0.7090484,0.7051595",
+          "Scale": "0.4,0.4,0.4",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/items/plain_set/plain_bed.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/items/plain_set/plain_bed.vmdl",
+              "Static": true,
+              "Surface": null
+            }
+          ]
         }
       ]
     },
@@ -870,7 +1188,7 @@
       "Id": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
       "Name": "Player",
       "Enabled": true,
-      "Position": "117.7133,129.6949,-0.00002659715",
+      "Position": "115.0109,65.87434,-0.00004599167",
       "Rotation": "-0.000000009171848,0.000000000000003614655,-0.1538782,0.9880899",
       "Scale": "1,1,1",
       "Tags": "",
@@ -892,6 +1210,34 @@
           "Tint": "0,0,0,1"
         }
       ]
+    },
+    {
+      "Id": "45211cf4-85e7-4e1c-b36f-c35609bd603c",
+      "Name": "plain_wardrobe",
+      "Enabled": true,
+      "Position": "208.054,76.20375,0.3125076",
+      "Rotation": "-0.00000005960451,0.000000000000003101048,-0.9999977,-0.002138308",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/items/plain_set/plain_wardrobe.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/items/plain_set/plain_wardrobe.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -910,19 +1256,27 @@
     "caro.oldcouch",
     "dotpack.sink",
     "duccsoft.duck_decoration",
+    "facepunch.beer_bottle",
     "facepunch.ceiling_plaster_01",
     "facepunch.floor_parquet_herringbone_a",
+    "facepunch.smoke_detector_a",
     "facepunch.toilet_a",
     "facepunch.tv",
+    "facepunch.windowframe_metal_a",
     "fdd.radio_retro",
+    "gkaf.door_frame",
     "greg.mgs4_ashtray",
+    "halfpeeps.light_switch",
     "jammie.metal_bin",
+    "luke.plain_bed",
     "luke.plain_cofftable",
+    "luke.plain_wardrobe",
     "penguins.hanging_picture",
     "polyhaven.wooden_bookshelf_worn",
     "rust.toilet_paper",
     "rust.toilet_paper_cluster_a",
     "rust.wall_300x600",
+    "saandy.lightbulb_ceiling_fixture",
     "svin.cafe_table",
     "svin.carpet001",
     "svin.plant_pot",
