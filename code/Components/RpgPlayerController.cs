@@ -37,6 +37,9 @@ public class RpgPlayerController : BaseComponent
 		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
+		// Allows Eye to be treated like aimray.
+		Eye.Transform.Rotation = EyeAngles.ToRotation();
+
 		var camera = GameObject.GetComponent<CameraComponent>( true, true );
 		if ( camera is not null )
 		{

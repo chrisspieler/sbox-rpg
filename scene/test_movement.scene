@@ -96,7 +96,7 @@
               "__type": "ModelComponent",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/mud_a/mud_a.vmat",
+              "MaterialOverride": "materials/metal/corrugated/metal_corrugated_01.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
@@ -107,7 +107,7 @@
               "IsTrigger": false,
               "Scale": "100,100,0.25",
               "Static": true,
-              "Surface": "surfaces/water.surface"
+              "Surface": "surfaces/metal.sheet.surface"
             }
           ]
         },
@@ -402,6 +402,34 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "16c22d6a-c615-4381-8c6f-1c71c4a06a7a",
+      "Name": "toilet_a",
+      "Enabled": true,
+      "Position": "-65.95617,-225.8938,0.000005234112",
+      "Rotation": "-0.00000002104197,-0.0000000000000009221565,-0.3530256,0.9356138",
+      "Scale": "1,1,1",
+      "Tags": "interactable",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -417,9 +445,9 @@
     "facepunch.concrete_pol_01",
     "facepunch.floor_grass_a",
     "facepunch.metal_painted_c",
+    "facepunch.toilet_a",
     "fdd.brick_pile",
     "rust.rock_quarry_small_b",
-    "rustextended.mud_a",
     "rustextended.wood_planks_a"
   ]
 }

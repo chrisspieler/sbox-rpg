@@ -36,8 +36,15 @@
       {
         "__type": "FootstepSoundPlayerComponent",
         "__enabled": true,
-        "DebugVis": true,
+        "DebugDraw": true,
         "Source": "974fe036-08ad-42d1-979c-a83188eaa304"
+      },
+      {
+        "__type": "InteractableTraceComponent",
+        "__enabled": true,
+        "DebugDraw": true,
+        "Range": 90,
+        "TraceStart": "50a23b7f-616d-472b-a1f1-063d553260fc"
       }
     ],
     "Children": [
@@ -70,6 +77,10 @@
             "TargetEye": "None",
             "ZFar": 10000,
             "ZNear": 10
+          },
+          {
+            "__type": "Highlight",
+            "__enabled": true
           }
         ]
       },

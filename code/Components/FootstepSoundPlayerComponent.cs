@@ -21,7 +21,7 @@ public class FootstepSoundPlayerComponent : BaseComponent
 		}
 	}
 	private AnimatedModelComponent _source;
-	[Property] public bool DebugVis { get; set; }
+	[Property] public bool DebugDraw { get; set; }
 	private CircularBuffer<SceneModel.FootstepEvent> _pastFootsteps = new( 5 );
 	private CircularBuffer<PhysicsTraceResult> _pastTraces = new( 5 );
 
@@ -37,7 +37,7 @@ public class FootstepSoundPlayerComponent : BaseComponent
 	{
 		base.Update();
 
-		if ( DebugVis )
+		if ( DebugDraw )
 		{
 			DebugDrawFootText();
 			DebugDrawTraces();
