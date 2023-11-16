@@ -129,6 +129,17 @@
                   "__type": "PhysicsComponent",
                   "__enabled": true,
                   "Gravity": true
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "6623480a-5ea3-486c-bd00-db8fd524015f"
+                },
+                {
+                  "__type": "InteractableComponent",
+                  "__enabled": true,
+                  "InteractionText": "Use"
                 }
               ]
             },
@@ -162,6 +173,17 @@
                   "__type": "PhysicsComponent",
                   "__enabled": true,
                   "Gravity": true
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "67c73bc5-a2d0-4895-bb13-1f05dc1e2dce"
+                },
+                {
+                  "__type": "InteractableComponent",
+                  "__enabled": true,
+                  "InteractionText": "Use"
                 }
               ]
             },
@@ -172,7 +194,7 @@
               "Position": "-8.240406,-6.69867,36.85032",
               "Rotation": "-0.0000000005975729,0.000000000000001388552,-0.01002569,0.9999498",
               "Scale": "1,1,1",
-              "Tags": "interactable",
+              "Tags": "",
               "Components": [
                 {
                   "__type": "ModelComponent",
@@ -190,6 +212,22 @@
                   "Model": "model/6/untitled_60.vmdl",
                   "Static": true,
                   "Surface": null
+                },
+                {
+                  "__type": "InteractableComponent",
+                  "__enabled": true,
+                  "InteractionText": "Toggle Light"
+                },
+                {
+                  "__type": "LightSwitchComponent",
+                  "__enabled": true,
+                  "Interactable": "8cb54e6a-7c39-4a60-992a-72b4a5274c74",
+                  "IsOn": false,
+                  "OffColor": "0,0,0,1",
+                  "OffMaterialGroup": null,
+                  "OnColor": "1,0.85098,0.56078,1",
+                  "OnMaterialGroup": null,
+                  "TargetLight": "cd9d00ff-61d7-40eb-9d2b-31ebc712ea18"
                 }
               ],
               "Children": [
@@ -767,6 +805,11 @@
                           "Model": "models/doors/door_2.vmdl",
                           "ShouldCastShadows": true,
                           "Tint": "1,1,1,1"
+                        },
+                        {
+                          "__type": "InteractableComponent",
+                          "__enabled": true,
+                          "InteractionText": "Go to Hell"
                         }
                       ]
                     }
@@ -1096,6 +1139,12 @@
                   "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
                   "Static": false,
                   "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5"
                 }
               ]
             },
@@ -1129,6 +1178,12 @@
                   "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
                   "Static": false,
                   "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "f6a5bc52-1e73-4060-b9ce-05e32deda1cc"
                 }
               ]
             },
@@ -1162,6 +1217,12 @@
                   "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
                   "Static": false,
                   "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "1a32045d-a1b0-40d5-9230-ce85170f7a5f"
                 }
               ]
             },
@@ -1195,6 +1256,12 @@
                   "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
                   "Static": false,
                   "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "53ceacac-167f-4f48-99d4-68daf6548a84"
                 }
               ]
             }

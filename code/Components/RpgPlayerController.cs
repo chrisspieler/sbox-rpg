@@ -32,13 +32,11 @@ public class RpgPlayerController : BaseComponent
 
 	public override void Update()
 	{
-		EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-		EyeAngles.pitch = Math.Clamp( EyeAngles.pitch, -89, 89 );
-		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
-		EyeAngles.roll = 0;
-
-		// Allows Eye to be treated like aimray.
-		Eye.Transform.Rotation = EyeAngles.ToRotation();
+		// If not rotating an object, allow the player to look around.
+		if ( _currentDraggable == null || !Input.Down( "attack2" ) )
+		{
+			UpdateEyes();
+		}
 
 		var camera = GameObject.GetComponent<CameraComponent>( true, true );
 		if ( camera is not null )
@@ -54,23 +52,9 @@ public class RpgPlayerController : BaseComponent
 				renderer.Tint = FirstPerson ? Color.Transparent : Color.White;
 			}
 
-			var mouseInput = Input.MouseWheel * 30.0f;
-			if ( FirstPerson )
-			{
-				if ( mouseInput < 0 )
-				{
-					// We are zooming out from first person.
-					FirstPerson = false;
-					CameraDistance = 50f;
-				}
-			}
-			else
-			{
-				CameraDistance -= mouseInput;
-				CameraDistance = CameraDistance.Clamp( 49f, 400f );
-				if ( CameraDistance < 50f )
-					FirstPerson = true;
-			}
+			// When dragging an object, the zoom controls move the object instead.
+			if ( _currentDraggable == null )
+				UpdateZoom();
 
 			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
 
@@ -96,6 +80,7 @@ public class RpgPlayerController : BaseComponent
 		}
 
 		HandleInteract();
+		HandleDrag();
 
 		var cc = GameObject.GetComponent<CharacterController>();
 		if ( cc is null ) return;
@@ -144,6 +129,38 @@ public class RpgPlayerController : BaseComponent
 		}
 	}
 
+	private void UpdateEyes()
+	{
+		EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
+		EyeAngles.pitch = Math.Clamp( EyeAngles.pitch, -89, 89 );
+		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+		EyeAngles.roll = 0;
+
+		// Allows Eye to be treated like aimray.
+		Eye.Transform.Rotation = EyeAngles.ToRotation();
+	}
+
+	private void UpdateZoom()
+	{
+		var mouseInput = Input.MouseWheel * 30.0f;
+		if ( FirstPerson )
+		{
+			if ( mouseInput < 0 )
+			{
+				// We are zooming out from first person.
+				FirstPerson = false;
+				CameraDistance = 50f;
+			}
+		}
+		else
+		{
+			CameraDistance -= mouseInput;
+			CameraDistance = CameraDistance.Clamp( 49f, 400f );
+			if ( CameraDistance < 50f )
+				FirstPerson = true;
+		}
+	}
+
 	private void HandleInteract()
 	{
 		if ( !Input.Pressed( "use" ) )
@@ -159,6 +176,36 @@ public class RpgPlayerController : BaseComponent
 			return;
 
 		interactable.Interact( GameObject );
+	}
+
+	private DraggableComponent _currentDraggable;
+
+	private void HandleDrag()
+	{
+		if ( !Input.Down( "attack1" ) )
+		{
+			if ( _currentDraggable is not null )
+			{
+				_currentDraggable.EndDrag();
+				_currentDraggable = null;
+			}
+			return;
+		}
+
+		if ( _currentDraggable is not null )
+		{
+			return;
+		}
+
+		var interact = GameObject.GetComponent<InteractableTraceComponent>();
+		if ( interact is null || interact.Hovered is null )
+			return;
+
+		if ( !interact.Hovered.TryGetComponent<DraggableComponent>( out var draggable ) )
+			return;
+
+		_currentDraggable = draggable;
+		draggable.BeginDrag( Eye );
 	}
 
 	public override void FixedUpdate()
