@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scene RPG", "code\Scene RPG.csproj", "{B9F74B48-4D7D-3D8B-E9ED-A5956DAC1CB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scene_rpg", "code\scene_rpg.csproj", "{EEC866FF-9CE3-BD90-F5FC-A2E61BEAF758}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scene RPG.editor", "code\Editor\Scene RPG.editor.csproj", "{3D0B787B-655F-7CB3-A00E-E266AD6554CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scene_rpg.editor", "code\Editor\scene_rpg.editor.csproj", "{7B9EE70E-33DF-1976-F30D-8CD67D41BEEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base Library", "C:\Program Files (x86)\Steam\steamapps\common\sbox\addons\base\code\Base Library.csproj", "{3CFCECAD-98E9-581B-90CF-75E5F2B140CA}"
 EndProject
@@ -28,14 +28,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-			{B9F74B48-4D7D-3D8B-E9ED-A5956DAC1CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9F74B48-4D7D-3D8B-E9ED-A5956DAC1CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9F74B48-4D7D-3D8B-E9ED-A5956DAC1CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9F74B48-4D7D-3D8B-E9ED-A5956DAC1CB2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D0B787B-655F-7CB3-A00E-E266AD6554CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D0B787B-655F-7CB3-A00E-E266AD6554CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D0B787B-655F-7CB3-A00E-E266AD6554CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D0B787B-655F-7CB3-A00E-E266AD6554CB}.Release|Any CPU.Build.0 = Release|Any CPU
+			{EEC866FF-9CE3-BD90-F5FC-A2E61BEAF758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC866FF-9CE3-BD90-F5FC-A2E61BEAF758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC866FF-9CE3-BD90-F5FC-A2E61BEAF758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC866FF-9CE3-BD90-F5FC-A2E61BEAF758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9EE70E-33DF-1976-F30D-8CD67D41BEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9EE70E-33DF-1976-F30D-8CD67D41BEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9EE70E-33DF-1976-F30D-8CD67D41BEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9EE70E-33DF-1976-F30D-8CD67D41BEEC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3CFCECAD-98E9-581B-90CF-75E5F2B140CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CFCECAD-98E9-581B-90CF-75E5F2B140CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CFCECAD-98E9-581B-90CF-75E5F2B140CA}.Release|Any CPU.ActiveCfg = Release|Any CPU

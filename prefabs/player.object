@@ -1,0 +1,101 @@
+{
+  "RootObject": {
+    "Id": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
+    "Name": "player",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "RpgPlayerController",
+        "__enabled": true,
+        "AnimationHelper": "974fe036-08ad-42d1-979c-a83188eaa304",
+        "AutoWalkEnabled": false,
+        "Body": "974fe036-08ad-42d1-979c-a83188eaa304",
+        "CameraDistance": 100,
+        "Eye": "50a23b7f-616d-472b-a1f1-063d553260fc",
+        "FirstPerson": true,
+        "FirstPersonFov": 100,
+        "Gravity": "0,0,800",
+        "ShouldWalk": false,
+        "ThirdPersonCameraOffset": "0,0,-8",
+        "ThirdPersonFov": 60
+      }
+    ],
+    "Children": [
+      {
+        "Id": "50a23b7f-616d-472b-a1f1-063d553260fc",
+        "Name": "Eye",
+        "Enabled": true,
+        "Position": "0,0,72",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": ""
+      },
+      {
+        "Id": "482a16c8-1165-4fb4-9317-4bbe400d06b0",
+        "Name": "Camera",
+        "Enabled": true,
+        "Position": "0,0,60",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__enabled": true,
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 100,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "TargetEye": "None",
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ]
+      },
+      {
+        "Id": "974fe036-08ad-42d1-979c-a83188eaa304",
+        "Name": "Body",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Components": [
+          {
+            "__type": "AnimatedModelComponent",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimation",
+            "__enabled": true,
+            "Height": 1,
+            "Target": "974fe036-08ad-42d1-979c-a83188eaa304"
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

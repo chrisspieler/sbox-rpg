@@ -22,10 +22,16 @@ public class RpgPlayerController : BaseComponent
 	public Angles EyeAngles;
 	public Vector3 WishVelocity;
 
+	public override void OnStart()
+	{
+		var startAngle = Transform.Rotation.Forward.EulerAngles
+			.WithPitch( 0 )
+			.WithRoll( 0 );
+		EyeAngles = startAngle;
+	}
+
 	public override void Update()
 	{
-		base.Update();
-
 		EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 		EyeAngles.pitch = Math.Clamp( EyeAngles.pitch, -89, 89 );
 		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
@@ -121,11 +127,15 @@ public class RpgPlayerController : BaseComponent
 
 		if ( AnimationHelper is not null )
 		{
-			AnimationHelper.WithVelocity( cc.Velocity );
+			// Prevent Citizen from leaning super far forward while running.
+			var velocity = cc.Velocity * (cc.Velocity.Length > 250f ? 0.7f : 1f );
+			AnimationHelper.WithVelocity( velocity );
 			AnimationHelper.IsGrounded = cc.IsOnGround;
+			// I don't see foot shuffling. Perhaps it's not implemented yet?
 			AnimationHelper.FootShuffle = rotateDifference;
-			AnimationHelper.WithLook( EyeAngles.Forward, 1, 1, 1.0f );
-			AnimationHelper.MoveStyle = Input.Down( "Run" ) ? CitizenAnimation.MoveStyles.Run : CitizenAnimation.MoveStyles.Walk;
+			var isRunning = Input.Down( "Run" );
+			AnimationHelper.WithLook( EyeAngles.Forward, 1, 0.5f, 0.5f );
+			AnimationHelper.MoveStyle = isRunning ? CitizenAnimation.MoveStyles.Run : CitizenAnimation.MoveStyles.Walk;
 		}
 	}
 
