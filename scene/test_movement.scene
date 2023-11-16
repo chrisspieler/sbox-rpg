@@ -68,7 +68,7 @@
               "__type": "ModelComponent",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/concrete/floor/concrete_polished_01.vmat",
+              "MaterialOverride": "materials/generic/metal_painted_c.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
@@ -79,7 +79,7 @@
               "IsTrigger": false,
               "Scale": "100,100,0.25",
               "Static": true,
-              "Surface": null
+              "Surface": "surfaces/metal.surface"
             }
           ]
         },
@@ -96,7 +96,7 @@
               "__type": "ModelComponent",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/concrete/floor/concrete_polished_01.vmat",
+              "MaterialOverride": "materials/mud_a/mud_a.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
@@ -107,7 +107,7 @@
               "IsTrigger": false,
               "Scale": "100,100,0.25",
               "Static": true,
-              "Surface": null
+              "Surface": "surfaces/water.surface"
             }
           ]
         },
@@ -236,7 +236,7 @@
               "__type": "ModelComponent",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/concrete/floor/concrete_polished_01.vmat",
+              "MaterialOverride": "materials/wood_planks_a/wood_planks_a.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
@@ -247,7 +247,7 @@
               "IsTrigger": false,
               "Scale": "100,100,0.25",
               "Static": true,
-              "Surface": null
+              "Surface": "surfaces/wood.surface"
             }
           ]
         },
@@ -264,7 +264,7 @@
               "__type": "ModelComponent",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
-              "MaterialOverride": "materials/concrete/floor/concrete_polished_01.vmat",
+              "MaterialOverride": "materials/grass/floor_grass_a.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
@@ -275,7 +275,7 @@
               "IsTrigger": false,
               "Scale": "100,100,0.25",
               "Static": true,
-              "Surface": null
+              "Surface": "surfaces/grass.surface"
             }
           ]
         }
@@ -415,7 +415,11 @@
   "Description": "",
   "__references": [
     "facepunch.concrete_pol_01",
+    "facepunch.floor_grass_a",
+    "facepunch.metal_painted_c",
     "fdd.brick_pile",
-    "rust.rock_quarry_small_b"
+    "rust.rock_quarry_small_b",
+    "rustextended.mud_a",
+    "rustextended.wood_planks_a"
   ]
 }

@@ -32,6 +32,12 @@
         "ShouldWalk": false,
         "ThirdPersonCameraOffset": "0,0,-8",
         "ThirdPersonFov": 60
+      },
+      {
+        "__type": "FootstepSoundPlayerComponent",
+        "__enabled": true,
+        "DebugVis": true,
+        "Source": "974fe036-08ad-42d1-979c-a83188eaa304"
       }
     ],
     "Children": [

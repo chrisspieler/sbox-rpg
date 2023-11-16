@@ -48,7 +48,7 @@ public class RpgPlayerController : BaseComponent
 			if ( Body is not null )
 			{
 				var renderer = Body.GetComponent<AnimatedModelComponent>( false );
-				renderer.Enabled = !FirstPerson;
+				renderer.Tint = FirstPerson ? Color.Transparent : Color.White;
 			}
 
 			var mouseInput = Input.MouseWheel * 30.0f;
@@ -196,7 +196,7 @@ public class RpgPlayerController : BaseComponent
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
 		if ( Input.Down( "Run" ) ) WishVelocity *= 320.0f;
-		else if ( Input.Down( "Walk" ) ) WishVelocity *= 70.0f;
-		else WishVelocity *= ShouldWalk ? 70.0f : 140.0f;
+		else if ( Input.Down( "Walk" ) ) WishVelocity *= 65.0f;
+		else WishVelocity *= ShouldWalk ? 65.0f : 110.0f;
 	}
 }
