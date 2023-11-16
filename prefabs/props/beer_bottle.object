@@ -1,0 +1,44 @@
+{
+  "RootObject": {
+    "Id": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5",
+    "Name": "beer_bottle",
+    "Enabled": true,
+    "Position": "-11.9148,17.84755,22.26047",
+    "Rotation": "0.0000002850547,0.0000001035869,-0.9609205,0.2768241",
+    "Scale": "1,1,1",
+    "Tags": "interactable",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialOverride": null,
+        "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "PhysicsComponent",
+        "__enabled": true,
+        "Gravity": true
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+        "Static": false,
+        "Surface": "surfaces/glass.surface"
+      },
+      {
+        "__type": "DraggableComponent",
+        "__enabled": true,
+        "DragSpeed": 50,
+        "Rigidbody": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5"
+      }
+    ]
+  },
+  "__references": [
+    "facepunch.beer_bottle"
+  ]
+}

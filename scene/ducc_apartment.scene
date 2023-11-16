@@ -31,7 +31,7 @@
         {
           "Id": "e8bb7b76-dd4d-416d-b5a2-5186a5319bef",
           "Name": "Volumetric Fog",
-          "Enabled": true,
+          "Enabled": false,
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
@@ -534,6 +534,22 @@
                   "Model": "models/duck_decoration/duck_decoration.vmdl",
                   "Static": false,
                   "Surface": null
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "f84222b9-1439-4628-90db-94994a105f08"
+                },
+                {
+                  "__type": "InteractableComponent",
+                  "__enabled": true,
+                  "InteractionText": "Use"
                 }
               ],
               "Children": [
@@ -933,7 +949,7 @@
                         {
                           "__type": "PointLightComponent",
                           "__enabled": true,
-                          "LightColor": "1,1,1,1",
+                          "LightColor": "0.10396,0.09881,0.09881,1",
                           "Radius": 400
                         }
                       ]
@@ -1110,11 +1126,11 @@
               ]
             },
             {
-              "Id": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5",
+              "Id": "76919532-e0ce-4039-9d51-30246cce41de",
               "Name": "beer_bottle",
               "Enabled": true,
-              "Position": "-11.9148,17.84755,22.26047",
-              "Rotation": "0.0000002850547,0.0000001035869,-0.9609205,0.2768241",
+              "Position": "-6.985879,17.2589,23.28698",
+              "Rotation": "0.000000004789015,0.000000000000000004385891,0.08034635,0.9967667",
               "Scale": "1,1,1",
               "Tags": "interactable",
               "Components": [
@@ -1144,16 +1160,16 @@
                   "__type": "DraggableComponent",
                   "__enabled": true,
                   "DragSpeed": 50,
-                  "Rigidbody": "f9a2aa2a-ecfc-448e-96a7-77324d571ff5"
+                  "Rigidbody": "76919532-e0ce-4039-9d51-30246cce41de"
                 }
               ]
             },
             {
-              "Id": "f6a5bc52-1e73-4060-b9ce-05e32deda1cc",
-              "Name": "beer_bottle (1)",
+              "Id": "3c6b5b95-7b14-41f4-ae5b-90a8ccf18f52",
+              "Name": "beer_bottle",
               "Enabled": true,
-              "Position": "-7.621639,13.00538,22.2605",
-              "Rotation": "-0.0000002954201,0.0000001411785,0.5569438,-0.8305503",
+              "Position": "-10.02486,19.22504,23.28698",
+              "Rotation": "0.00000003522813,0.000000000000001068273,0.5910299,0.8066494",
               "Scale": "1,1,1",
               "Tags": "interactable",
               "Components": [
@@ -1183,16 +1199,16 @@
                   "__type": "DraggableComponent",
                   "__enabled": true,
                   "DragSpeed": 50,
-                  "Rigidbody": "f6a5bc52-1e73-4060-b9ce-05e32deda1cc"
+                  "Rigidbody": "3c6b5b95-7b14-41f4-ae5b-90a8ccf18f52"
                 }
               ]
             },
             {
-              "Id": "1a32045d-a1b0-40d5-9230-ce85170f7a5f",
-              "Name": "beer_bottle (2)",
+              "Id": "2266abe6-f154-401b-807e-dbe94823d4a4",
+              "Name": "beer_bottle",
               "Enabled": true,
-              "Position": "-5.954601,18.19709,22.26049",
-              "Rotation": "-0.00000003278157,0.0000003455671,0.9971249,-0.07577351",
+              "Position": "-5.109938,22.64521,23.287",
+              "Rotation": "0.00000005958547,0.00000000000000310555,0.9996782,0.02535043",
               "Scale": "1,1,1",
               "Tags": "interactable",
               "Components": [
@@ -1222,16 +1238,16 @@
                   "__type": "DraggableComponent",
                   "__enabled": true,
                   "DragSpeed": 50,
-                  "Rigidbody": "1a32045d-a1b0-40d5-9230-ce85170f7a5f"
+                  "Rigidbody": "2266abe6-f154-401b-807e-dbe94823d4a4"
                 }
               ]
             },
             {
-              "Id": "53ceacac-167f-4f48-99d4-68daf6548a84",
-              "Name": "beer_bottle (3)",
+              "Id": "a514590e-1466-401c-92a7-f68e8339ba60",
+              "Name": "beer_bottle",
               "Enabled": true,
-              "Position": "-5.052926,19.3103,3.389879",
-              "Rotation": "-0.148597,0.6490562,0.7320849,-0.1438612",
+              "Position": "-9.986318,22.89269,23.287",
+              "Rotation": "0.00000003821557,0.000000000000002850327,0.6411508,0.767414",
               "Scale": "1,1,1",
               "Tags": "interactable",
               "Components": [
@@ -1261,7 +1277,280 @@
                   "__type": "DraggableComponent",
                   "__enabled": true,
                   "DragSpeed": 50,
-                  "Rigidbody": "53ceacac-167f-4f48-99d4-68daf6548a84"
+                  "Rigidbody": "a514590e-1466-401c-92a7-f68e8339ba60"
+                }
+              ]
+            },
+            {
+              "Id": "3caee979-8847-4f9d-960b-c1f5e3322c6b",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-6.720683,24.5107,23.28699",
+              "Rotation": "0.00000003821557,0.000000000000002612261,0.6411508,0.767414",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "3caee979-8847-4f9d-960b-c1f5e3322c6b"
+                }
+              ]
+            },
+            {
+              "Id": "446c1bcf-99e8-40cf-b38a-ee995185f0e6",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-8.136329,21.26525,23.28697",
+              "Rotation": "0.000000006082013,-0.000000000000002286951,0.1020393,0.99478",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "446c1bcf-99e8-40cf-b38a-ee995185f0e6"
+                }
+              ]
+            },
+            {
+              "Id": "bbc43749-1f06-4213-b860-810ecf5ed708",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-5.680447,19.65296,23.28699",
+              "Rotation": "0.00000003522813,0.000000000000001062303,0.5910299,0.8066494",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "bbc43749-1f06-4213-b860-810ecf5ed708"
+                }
+              ]
+            },
+            {
+              "Id": "6a09a669-c65b-4e66-8562-5255f49d159c",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-10.24369,16.27438,23.28699",
+              "Rotation": "0.00000005136011,0.0000000000000004487063,0.8616796,0.5074521",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "6a09a669-c65b-4e66-8562-5255f49d159c"
+                }
+              ]
+            },
+            {
+              "Id": "3304695e-5d20-48f7-ac30-23b3a995524c",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-12.60563,17.66926,23.28697",
+              "Rotation": "-0.00000001728507,0.000000000000005140486,-0.2899954,0.9570278",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "3304695e-5d20-48f7-ac30-23b3a995524c"
+                }
+              ]
+            },
+            {
+              "Id": "2f249680-88b3-4db0-82dd-7fe05807668f",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-12.8434,20.07383,23.28698",
+              "Rotation": "-0.00000005234195,0.000000000000009775373,-0.8781523,0.4783808",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "2f249680-88b3-4db0-82dd-7fe05807668f"
+                }
+              ]
+            },
+            {
+              "Id": "972936ed-e905-4fca-a961-d808d9467e62",
+              "Name": "beer_bottle",
+              "Enabled": true,
+              "Position": "-2.228642,20.5978,23.28699",
+              "Rotation": "-0.00000002934533,-0.000000000000001026948,-0.4923328,0.8704063",
+              "Scale": "1,1,1",
+              "Tags": "interactable",
+              "Components": [
+                {
+                  "__type": "ModelComponent",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "PhysicsComponent",
+                  "__enabled": true,
+                  "Gravity": true
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+                  "Static": false,
+                  "Surface": "surfaces/glass.surface"
+                },
+                {
+                  "__type": "DraggableComponent",
+                  "__enabled": true,
+                  "DragSpeed": 50,
+                  "Rigidbody": "972936ed-e905-4fca-a961-d808d9467e62"
                 }
               ]
             }
@@ -1733,8 +2022,8 @@
       "Id": "cbd14fcd-c8bf-4777-89a9-59fbc8df9138",
       "Name": "Player",
       "Enabled": true,
-      "Position": "115.0109,65.87434,-0.00004599167",
-      "Rotation": "-0.000000009171848,0.000000000000003614655,-0.1538782,0.9880899",
+      "Position": "127.3323,112.2915,-0.00004700946",
+      "Rotation": "-0.00000005174213,0.000000000000006540179,-0.8680888,0.4964087",
       "Scale": "1,1,1",
       "Tags": "",
       "__Prefab": "prefabs/player.object"
