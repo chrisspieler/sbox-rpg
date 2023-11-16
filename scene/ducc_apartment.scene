@@ -682,6 +682,23 @@
                       "Scale": "6,2,6",
                       "Static": false,
                       "Surface": null
+                    },
+                    {
+                      "__type": "InteractableComponent",
+                      "__enabled": true,
+                      "InteractionText": "Toggle Light"
+                    },
+                    {
+                      "__type": "LightSwitchComponent",
+                      "__enabled": true,
+                      "Interactable": "861fe6e6-4ced-4e64-93a3-99bf4040c4e3",
+                      "IsOn": false,
+                      "OffColor": "0.05941,0.05902,0.05794,1",
+                      "OffMaterialGroup": "off",
+                      "OnColor": "0.96535,0.87359,0.65949,1",
+                      "OnMaterialGroup": "default",
+                      "TargetLight": "b74a4b30-63d2-41c3-bdbe-ee580ae2d8c3",
+                      "TargetLightModel": "f26de1cf-691e-4f41-8fe4-3c16b9f353d9"
                     }
                   ]
                 },
@@ -873,7 +890,7 @@
                         {
                           "__type": "PointLightComponent",
                           "__enabled": true,
-                          "LightColor": "0.93564,0.88491,0.80132,1",
+                          "LightColor": "1,1,1,1",
                           "Radius": 400
                         }
                       ]

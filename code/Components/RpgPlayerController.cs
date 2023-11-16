@@ -95,6 +95,8 @@ public class RpgPlayerController : BaseComponent
 			camera.Transform.Rotation = EyeAngles.ToRotation();
 		}
 
+		HandleInteract();
+
 		var cc = GameObject.GetComponent<CharacterController>();
 		if ( cc is null ) return;
 
@@ -140,6 +142,23 @@ public class RpgPlayerController : BaseComponent
 			AnimationHelper.WithLook( EyeAngles.Forward, 1, 0.5f, 0.5f );
 			AnimationHelper.MoveStyle = isRunning ? CitizenAnimation.MoveStyles.Run : CitizenAnimation.MoveStyles.Walk;
 		}
+	}
+
+	private void HandleInteract()
+	{
+		if ( !Input.Pressed( "use" ) )
+			return;
+
+		var interact = GameObject.GetComponent<InteractableTraceComponent>();
+
+		// The player may not interact, or no interactable is hovered over.
+		if ( interact is null || interact.Hovered is null )
+			return;
+
+		if ( !interact.Hovered.TryGetComponent<InteractableComponent>( out var interactable ) )
+			return;
+
+		interactable.Interact( GameObject );
 	}
 
 	public override void FixedUpdate()
