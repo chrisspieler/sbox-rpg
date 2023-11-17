@@ -18,6 +18,14 @@ public class DraggableComponent : AffordanceComponent
 		Rigidbody ??= GameObject.GetComponent<PhysicsComponent>();
 	}
 
+	public override void Update()
+	{
+		base.Update();
+
+		if ( Dragger != null && !Input.Down( ActionButton ) )
+			EndDrag();
+	}
+
 	public override void FixedUpdate()
 	{
 		if ( Dragger is null )
@@ -54,7 +62,8 @@ public class DraggableComponent : AffordanceComponent
 
 	public void BeginDrag( GameObject go )
 	{
-		Dragger = go;
+		var playerController = go.GetComponent<RpgPlayerController>();
+		Dragger = playerController.Eye;
 		_currentHoldDistance = DefaultHoldDistance;
 	}
 
@@ -63,8 +72,5 @@ public class DraggableComponent : AffordanceComponent
 		Dragger = null;
 	}
 
-	public override void DoInteract( GameObject user )
-	{
-		throw new NotImplementedException();
-	}
+	public override void DoInteract( GameObject user ) => BeginDrag( user ); 
 }

@@ -30,3 +30,5 @@ public class AffordanceComponent : BaseComponent
 			GameObject.Tags.Remove( "interactable" );
 	}
 }
+
+

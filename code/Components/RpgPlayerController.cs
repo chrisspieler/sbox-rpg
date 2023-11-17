@@ -16,8 +16,8 @@ public class RpgPlayerController : BaseComponent
 	[Property, Range( 50, 400 )] public float CameraDistance { get; set; } = 200.0f;
 	[Property] public Vector3 ThirdPersonCameraOffset { get; set; } = Vector3.Zero.WithZ( -20f );
 	[Property] public Vector3 Gravity { get; set; } = Vector3.Zero.WithZ( 800f );
-	[Property] GameObject Body { get; set; }
-	[Property] GameObject Eye { get; set; }
+	[Property] public GameObject Body { get; private set; }
+	[Property] public GameObject Eye { get; private set; }
 	[Property] CitizenAnimation AnimationHelper { get; set; }
 	public Angles EyeAngles;
 	public Vector3 WishVelocity;
@@ -32,11 +32,9 @@ public class RpgPlayerController : BaseComponent
 
 	public override void Update()
 	{
-		// If not rotating an object, allow the player to look around.
-		if ( _currentDraggable == null || !Input.Down( "attack2" ) )
-		{
-			UpdateEyes();
-		}
+		// TODO: Figure out how to stop the player from looking around when
+		// rotating a draggable object.
+		UpdateEyes();
 
 		var camera = GameObject.GetComponent<CameraComponent>( true, true );
 		if ( camera is not null )
@@ -52,9 +50,8 @@ public class RpgPlayerController : BaseComponent
 				renderer.Tint = FirstPerson ? Color.Transparent : Color.White;
 			}
 
-			// When dragging an object, the zoom controls move the object instead.
-			if ( _currentDraggable == null )
-				UpdateZoom();
+			// TODO: Figure out how to stop zooming when moving a draggable object in/out.
+			UpdateZoom();
 
 			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
 
@@ -80,7 +77,6 @@ public class RpgPlayerController : BaseComponent
 		}
 
 		HandleInteract();
-		HandleDrag();
 
 		var cc = GameObject.GetComponent<CharacterController>();
 		if ( cc is null ) return;
@@ -163,49 +159,24 @@ public class RpgPlayerController : BaseComponent
 
 	private void HandleInteract()
 	{
-		if ( !Input.Pressed( "use" ) )
-			return;
-
 		var interact = GameObject.GetComponent<InteractableTraceComponent>();
 
 		// The player may not interact, or no interactable is hovered over.
 		if ( interact is null || interact.Hovered is null )
 			return;
 
-		if ( !interact.Hovered.TryGetComponent<AffordanceComponent>( out var interactable ) )
+		var affordances = interact.Hovered.GetComponents<AffordanceComponent>();
+
+		// If there's nothing we can do with the hovered object, just return.
+		if ( !affordances.Any() )
 			return;
 
-		interactable.DoInteract( GameObject );
-	}
-
-	private DraggableComponent _currentDraggable;
-
-	private void HandleDrag()
-	{
-		if ( !Input.Down( "attack1" ) )
+		foreach( var affordance in affordances )
 		{
-			if ( _currentDraggable is not null )
-			{
-				_currentDraggable.EndDrag();
-				_currentDraggable = null;
-			}
-			return;
+			// TODO: Figure out how to to pass the Eye to the Draggable affordance.
+			if ( Input.Pressed( affordance.ActionButton ) )
+				affordance.DoInteract( GameObject );
 		}
-
-		if ( _currentDraggable is not null )
-		{
-			return;
-		}
-
-		var interact = GameObject.GetComponent<InteractableTraceComponent>();
-		if ( interact is null || interact.Hovered is null )
-			return;
-
-		if ( !interact.Hovered.TryGetComponent<DraggableComponent>( out var draggable ) )
-			return;
-
-		_currentDraggable = draggable;
-		draggable.BeginDrag( Eye );
 	}
 
 	public override void FixedUpdate()
