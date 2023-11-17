@@ -3,7 +3,24 @@
     height: 10%;
     bottom: 35%;
     width: 100%;
-
     flex-direction: row;
     justify-content: center;
+
+    InputGlyphControl {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+
+        image {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: white;
+        }
+    }
 }

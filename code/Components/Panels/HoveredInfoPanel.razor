@@ -1,0 +1,35 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@namespace Sandbox
+@inherits PanelComponent
+
+<root>
+    @if ( Hovered != null)
+    {
+        <div id="name">@Hovered.Name</div>
+    }
+</root>
+
+@code {
+    public static HoveredInfoPanel Instance { get; private set; }
+    public GameObject Hovered { get; set;}
+
+    public HoveredInfoPanel()
+    {
+        Instance = this;
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        // If the hovered GameObject is no longer hovered, clear it.
+        if ( Hovered is not null && !Hovered.Tags.Has( "hovered" ) )
+            Hovered = null;
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine( Hovered );
+    }
+}

@@ -1,0 +1,43 @@
+{
+  "RootObject": {
+    "Id": "a514590e-1466-401c-92a7-f68e8339ba60",
+    "Name": "Empty Beer Bottle",
+    "Enabled": true,
+    "Position": "-9.986318,22.89269,23.287",
+    "Rotation": "0.00000003821557,0.000000000000002850327,0.6411508,0.767414",
+    "Scale": "1,1,1",
+    "Tags": "interactable",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialOverride": null,
+        "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "PhysicsComponent",
+        "__enabled": true,
+        "Gravity": true
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl",
+        "Static": false,
+        "Surface": "surfaces/glass.surface"
+      },
+      {
+        "__type": "DraggableComponent",
+        "__enabled": true,
+        "DragSpeed": 50
+      }
+    ]
+  },
+  "__references": [
+    "facepunch.beer_bottle"
+  ]
+}

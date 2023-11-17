@@ -1,0 +1,10 @@
+﻿HoveredInfoPanel {
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    bottom: 42%;
+    > #name {
+        font-size: 28px;
+        color: white;
+    }
+}

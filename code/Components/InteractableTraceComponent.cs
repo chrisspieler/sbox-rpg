@@ -70,6 +70,7 @@ public class InteractableTraceComponent : BaseComponent
 		}
 		outline.Enabled = true;
 		go.Tags.Add( "hovered" );
+		HoveredInfoPanel.Instance.Hovered = go;
 		var affordances = go.GetComponents<AffordanceComponent>();
 		foreach(var affordance in affordances)
 		{

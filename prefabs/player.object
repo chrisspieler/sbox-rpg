@@ -136,6 +136,10 @@
           {
             "__type": "InputGlyphsPanel",
             "__enabled": true
+          },
+          {
+            "__type": "HoveredInfoPanel",
+            "__enabled": true
           }
         ]
       }
