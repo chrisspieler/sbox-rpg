@@ -4,8 +4,8 @@ public class DraggableComponent : AffordanceComponent
 {
 	[Property] public PhysicsComponent Rigidbody { get; set; }
 	[Property] public float DragSpeed { get; set; } = 50f;
-	[Property] public override string AffordanceText => "Drag";
-	[Property] public override string ActionButton => "attack1";
+	public override string AffordanceText => "Drag";
+	public override string ActionButton => "attack1";
 	public GameObject Dragger { get; private set; }
 	public float MaxHoldDistance = 80f;
 	public float DefaultHoldDistance = 60f;

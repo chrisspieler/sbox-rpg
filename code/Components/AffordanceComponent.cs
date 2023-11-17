@@ -7,8 +7,8 @@
 /// </summary>
 public class AffordanceComponent : BaseComponent
 {
-	[Property] public virtual string AffordanceText { get; set; } = "Use";
-	[Property] public virtual string ActionButton { get; set; } = "use";
+	public virtual string AffordanceText => "Use";
+	public virtual string ActionButton => "use";
 
 	public virtual void DoInteract( GameObject user ) { }
 

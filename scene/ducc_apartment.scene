@@ -133,8 +133,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "6623480a-5ea3-486c-bd00-db8fd524015f"
                 }
@@ -174,8 +172,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "67c73bc5-a2d0-4895-bb13-1f05dc1e2dce"
                 }
@@ -210,7 +206,6 @@
                 {
                   "__type": "LightSwitchComponent",
                   "__enabled": true,
-                  "ActionButton": "use",
                   "IsOn": false,
                   "OffColor": "0,0,0,1",
                   "OffMaterialGroup": null,
@@ -532,8 +527,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "f84222b9-1439-4628-90db-94994a105f08"
                 }
@@ -726,7 +719,6 @@
                     {
                       "__type": "LightSwitchComponent",
                       "__enabled": true,
-                      "ActionButton": "use",
                       "IsOn": false,
                       "OffColor": "0.05941,0.05902,0.05794,1",
                       "OffMaterialGroup": "off",
@@ -1195,8 +1187,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "76919532-e0ce-4039-9d51-30246cce41de"
                 }
@@ -1236,8 +1226,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "3c6b5b95-7b14-41f4-ae5b-90a8ccf18f52"
                 }
@@ -1277,8 +1265,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "2266abe6-f154-401b-807e-dbe94823d4a4"
                 }
@@ -1318,8 +1304,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "a514590e-1466-401c-92a7-f68e8339ba60"
                 }
@@ -1359,8 +1343,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "3caee979-8847-4f9d-960b-c1f5e3322c6b"
                 }
@@ -1400,8 +1382,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "446c1bcf-99e8-40cf-b38a-ee995185f0e6"
                 }
@@ -1441,8 +1421,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "bbc43749-1f06-4213-b860-810ecf5ed708"
                 }
@@ -1482,8 +1460,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "6a09a669-c65b-4e66-8562-5255f49d159c"
                 }
@@ -1523,8 +1499,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "3304695e-5d20-48f7-ac30-23b3a995524c"
                 }
@@ -1564,8 +1538,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "2f249680-88b3-4db0-82dd-7fe05807668f"
                 }
@@ -1605,8 +1577,6 @@
                 {
                   "__type": "DraggableComponent",
                   "__enabled": true,
-                  "ActionButton": "attack1",
-                  "AffordanceText": "Drag",
                   "DragSpeed": 50,
                   "Rigidbody": "972936ed-e905-4fca-a961-d808d9467e62"
                 }
