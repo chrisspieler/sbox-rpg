@@ -1,0 +1,11 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@namespace Sandbox
+@inherits PanelComponent
+
+<root>
+    @foreach ( var glyph in Glyphs.Values )
+    {
+        <InputGlyphControl GlyphData=@glyph/>
+    }
+</root>

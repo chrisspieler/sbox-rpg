@@ -1,0 +1,17 @@
+﻿InputGlyphControl {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+    > Image {
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+    }
+
+    > h2 {
+        font-size: 28px;
+        color: white;
+    }
+}

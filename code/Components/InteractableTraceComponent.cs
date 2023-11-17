@@ -58,6 +58,7 @@ public class InteractableTraceComponent : BaseComponent
 		{
 			outline.Destroy();
 		}
+		go.Tags.Remove( "hovered" );
 	}
 
 	private void Hover( GameObject go )
@@ -68,5 +69,26 @@ public class InteractableTraceComponent : BaseComponent
 			outline = go.AddComponent<HighlightOutline>();
 		}
 		outline.Enabled = true;
+		go.Tags.Add( "hovered" );
+		var isInteractable = go.TryGetComponent<InteractableComponent>( out var interactable );
+		var isDraggable = go.TryGetComponent<DraggableComponent>( out var draggable );
+		if ( isInteractable )
+		{
+			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
+			{
+				ActionName = "use",
+				DisplayText = interactable.InteractionText,
+				RemovalPredicate = () => !go.Tags.Has( "hovered" )
+			} );
+		}
+		if ( isDraggable )
+		{
+			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
+			{
+				ActionName = "attack1",
+				DisplayText = "Drag",
+				RemovalPredicate = () => !go.Tags.Has( "hovered" )
+			} );
+		}
 	}
 }

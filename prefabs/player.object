@@ -132,6 +132,10 @@
           {
             "__type": "CrosshairPanel",
             "__enabled": true
+          },
+          {
+            "__type": "InputGlyphsPanel",
+            "__enabled": true
           }
         ]
       }

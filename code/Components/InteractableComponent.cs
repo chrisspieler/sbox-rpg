@@ -3,7 +3,7 @@
 public class InteractableComponent : BaseComponent
 {
 	[Property] public string InteractionText { get; set; } = "Use";
-
+	public bool Hovered { get; set; }
 	public event EventHandler<GameObject> OnInteract;
 
 	public override void OnStart()
