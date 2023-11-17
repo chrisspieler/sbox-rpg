@@ -70,23 +70,13 @@ public class InteractableTraceComponent : BaseComponent
 		}
 		outline.Enabled = true;
 		go.Tags.Add( "hovered" );
-		var isInteractable = go.TryGetComponent<InteractableComponent>( out var interactable );
-		var isDraggable = go.TryGetComponent<DraggableComponent>( out var draggable );
-		if ( isInteractable )
+		var affordances = go.GetComponents<AffordanceComponent>();
+		foreach(var affordance in affordances)
 		{
 			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
 			{
-				ActionName = "use",
-				DisplayText = interactable.InteractionText,
-				RemovalPredicate = () => !go.Tags.Has( "hovered" )
-			} );
-		}
-		if ( isDraggable )
-		{
-			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
-			{
-				ActionName = "attack1",
-				DisplayText = "Drag",
+				ActionName = affordance.ActionButton,
+				DisplayText = affordance.AffordanceText,
 				RemovalPredicate = () => !go.Tags.Has( "hovered" )
 			} );
 		}

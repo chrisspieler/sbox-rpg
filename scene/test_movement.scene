@@ -402,6 +402,44 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "2cd6e8c3-0f59-4df5-964e-b4ea6690f4e8",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "-83.76136,-195.2927,39.47578",
+      "Rotation": "0,0,0,1",
+      "Scale": "0.2303659,0.2303659,0.2303659",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true
+        },
+        {
+          "__type": "DraggableComponent",
+          "__enabled": true,
+          "DragSpeed": 50
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {

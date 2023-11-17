@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class LightSwitchComponent : BaseComponent
+public class LightSwitchComponent : AffordanceComponent
 {
 	[Property] public Color OnColor { get; set; } = Color.White;
 	[Property] public string OnMaterialGroup { get; set; }
@@ -8,27 +8,8 @@ public class LightSwitchComponent : BaseComponent
 	[Property] public string OffMaterialGroup { get; set; }
 	[Property] public PointLightComponent TargetLight { get; set; }
 	[Property] public ModelComponent TargetLightModel { get; set; }
+	public override string AffordanceText => "Toggle Light";
 
-	[Property]
-	public InteractableComponent Interactable
-	{
-		get => _interactable;
-		set
-		{
-			if ( !global::GameManager.IsPlaying )
-			{
-				_interactable = value;
-				return;
-			}
-
-			if ( _interactable is not null )
-				_interactable.OnInteract -= InteractableOnInteract;
-
-			_interactable = value;
-			_interactable.OnInteract += InteractableOnInteract;
-		}
-	}
-	private InteractableComponent _interactable;
 	[Property] public bool IsOn
 	{
 		get => _isOn;
@@ -54,8 +35,6 @@ public class LightSwitchComponent : BaseComponent
 
 	public override void OnStart()
 	{
-		base.OnStart();
-
 		if ( IsOn )
 		{
 			TurnOn();
@@ -66,7 +45,7 @@ public class LightSwitchComponent : BaseComponent
 		}
 	}
 
-	private void InteractableOnInteract( object sender, GameObject e )
+	public override void DoInteract( GameObject user )
 	{
 		ToggleLight();
 	}
@@ -98,4 +77,6 @@ public class LightSwitchComponent : BaseComponent
 		}
 		_isOn = false;
 	}
+
+
 }

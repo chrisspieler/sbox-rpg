@@ -172,10 +172,10 @@ public class RpgPlayerController : BaseComponent
 		if ( interact is null || interact.Hovered is null )
 			return;
 
-		if ( !interact.Hovered.TryGetComponent<InteractableComponent>( out var interactable ) )
+		if ( !interact.Hovered.TryGetComponent<AffordanceComponent>( out var interactable ) )
 			return;
 
-		interactable.Interact( GameObject );
+		interactable.DoInteract( GameObject );
 	}
 
 	private DraggableComponent _currentDraggable;
