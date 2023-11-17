@@ -1088,7 +1088,7 @@
               "Children": [
                 {
                   "Id": "45a1c76f-aafd-46fd-9391-266ea44794bc",
-                  "Name": "Point Light",
+                  "Name": "Ambient Light",
                   "Enabled": true,
                   "Position": "26.2983,-0.6864558,16.41294",
                   "Rotation": "0,0,0,1",
@@ -1098,8 +1098,68 @@
                     {
                       "__type": "PointLightComponent",
                       "__enabled": true,
-                      "LightColor": "0.76272,0.84151,0.84653,1",
+                      "LightColor": "0.22302,0.24752,0.24752,1",
                       "Radius": 66.13317
+                    }
+                  ]
+                },
+                {
+                  "Id": "f04a0a9c-7c37-45b1-a47c-a31e438f6807",
+                  "Name": "Snow Light",
+                  "Enabled": true,
+                  "Position": "13.37078,0.2907154,15.23798",
+                  "Rotation": "-0.00000000698131,-0.0000000008292352,-0.000000000000000005789148,1",
+                  "Scale": "1,1,1",
+                  "Tags": "",
+                  "Components": [
+                    {
+                      "__type": "SpotLightComponent",
+                      "__enabled": true,
+                      "Attenuation": 0,
+                      "ConeInner": 0,
+                      "ConeOuter": 50.41,
+                      "Cookie": null,
+                      "LightColor": "0.91373,0.98039,1,1",
+                      "Radius": 500
+                    },
+                    {
+                      "__type": "VideoPlayerComponent",
+                      "__enabled": true,
+                      "Loop": true,
+                      "TextureTarget": "f04a0a9c-7c37-45b1-a47c-a31e438f6807",
+                      "VideoPath": "videos/tv_static.mp4"
+                    },
+                    {
+                      "__type": "ProjectorComponent",
+                      "__enabled": true,
+                      "Light": "f04a0a9c-7c37-45b1-a47c-a31e438f6807",
+                      "MaxUpdatesPerSecond": 24
+                    },
+                    {
+                      "__type": "DownscaleTextureEffect",
+                      "__enabled": true,
+                      "MatchTexture": "materials/cookies/border_collies.vtex",
+                      "ScaleFactor": 0.5
+                    },
+                    {
+                      "__type": "MultiplyTextureEffect",
+                      "__enabled": true,
+                      "MultiplicandTexture": "materials/cookies/border_collies.vtex"
+                    },
+                    {
+                      "__type": "MultiplyTextureEffect",
+                      "__enabled": true,
+                      "MultiplicandTexture": "materials/cookies/box_soft.vtex"
+                    },
+                    {
+                      "__type": "GaussianBlurTextureEffect",
+                      "__enabled": true
+                    },
+                    {
+                      "__type": "LightCookieDebugComponent",
+                      "__enabled": false,
+                      "IgnoreDepth": true,
+                      "SpotLight": "f04a0a9c-7c37-45b1-a47c-a31e438f6807"
                     }
                   ]
                 }
