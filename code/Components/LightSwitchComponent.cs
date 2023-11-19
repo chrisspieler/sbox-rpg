@@ -53,6 +53,9 @@ public class LightSwitchComponent : AffordanceComponent
 	public void ToggleLight() => IsOn = !IsOn;
 	public void TurnOn()
 	{
+		if ( TargetLight is null )
+			return;
+
 		TargetLight.Enabled = true;
 		TargetLight.LightColor = OnColor;
 
@@ -65,6 +68,9 @@ public class LightSwitchComponent : AffordanceComponent
 
 	public void TurnOff()
 	{
+		if ( TargetLight is null )
+			return;
+
 		TargetLight.LightColor = OffColor;
 		if ( OffColor == Color.Black )
 		{
