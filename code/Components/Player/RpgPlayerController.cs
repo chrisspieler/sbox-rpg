@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-namespace Sandbox;
+﻿namespace Sandbox;
 
 public class RpgPlayerController : BaseComponent
 {
 	[Property] bool AutoWalkEnabled { get; set; }
 	[Property] bool ShouldWalk { get; set; }
-	/// <summary>
-	/// If true, the camera will be positioned at <see cref="Eye"/>. Otherwise, it will
-	/// orbit around <see cref="Eye"/> at a distance of <see cref="CameraDistance"/>.
-	/// </summary>
-	[Property] bool FirstPerson { get; set; }
-	[Property, Range( 20f, 150f )] float FirstPersonFov { get; set; } = 100.0f;
-	[Property, Range( 20f, 150f )] float ThirdPersonFov { get; set; } = 60.0f;
-	[Property, Range( 50, 400 )] public float CameraDistance { get; set; } = 200.0f;
-	[Property] public Vector3 ThirdPersonCameraOffset { get; set; } = Vector3.Zero.WithZ( -20f );
 	[Property] public Vector3 Gravity { get; set; } = Vector3.Zero.WithZ( 800f );
 	[Property] public GameObject Body { get; private set; }
 	[Property] public GameObject Eye { get; private set; }
+	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
+	[Property] public CameraComponent PlayerCam 
+		=> GameObject.GetComponent<CameraComponent>( true, true );
+	[Property] public PlayerStateMachine CameraState { get; private set; }
 	[Property] CitizenAnimation AnimationHelper { get; set; }
 	public Angles EyeAngles;
 	public Vector3 WishVelocity;
@@ -35,46 +28,6 @@ public class RpgPlayerController : BaseComponent
 		// TODO: Figure out how to stop the player from looking around when
 		// rotating a draggable object.
 		UpdateEyes();
-
-		var camera = GameObject.GetComponent<CameraComponent>( true, true );
-		if ( camera is not null )
-		{
-			if ( Input.Pressed( "flashlight" ) )
-				FirstPerson = !FirstPerson;
-
-			camera.FieldOfView = FirstPerson ? FirstPersonFov : ThirdPersonFov;
-
-			if ( Body is not null )
-			{
-				var renderer = Body.GetComponent<AnimatedModelComponent>( false );
-				renderer.Tint = FirstPerson ? Color.Transparent : Color.White;
-			}
-
-			// TODO: Figure out how to stop zooming when moving a draggable object in/out.
-			UpdateZoom();
-
-			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
-
-			if ( FirstPerson )
-			{
-				camPos = Eye.Transform.Position;
-			}
-			else
-			{
-				camPos += ThirdPersonCameraOffset;
-				var tr = Scene.PhysicsWorld
-					.Trace
-					.Ray( Eye.Transform.Position, camPos )
-					.Run();
-				if ( tr.Hit )
-				{
-					camPos = tr.HitPosition;
-				}
-			}
-
-			camera.Transform.Position = camPos;
-			camera.Transform.Rotation = EyeAngles.ToRotation();
-		}
 
 		HandleInteract();
 
@@ -125,6 +78,18 @@ public class RpgPlayerController : BaseComponent
 		}
 	}
 
+	// TODO: Consider moving this to a separate file.
+	public void SetBodyTransparency( float alpha, bool castShadow = true )
+	{
+		if ( Body is not null )
+		{
+			// TODO: Cache this, or make callers stop calling it every frame.
+			var renderer = Body.GetComponent<AnimatedModelComponent>( false );
+			renderer.Tint = renderer.Tint.WithAlpha( alpha );
+			renderer.ShouldCastShadows = castShadow;
+		}
+	}
+
 	private void UpdateEyes()
 	{
 		EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
@@ -134,27 +99,6 @@ public class RpgPlayerController : BaseComponent
 
 		// Allows Eye to be treated like aimray.
 		Eye.Transform.Rotation = EyeAngles.ToRotation();
-	}
-
-	private void UpdateZoom()
-	{
-		var mouseInput = Input.MouseWheel * 30.0f;
-		if ( FirstPerson )
-		{
-			if ( mouseInput < 0 )
-			{
-				// We are zooming out from first person.
-				FirstPerson = false;
-				CameraDistance = 50f;
-			}
-		}
-		else
-		{
-			CameraDistance -= mouseInput;
-			CameraDistance = CameraDistance.Clamp( 49f, 400f );
-			if ( CameraDistance < 50f )
-				FirstPerson = true;
-		}
 	}
 
 	private void HandleInteract()

@@ -1685,7 +1685,172 @@
       "Rotation": "-0.00000005174213,0.000000000000006540179,-0.8680888,0.4964087",
       "Scale": "1,1,1",
       "Tags": "",
-      "__Prefab": "prefabs/player.object"
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "RpgPlayerController",
+          "__enabled": true,
+          "AnimationHelper": "80677abf-7929-4fa7-a743-2b6f1cbd34de",
+          "AutoWalkEnabled": false,
+          "Body": "80677abf-7929-4fa7-a743-2b6f1cbd34de",
+          "CameraDistance": 100,
+          "CameraState": "47f69e1b-4ff6-4c0a-9846-3e418132eb91",
+          "Eye": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
+          "FirstPerson": true,
+          "FirstPersonFov": 100,
+          "Gravity": "0,0,800",
+          "PlayerCam": "dcd423b6-0346-400c-91ae-e61d5b648a12",
+          "ShouldWalk": false,
+          "ThirdPersonCameraOffset": "0,0,-8",
+          "ThirdPersonFov": 60
+        },
+        {
+          "__type": "FootstepSoundPlayerComponent",
+          "__enabled": true,
+          "DebugDraw": false,
+          "Source": "80677abf-7929-4fa7-a743-2b6f1cbd34de"
+        },
+        {
+          "__type": "InteractableTraceComponent",
+          "__enabled": true,
+          "DebugDraw": false,
+          "Range": 90,
+          "TraceStart": "a5c32ede-20c0-45c0-9056-f64273d2db3f"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
+          "Name": "Eye",
+          "Enabled": true,
+          "Position": "0,0,72",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": ""
+        },
+        {
+          "Id": "dcd423b6-0346-400c-91ae-e61d5b648a12",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "0,0,60",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 100,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "TargetEye": "None",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Highlight",
+              "__enabled": true
+            }
+          ]
+        },
+        {
+          "Id": "80677abf-7929-4fa7-a743-2b6f1cbd34de",
+          "Name": "Body",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "AnimatedModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimation",
+              "__enabled": true,
+              "Height": 1,
+              "Target": "80677abf-7929-4fa7-a743-2b6f1cbd34de"
+            }
+          ]
+        },
+        {
+          "Id": "f540d72a-4a0d-466b-9567-fa0f3762db13",
+          "Name": "Screen UI",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "ScreenPanel",
+              "__enabled": true,
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "CrosshairPanel",
+              "__enabled": true
+            },
+            {
+              "__type": "InputGlyphsPanel",
+              "__enabled": true
+            },
+            {
+              "__type": "HoveredInfoPanel",
+              "__enabled": true
+            }
+          ]
+        },
+        {
+          "Id": "47f69e1b-4ff6-4c0a-9846-3e418132eb91",
+          "Name": "Camera State Machine",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "PlayerStateMachine",
+              "__enabled": true
+            },
+            {
+              "__type": "FirstPersonCameraState",
+              "__enabled": true,
+              "FieldOfView": 100
+            },
+            {
+              "__type": "ThirdPersonCameraState",
+              "__enabled": false,
+              "Distance": 200,
+              "FieldOfView": 80,
+              "Offset": "0,0,-20"
+            }
+          ]
+        }
+      ]
     },
     {
       "Id": "745fce65-bc3f-485a-8d94-b433812c53aa",

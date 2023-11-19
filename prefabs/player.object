@@ -29,6 +29,7 @@
         "FirstPerson": true,
         "FirstPersonFov": 100,
         "Gravity": "0,0,800",
+        "PlayerCam": "482a16c8-1165-4fb4-9317-4bbe400d06b0",
         "ShouldWalk": false,
         "ThirdPersonCameraOffset": "0,0,-8",
         "ThirdPersonFov": 60
@@ -140,6 +141,29 @@
           {
             "__type": "HoveredInfoPanel",
             "__enabled": true
+          }
+        ]
+      },
+      {
+        "Id": "92c8c412-7767-4cf9-a34e-fc6b216f6454",
+        "Name": "Camera State Machine",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Components": [
+          {
+            "__type": "FirstPersonCameraState",
+            "__enabled": true,
+            "FieldOfView": 80
+          },
+          {
+            "__type": "ThirdPersonCameraState",
+            "__enabled": true,
+            "Distance": 200,
+            "FieldOfView": 80,
+            "Offset": "0,0,-20"
           }
         ]
       }
