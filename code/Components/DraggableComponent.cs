@@ -62,8 +62,11 @@ public class DraggableComponent : AffordanceComponent
 
 	public void BeginDrag( GameObject go )
 	{
-		var playerController = go.GetComponent<RpgPlayerController>();
-		Dragger = playerController.Eye;
+		// For players, use the Eye to drag things.
+		if ( go.TryGetComponent<RpgPlayerController>(out var playerController) )
+			go = playerController.Eye;
+		
+		Dragger = go;
 		_currentHoldDistance = DefaultHoldDistance;
 	}
 

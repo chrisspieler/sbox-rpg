@@ -77,7 +77,6 @@ public class RpgPlayerController : BaseComponent
 
 		foreach( var affordance in affordances )
 		{
-			// TODO: Figure out how to to pass the Eye to the Draggable affordance.
 			if ( Input.Pressed( affordance.ActionButton ) )
 				affordance.DoInteract( GameObject );
 		}
