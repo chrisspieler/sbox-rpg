@@ -2,18 +2,18 @@
 
 public class RpgPlayerController : BaseComponent
 {
-	[Property] bool AutoWalkEnabled { get; set; }
-	[Property] bool ShouldWalk { get; set; }
-	[Property] public Vector3 Gravity { get; set; } = Vector3.Zero.WithZ( 800f );
+	public bool EnableAutoWalk { get; set; }
+	public bool RunToggle { get; set; }
 	[Property] public GameObject Body { get; private set; }
 	[Property] public GameObject Eye { get; private set; }
-	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
-	[Property] public CameraComponent PlayerCam 
-		=> GameObject.GetComponent<CameraComponent>( true, true );
 	[Property] public PlayerStateMachine CameraState { get; private set; }
-	[Property] CitizenAnimation AnimationHelper { get; set; }
+	[Property] public PlayerStateMachine MovementState { get; private set; }
+	[Property] public CitizenAnimation AnimationHelper { get; set; }
+	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
+	public CameraComponent PlayerCam
+		=> GameObject.GetComponent<CameraComponent>( true, true );
+	public CharacterController CharacterController => GameObject.GetComponent<CharacterController>( );
 	public Angles EyeAngles;
-	public Vector3 WishVelocity;
 
 	public override void OnStart()
 	{
@@ -31,16 +31,14 @@ public class RpgPlayerController : BaseComponent
 
 		HandleInteract();
 
-		var cc = GameObject.GetComponent<CharacterController>();
-		if ( cc is null ) return;
-
-		if ( Input.Pressed( "view" ))
-			AutoWalkEnabled = !AutoWalkEnabled;
+		if ( Input.Pressed( "view" ) )
+			EnableAutoWalk = !EnableAutoWalk;
 
 		if ( Input.Pressed( "menu" ) )
-			ShouldWalk = !ShouldWalk;
+			RunToggle = !RunToggle;
 
-		float rotateDifference = 0;
+		var cc = GameObject.GetComponent<CharacterController>();
+		if ( cc is null ) return;
 
 		// rotate body to look angles
 		if ( Body is not null )
@@ -54,7 +52,7 @@ public class RpgPlayerController : BaseComponent
 				targetAngle = Rotation.LookAt( v, Vector3.Up );
 			}
 
-			rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
+			var rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
 
 			var isMovingQuickly = cc.Velocity.Length > 10.0f;
 			if ( rotateDifference > 50.0f || isMovingQuickly )
@@ -62,19 +60,6 @@ public class RpgPlayerController : BaseComponent
 				var rotationSpeedFactor = 2.0f + cc.Velocity.Length / 5.0f;
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * rotationSpeedFactor );
 			}
-		}
-
-		if ( AnimationHelper is not null )
-		{
-			// Prevent Citizen from leaning super far forward while running.
-			var velocity = cc.Velocity * (cc.Velocity.Length > 250f ? 0.7f : 1f );
-			AnimationHelper.WithVelocity( velocity );
-			AnimationHelper.IsGrounded = cc.IsOnGround;
-			// I don't see foot shuffling. Perhaps it's not implemented yet?
-			AnimationHelper.FootShuffle = rotateDifference;
-			var isRunning = Input.Down( "Run" );
-			AnimationHelper.WithLook( EyeAngles.Forward, 1, 0.5f, 0.5f );
-			AnimationHelper.MoveStyle = isRunning ? CitizenAnimation.MoveStyles.Run : CitizenAnimation.MoveStyles.Walk;
 		}
 	}
 
@@ -121,66 +106,5 @@ public class RpgPlayerController : BaseComponent
 			if ( Input.Pressed( affordance.ActionButton ) )
 				affordance.DoInteract( GameObject );
 		}
-	}
-
-	public override void FixedUpdate()
-	{
-		BuildWishVelocity();
-
-		var cc = GameObject.GetComponent<CharacterController>();
-
-		if ( cc.IsOnGround && Input.Down( "Jump" ) )
-		{
-			float flGroundFactor = 1.0f;
-			float flMul = 268.3281572999747f * 1.2f;
-
-			cc.Punch( Vector3.Up * flMul * flGroundFactor );
-
-			AnimationHelper?.TriggerJump();
-		}
-
-		if ( cc.IsOnGround )
-		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-			cc.Accelerate( WishVelocity );
-			cc.ApplyFriction( 4.0f );
-		}
-		else
-		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-			cc.Accelerate( WishVelocity.ClampLength( 50 ) );
-			cc.ApplyFriction( 0.1f );
-		}
-
-		cc.Move();
-
-		if ( !cc.IsOnGround )
-		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-		}
-		else
-		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-		}
-	}
-
-	public void BuildWishVelocity()
-	{
-		var rot = EyeAngles.ToRotation();
-
-		WishVelocity = 0;
-
-		if ( Input.Down( "Forward" ) || AutoWalkEnabled ) WishVelocity += rot.Forward;
-		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
-		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
-		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right;
-
-		WishVelocity = WishVelocity.WithZ( 0 );
-
-		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
-
-		if ( Input.Down( "Run" ) ) WishVelocity *= 320.0f;
-		else if ( Input.Down( "Walk" ) ) WishVelocity *= 65.0f;
-		else WishVelocity *= ShouldWalk ? 65.0f : 110.0f;
 	}
 }

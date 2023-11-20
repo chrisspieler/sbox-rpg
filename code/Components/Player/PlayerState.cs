@@ -8,4 +8,6 @@ public class PlayerState : BaseComponent
 	protected RpgPlayerController Controller => StateMachine?.Controller;
 	protected GameObject Player => StateMachine?.GameObject?.Parent;
 	public PlayerState PreviousState { get; set; }
+	public T ChangeState<T>() where T : PlayerState
+		=> StateMachine.ChangeState<T>();
 }

@@ -1702,16 +1702,10 @@
           "AnimationHelper": "80677abf-7929-4fa7-a743-2b6f1cbd34de",
           "AutoWalkEnabled": false,
           "Body": "80677abf-7929-4fa7-a743-2b6f1cbd34de",
-          "CameraDistance": 100,
           "CameraState": "47f69e1b-4ff6-4c0a-9846-3e418132eb91",
           "Eye": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
-          "FirstPerson": true,
-          "FirstPersonFov": 100,
-          "Gravity": "0,0,800",
-          "PlayerCam": "dcd423b6-0346-400c-91ae-e61d5b648a12",
-          "ShouldWalk": false,
-          "ThirdPersonCameraOffset": "0,0,-8",
-          "ThirdPersonFov": 60
+          "MovementState": "9e18020e-a1ab-4aac-961c-95608abad95a",
+          "RunToggle": false
         },
         {
           "__type": "FootstepSoundPlayerComponent",
@@ -1847,6 +1841,46 @@
               "Distance": 200,
               "FieldOfView": 80,
               "Offset": "0,0,-20"
+            }
+          ]
+        },
+        {
+          "Id": "9e18020e-a1ab-4aac-961c-95608abad95a",
+          "Name": "Movement State Machine",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "PlayerStateMachine",
+              "__enabled": true
+            },
+            {
+              "__type": "WalkState",
+              "__enabled": true,
+              "CanJump": true,
+              "Friction": 4,
+              "IgnoreZ": true,
+              "MoveSpeed": 80
+            },
+            {
+              "__type": "RunState",
+              "__enabled": false,
+              "CanJump": true,
+              "Friction": 4,
+              "IgnoreZ": true,
+              "MoveSpeed": 240
+            },
+            {
+              "__type": "AirborneState",
+              "__enabled": false,
+              "AirAccelerationLimit": 50,
+              "Friction": 0.1,
+              "Gravity": "0,0,800",
+              "IgnoreZ": true,
+              "MoveSpeed": 160
             }
           ]
         }
