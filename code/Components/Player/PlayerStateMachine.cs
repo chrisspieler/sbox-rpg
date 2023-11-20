@@ -53,8 +53,11 @@ public class PlayerStateMachine : BaseComponent
 	{
 		var nextState = GameObject.GetComponent<T>( false )
 			?? throw new Exception( $"({GameObject.Name} has no state: {TypeLibrary.GetType<T>().Name})" );
-		PreviousState = CurrentState;
-		PreviousState.Enabled = false;
+		if ( CurrentState is not null )
+		{
+			PreviousState = CurrentState;
+			PreviousState.Enabled = false;
+		}
 		CurrentState = nextState;
 		CurrentState.Enabled = true;
 		CurrentState.PreviousState = PreviousState;
