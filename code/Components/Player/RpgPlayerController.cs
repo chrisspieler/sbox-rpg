@@ -36,31 +36,6 @@ public class RpgPlayerController : BaseComponent
 
 		if ( Input.Pressed( "menu" ) )
 			RunToggle = !RunToggle;
-
-		var cc = GameObject.GetComponent<CharacterController>();
-		if ( cc is null ) return;
-
-		// rotate body to look angles
-		if ( Body is not null )
-		{
-			var targetAngle = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-
-			var v = cc.Velocity.WithZ( 0 );
-
-			if ( v.Length > 10.0f )
-			{
-				targetAngle = Rotation.LookAt( v, Vector3.Up );
-			}
-
-			var rotateDifference = Body.Transform.Rotation.Distance( targetAngle );
-
-			var isMovingQuickly = cc.Velocity.Length > 10.0f;
-			if ( rotateDifference > 50.0f || isMovingQuickly )
-			{
-				var rotationSpeedFactor = 2.0f + cc.Velocity.Length / 5.0f;
-				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetAngle, Time.Delta * rotationSpeedFactor );
-			}
-		}
 	}
 
 	// TODO: Consider moving this to a separate file.

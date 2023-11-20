@@ -5,6 +5,7 @@ public abstract class LocomotionState : PlayerState
 	[Property, Range(0, 800)] public float MoveSpeed { get; set; } = 160f;
 	[Property] public bool IgnoreZ { get; set; } = true;
 	[Property, Range(0.1f, 6.0f, 0.1f)] public float Friction { get; set; } = 2.0f;
+	[Property] public bool RotateBodyWithCamera { get; set; } = true;
 	public Vector3 WishVelocity { get; protected set; }
 
 	protected virtual Vector3 GetMovementDirection( )
@@ -22,8 +23,38 @@ public abstract class LocomotionState : PlayerState
 		return moveDir;
 	}
 
+	protected virtual void RotateBody()
+	{
+		var body = Controller.Body;
+		if ( body is null )
+			return;
+
+		var targetAngle = new Angles( 0, Controller.EyeAngles.yaw, 0 ).ToRotation();
+
+		var cc = Controller.CharacterController;
+		var v = cc.Velocity.WithZ( 0 );
+
+		if ( v.Length > 10.0f )
+		{
+			targetAngle = Rotation.LookAt( v, Vector3.Up );
+		}
+
+		var rotateDifference = body.Transform.Rotation.Distance( targetAngle );
+
+		var isMovingQuickly = cc.Velocity.Length > 10.0f;
+		if ( rotateDifference > 50.0f || isMovingQuickly )
+		{
+			var rotationSpeedFactor = 2.0f + cc.Velocity.Length / 5.0f;
+			body.Transform.Rotation = Rotation.Lerp( body.Transform.Rotation, targetAngle, Time.Delta * rotationSpeedFactor );
+		}
+	}
+
 	public override void Update()
 	{
+		if ( RotateBodyWithCamera )
+		{
+			RotateBody();
+		}
 		HandleUpdate();
 		var animation = Controller.AnimationHelper;
 		if ( animation is not null )
