@@ -32,9 +32,10 @@ public class DraggingHandState : HandState
 	{
 		_originalParent = GameObject.Parent;
 		GameObject.Parent = dragged;
-		// TODO: Get position, rotation and finger curl from dragged.
+		// In case the dragged has no hold data, reset the transform.
 		Transform.Position = dragged.Transform.Position;
 		Transform.Rotation = Rotation.Identity;
+		// The parent should never affect the scale of the hand.
 		Transform.Scale = 1f;
 
 		if ( HandModel is not null )
@@ -85,6 +86,7 @@ public class DraggingHandState : HandState
 		var handAnimator = GetComponent<WorldHandAnimator>();
 		if ( holdData is not null && handAnimator is not null )
 		{
+			// Set the hand position and rotation based on the hold data.
 			holdData.UpdateHand( handAnimator );
 		}
 		DoDebugDraw();
@@ -104,11 +106,19 @@ public class DraggingHandState : HandState
 
 		if ( Input.Down( "attack2" ) )
 		{
-			UpdateRotate();
+			DraggedRigidbody.AngularVelocity = Vector3.Zero;
+			if ( !Dragged.TryGetComponent<LookRotateComponent>( out var rotate ) )
+			{
+				rotate = Dragged.AddComponent<LookRotateComponent>();
+			}
+			rotate.Enabled = true;
 			Controller.BlockLook( this );
 		}
 		else
 		{
+			if ( Dragged.TryGetComponent<LookRotateComponent>( out var rotate ) )
+				rotate.Enabled = false;
+
 			Controller.UnblockLook( this );
 		}
 
@@ -124,21 +134,6 @@ public class DraggingHandState : HandState
 		DraggedRigidbody.Velocity = direction * scaledSpeed;
 		// Gradually stop the rotation.
 		DraggedRigidbody.AngularVelocity = DraggedRigidbody.AngularVelocity.LerpTo( Vector3.Zero, AngularVelocityDamping * Time.Delta );
-	}
-
-	private void UpdateRotate()
-	{
-		DraggedRigidbody.AngularVelocity = Vector3.Zero;
-
-		// Yoinked rotation code from the Sandbox physgun.
-		var eyeRot = Rotation.From( new Angles( 0f, Camera.Main.Rotation.Yaw(), 0f ) );
-		var localRot = eyeRot;
-		localRot *= Rotation.FromAxis( Vector3.Up, Input.MouseDelta.x * 0.3f );
-		localRot *= Rotation.FromAxis( Vector3.Right, Input.MouseDelta.y * 0.3f );
-		localRot = eyeRot.Inverse * localRot;
-		Dragged.Transform.Rotation = localRot * Dragged.Transform.Rotation;
-		// Clear the mouse input.
-		Input.MouseDelta = Vector2.Zero;
 	}
 
 	private void UpdateDistance()

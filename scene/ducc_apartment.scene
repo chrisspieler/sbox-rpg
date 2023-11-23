@@ -1735,6 +1735,8 @@
               "FieldOfView": 100,
               "Orthographic": false,
               "OrthographicHeight": 1204,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
               "TargetEye": "None",
               "ZFar": 10000,
               "ZNear": 10
