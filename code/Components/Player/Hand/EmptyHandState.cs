@@ -1,20 +1,24 @@
 ﻿namespace Sandbox;
 
-public class InteractableTraceComponent : BaseComponent
+public class EmptyHandState : HandState
 {
-	[Property] public float Range { get; set; } = 80f;
-	[Property] public GameObject TraceStart { get; set; }
 	[Property] public bool DebugDraw { get; set; }
 
 	public GameObject Hovered { get; private set; }
-	
+
+	public override void OnEnabled() => Initialize();
+	public override void OnStart() => Initialize();
+
+	private void Initialize()
+	{
+		if ( HandModel is not null )
+			HandModel.Enabled = false;
+	}
 
 	public override void Update()
 	{
-		var startPos = TraceStart.Transform.Position;
-		var endPos = TraceStart.Transform.Position + TraceStart.Transform.Rotation.Forward * Range;
 		var tr = Scene.PhysicsWorld.Trace
-			.Ray( startPos, endPos )
+			.Ray( InteractionRay, InteractionReach )
 			.WithTag( "interactable" )
 			.Run();
 
@@ -40,15 +44,7 @@ public class InteractableTraceComponent : BaseComponent
 
 		if ( DebugDraw )
 		{
-			Gizmo.Draw.Color = tr.Hit ? Color.Red : Color.Blue;
-			Gizmo.Draw.Line( startPos, tr.EndPosition );
-			Gizmo.Draw.LineSphere( tr.StartPosition, 1f );
-			Gizmo.Draw.LineSphere( tr.StartPosition.LerpTo( tr.EndPosition, 0.33f ), 1f );
-			Gizmo.Draw.LineSphere( tr.StartPosition.LerpTo( tr.EndPosition, 0.66f ), 1f );
-			if ( tr.Hit )
-			{
-				Gizmo.Draw.LineSphere( tr.EndPosition, 2f );
-			}
+			DoDebugDraw( tr );
 		}
 	}
 
@@ -63,7 +59,7 @@ public class InteractableTraceComponent : BaseComponent
 
 	private void Hover( GameObject go )
 	{
-		var outline = go.GetComponent<HighlightOutline>( );
+		var outline = go.GetComponent<HighlightOutline>();
 		if ( outline is null )
 		{
 			outline = go.AddComponent<HighlightOutline>();
@@ -72,7 +68,7 @@ public class InteractableTraceComponent : BaseComponent
 		go.Tags.Add( "hovered" );
 		HoveredInfoPanel.Instance.Hovered = go;
 		var affordances = go.GetComponents<AffordanceComponent>();
-		foreach(var affordance in affordances)
+		foreach ( var affordance in affordances )
 		{
 			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
 			{
@@ -80,6 +76,19 @@ public class InteractableTraceComponent : BaseComponent
 				DisplayText = affordance.AffordanceText,
 				RemovalPredicate = () => !go.Tags.Has( "hovered" )
 			} );
+		}
+	}
+
+	private void DoDebugDraw( PhysicsTraceResult tr )
+	{
+		Gizmo.Draw.Color = tr.Hit ? Color.Red : Color.Blue;
+		Gizmo.Draw.Line( InteractionRay.Position, tr.EndPosition );
+		Gizmo.Draw.LineSphere( tr.StartPosition, 1f );
+		Gizmo.Draw.LineSphere( tr.StartPosition.LerpTo( tr.EndPosition, 0.33f ), 1f );
+		Gizmo.Draw.LineSphere( tr.StartPosition.LerpTo( tr.EndPosition, 0.66f ), 1f );
+		if ( tr.Hit )
+		{
+			Gizmo.Draw.LineSphere( tr.EndPosition, 2f );
 		}
 	}
 }

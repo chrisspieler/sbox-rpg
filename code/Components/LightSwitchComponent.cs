@@ -45,7 +45,7 @@ public class LightSwitchComponent : AffordanceComponent
 		}
 	}
 
-	public override void DoInteract( GameObject user )
+	public override void DoInteract( GameObject user, HandState hand )
 	{
 		ToggleLight();
 	}

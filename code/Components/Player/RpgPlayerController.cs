@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using System.Collections.Generic;
+
+namespace Sandbox;
 
 public class RpgPlayerController : BaseComponent
 {
@@ -8,12 +10,16 @@ public class RpgPlayerController : BaseComponent
 	[Property] public GameObject Eye { get; private set; }
 	[Property] public PlayerStateMachine CameraState { get; private set; }
 	[Property] public PlayerStateMachine MovementState { get; private set; }
+	[Property] public PlayerStateMachine PrimaryHandState { get; private set; }
+	[Property] public PlayerStateMachine SecondaryHandState { get; private set; }
 	[Property] public CitizenAnimation AnimationHelper { get; set; }
 	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
 	public CameraComponent PlayerCam
 		=> GameObject.GetComponent<CameraComponent>( true, true );
 	public CharacterController CharacterController => GameObject.GetComponent<CharacterController>( );
 	public Angles EyeAngles;
+	private HashSet<object> _thirdPersonBlockers = new HashSet<object>();
+	private HashSet<object> _lookBlockers = new HashSet<object>();
 
 	public override void OnStart()
 	{
@@ -27,7 +33,8 @@ public class RpgPlayerController : BaseComponent
 	{
 		// TODO: Figure out how to stop the player from looking around when
 		// rotating a draggable object.
-		UpdateEyes();
+		if ( !IsLookBlocked )
+			UpdateEyes();
 
 		HandleInteract();
 
@@ -63,13 +70,18 @@ public class RpgPlayerController : BaseComponent
 
 	private void HandleInteract()
 	{
-		var interact = GameObject.GetComponent<InteractableTraceComponent>();
+		EmptyHandState emptyHand = null;
 
-		// The player may not interact, or no interactable is hovered over.
-		if ( interact is null || interact.Hovered is null )
+		if ( PrimaryHandState.CurrentState is EmptyHandState primaryEmpty )
+			emptyHand = primaryEmpty;
+		else if ( SecondaryHandState.CurrentState is EmptyHandState secondaryEmpty )
+			emptyHand = secondaryEmpty;
+
+		// No empty hand is free, or no interactable is hovered over.
+		if ( emptyHand is null || emptyHand.Hovered is null )
 			return;
 
-		var affordances = interact.Hovered.GetComponents<AffordanceComponent>();
+		var affordances = emptyHand.Hovered.GetComponents<AffordanceComponent>();
 
 		// If there's nothing we can do with the hovered object, just return.
 		if ( !affordances.Any() )
@@ -78,7 +90,14 @@ public class RpgPlayerController : BaseComponent
 		foreach( var affordance in affordances )
 		{
 			if ( Input.Pressed( affordance.ActionButton ) )
-				affordance.DoInteract( GameObject );
+				affordance.DoInteract( GameObject, emptyHand );
 		}
 	}
+
+	public void BlockThirdPerson( object blocker ) => _thirdPersonBlockers.Add( blocker );
+	public void UnblockThirdPerson( object blocker ) => _thirdPersonBlockers.Remove( blocker );
+	public bool IsThirdPersonBlocked => _thirdPersonBlockers.Any();
+	public void BlockLook( object blocker ) => _lookBlockers.Add( blocker );
+	public void UnblockLook( object blocker ) => _lookBlockers.Remove( blocker );
+	public bool IsLookBlocked => _lookBlockers.Any();
 }

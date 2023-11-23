@@ -7,7 +7,7 @@ public class ThirdPersonCameraState : CameraState
 
 	public override void Update()
 	{
-		if ( Input.Pressed( "flashlight" ) )
+		if ( Input.Pressed( "flashlight" ) || Controller.IsThirdPersonBlocked )
 		{
 			Input.Clear( "flashlight" );
 			StateMachine.ChangeState<FirstPersonCameraState>();

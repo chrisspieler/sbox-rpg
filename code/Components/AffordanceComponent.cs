@@ -10,7 +10,7 @@ public class AffordanceComponent : BaseComponent
 	public virtual string AffordanceText => "Use";
 	public virtual string ActionButton => "use";
 
-	public virtual void DoInteract( GameObject user ) { }
+	public virtual void DoInteract( GameObject user, HandState state = null ) { }
 
 	public override void OnEnabled()
 	{

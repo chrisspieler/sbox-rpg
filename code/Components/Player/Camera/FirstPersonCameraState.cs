@@ -4,7 +4,7 @@ public class FirstPersonCameraState : CameraState
 {
 	public override void Update()
 	{
-		if ( Input.Pressed( "flashlight" ) )
+		if ( Input.Pressed( "flashlight" ) && !Controller.IsThirdPersonBlocked )
 		{
 			Input.Clear( "flashlight" );
 			StateMachine.ChangeState<ThirdPersonCameraState>();
@@ -15,7 +15,7 @@ public class FirstPersonCameraState : CameraState
 		Controller.PlayerCam.FieldOfView = FieldOfView;
 
 		var mouseInput = Input.MouseWheel * 30.0f;
-		if ( mouseInput < 0 )
+		if ( mouseInput < 0 && !Controller.IsThirdPersonBlocked )
 		{
 			var thirdPerson = StateMachine.ChangeState<ThirdPersonCameraState>();
 			thirdPerson.Distance = 50f;

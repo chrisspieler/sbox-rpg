@@ -2,9 +2,7 @@
 
 public class PlayerStateMachine : BaseComponent
 {
-	public RpgPlayerController Controller 
-		=> _controller ??= GameObject.Parent.GetComponent<RpgPlayerController>();
-	private RpgPlayerController _controller;
+	[Property] public RpgPlayerController Controller { get; set; }
 	public PlayerState NextState { get; private set; }
 	public PlayerState CurrentState { get; private set; }
 	public PlayerState PreviousState { get; private set; }
