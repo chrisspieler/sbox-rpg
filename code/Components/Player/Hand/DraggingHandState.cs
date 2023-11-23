@@ -58,6 +58,7 @@ public class DraggingHandState : HandState
 
 	public override void OnDisabled()
 	{
+		Dragged?.GetComponent<LookRotateComponent>()?.SetEnabled( false );
 		if ( Dragged is not null && Dragged.TryGetComponent<LookRotateComponent>( out var rotate ) )
 			rotate.Enabled = false;
 
@@ -110,15 +111,12 @@ public class DraggingHandState : HandState
 		if ( Input.Down( "attack2" ) )
 		{
 			DraggedRigidbody.AngularVelocity = Vector3.Zero;
-			var rotate = Dragged.GetOrCreateComponent<LookRotateComponent>( false );
-			rotate.Enabled = true;
+			Dragged.GetOrCreateComponent<LookRotateComponent>( false ).SetEnabled( true );
 			Controller.BlockLook( this );
 		}
 		else
 		{
-			if ( Dragged.TryGetComponent<LookRotateComponent>( out var rotate ) )
-				rotate.Enabled = false;
-
+			Dragged.GetComponent<LookRotateComponent>()?.SetEnabled( false );
 			Controller.UnblockLook( this );
 		}
 
