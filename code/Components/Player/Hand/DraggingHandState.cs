@@ -49,7 +49,7 @@ public class DraggingHandState : HandState
 		{
 			ActionName = "attack2",
 			DisplayText = "Rotate",
-			RemovalPredicate = () => this?.Enabled == true
+			RemovalPredicate = () => this?.Enabled != true
 		} );
 
 		Controller.BlockThirdPerson( this );
