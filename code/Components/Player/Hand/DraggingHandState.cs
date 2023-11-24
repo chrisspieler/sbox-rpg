@@ -45,6 +45,8 @@ public class DraggingHandState : HandState
 		DraggedRigidbody = Dragged.GetComponent<PhysicsComponent>();
 		// Prevent the dragged object from showing the drag prompt.
 		Dragged.GetComponent<DraggableComponent>().SetEnabled( false );
+		// Prevent the movement code from treating held objects as obstacles.
+		Dragged.Tags.Add( "held" );
 
 		// The hand becomes the child of the held object, so store the original
 		// parent for when we go back to the emptyhanded state.
@@ -98,6 +100,8 @@ public class DraggingHandState : HandState
 
 	public override void OnDisabled()
 	{
+		Dragged?.Tags?.Remove( "held" );
+
 		Dragged?.GetComponent<LookRotateComponent>()?.SetEnabled( false );
 		Dragged?.GetComponent<DraggableComponent>( false )?.SetEnabled( true );
 		Dragged?.GetComponent<PhysicsFollowComponent>()?.Destroy();

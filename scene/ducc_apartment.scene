@@ -1587,7 +1587,7 @@
           "Acceleration": 10,
           "GroundAngle": 45,
           "Height": 64,
-          "IgnoreLayers": "",
+          "IgnoreLayers": "held",
           "Radius": 16,
           "StepHeight": 18
         },
