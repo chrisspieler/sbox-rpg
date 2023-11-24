@@ -38,11 +38,13 @@ public class DraggingHandState : HandState
 	private PhysicsComponent DraggedRigidbody { get; set; }
 	private GameObject _originalParent;
 
-	public void Initialize( GameObject dragged, GameObject dragSource)
+	public void Initialize( GameObject dragged, GameObject dragSource )
 	{
 		Dragged = dragged;
 		DragSource = dragSource;
 		DraggedRigidbody = Dragged.GetComponent<PhysicsComponent>();
+		// Prevent the dragged object from showing the drag prompt.
+		Dragged.GetComponent<DraggableComponent>().SetEnabled( false );
 
 		// The hand becomes the child of the held object, so store the original
 		// parent for when we go back to the emptyhanded state.
@@ -97,6 +99,9 @@ public class DraggingHandState : HandState
 	public override void OnDisabled()
 	{
 		Dragged?.GetComponent<LookRotateComponent>()?.SetEnabled( false );
+		Dragged?.GetComponent<DraggableComponent>( false )?.SetEnabled( true );
+		Dragged?.GetComponent<PhysicsFollowComponent>()?.Destroy();
+
 		if ( DraggedRigidbody is not null )
 		{
 			DraggedRigidbody.Velocity *= ThrowSpeedFactor;
@@ -115,8 +120,11 @@ public class DraggingHandState : HandState
 
 	public override void Update()
 	{
-		if ( Dragged is null )
+		if ( Dragged?.IsValid != true || !Input.Down( "attack1" ) )
+		{
+			ChangeState<EmptyHandState>();
 			return;
+		}
 
 		UpdateDistance();
 		DragTarget.Transform.Position = DragRay.Project( CurrentDragDistance );
