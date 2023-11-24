@@ -7,6 +7,18 @@ public class DraggingHandState : HandState
 	[Property] public float DragForce { get; set; } = 50f;
 	[Property] public float AngularVelocityDamping { get; set; } = 2.5f;
 	[Property] public bool DebugDraw { get; set; }
+	/// <summary>
+	/// A factor applied to the velocity of the dragged object when it is 
+	/// no longer being dragged.
+	/// </summary>
+	[Property, Range(0f, 5f, 0.05f)] 
+	public float ThrowSpeedFactor { get; set; } = 1.5f;
+	/// <summary>
+	/// Determines how much the dragged object will spin when it is released.
+	/// This spin is scaled by the velocity of the object.
+	/// </summary>
+	[Property, Range(0f, 0.25f, 0.01f)] 
+	public float ThrowSpinFactor { get; set; } = 0.03f;
 
 	public GameObject Dragged { get; set; }
 
@@ -59,8 +71,12 @@ public class DraggingHandState : HandState
 	public override void OnDisabled()
 	{
 		Dragged?.GetComponent<LookRotateComponent>()?.SetEnabled( false );
-		if ( Dragged is not null && Dragged.TryGetComponent<LookRotateComponent>( out var rotate ) )
-			rotate.Enabled = false;
+		if ( DraggedRigidbody is not null )
+		{
+			DraggedRigidbody.Velocity *= ThrowSpeedFactor;
+			var spinStrength = DraggedRigidbody.Velocity.Length * ThrowSpinFactor;
+			DraggedRigidbody.AngularVelocity += Vector3.Random * spinStrength;
+		}
 
 		GameObject.Parent = _originalParent;
 		Dragged = null;

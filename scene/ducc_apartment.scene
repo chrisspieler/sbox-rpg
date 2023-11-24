@@ -1707,7 +1707,9 @@
                   "InteractionRaySource": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
                   "InteractionReach": 80,
                   "MaxDragDistance": 1,
-                  "MinDragDistance": 0.2
+                  "MinDragDistance": 0.2,
+                  "ThrowSpeedFactor": 1.5,
+                  "ThrowSpinFactor": 0.03
                 }
               ],
               "Children": [
@@ -1773,7 +1775,9 @@
                   "InteractionRaySource": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
                   "InteractionReach": 80,
                   "MaxDragDistance": 1,
-                  "MinDragDistance": 0.2
+                  "MinDragDistance": 0.2,
+                  "ThrowSpeedFactor": 1.5,
+                  "ThrowSpinFactor": 0.03
                 }
               ],
               "Children": [
