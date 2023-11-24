@@ -111,7 +111,7 @@ public class DraggingHandState : HandState
 		if ( Input.Down( "attack2" ) )
 		{
 			DraggedRigidbody.AngularVelocity = Vector3.Zero;
-			Dragged.GetOrCreateComponent<LookRotateComponent>().SetEnabled( true );
+			Dragged.GetOrAddComponent<LookRotateComponent>().SetEnabled( true );
 			Controller.BlockLook( this );
 		}
 		else
