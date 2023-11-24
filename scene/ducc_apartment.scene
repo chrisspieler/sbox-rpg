@@ -1091,7 +1091,7 @@
             {
               "Id": "a36326e4-79a8-45eb-946f-620ca61fb740",
               "Name": "Empty Beer Bottle",
-              "Position": "-9.418676,19.4593,23.28704",
+              "Position": "-11.35358,17.88309,22.43619",
               "Rotation": "-0.00000003114649,-0.000000004840236,-0.3922193,0.9198717",
               "Tags": "interactable",
               "Enabled": true,
@@ -1701,9 +1701,7 @@
                 {
                   "__type": "DraggingHandState",
                   "__enabled": false,
-                  "AngularVelocityDamping": 2.5,
                   "DebugDraw": true,
-                  "DragForce": 50,
                   "InteractionRaySource": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
                   "InteractionReach": 80,
                   "MaxDragDistance": 1,
@@ -1769,9 +1767,7 @@
                 {
                   "__type": "DraggingHandState",
                   "__enabled": false,
-                  "AngularVelocityDamping": 2.5,
                   "DebugDraw": true,
-                  "DragForce": 50,
                   "InteractionRaySource": "a5c32ede-20c0-45c0-9056-f64273d2db3f",
                   "InteractionReach": 80,
                   "MaxDragDistance": 1,
