@@ -184,6 +184,9 @@ public abstract class Collider : BaseComponent, BaseComponent.ExecuteInEditor
 
 		Transform.OnTransformChanged -= UpdateKeyframeTransform;
 
+		GameObject.Tags.OnTagAdded -= OnTagsChanged;
+		GameObject.Tags.OnTagRemoved -= OnTagsChanged;
+
 		_collisionEvents?.Dispose();
 		_collisionEvents = null;
 
@@ -226,6 +229,8 @@ public abstract class Collider : BaseComponent, BaseComponent.ExecuteInEditor
 			// if it's shorter, the objects will be punched quicker than the collider is moving
 			// so will tend to over-react to being touched.
 			float timeToArrive = Scene.FixedDelta;
+
+			if ( IsProxy ) timeToArrive *= 2.0f;
 
 			keyframeBody.Move( Transform.World, timeToArrive );
 		}
