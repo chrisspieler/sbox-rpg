@@ -118,8 +118,6 @@ public class DraggingHandState : HandState
 		DragSource = null;
 		DraggedRigidbody = null;
 		DragTarget?.Destroy();
-		Controller.UnblockThirdPerson( this );
-		Controller.UnblockLook( this );
 	}
 
 	public override void Update()

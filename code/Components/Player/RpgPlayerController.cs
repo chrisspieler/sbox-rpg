@@ -2,7 +2,7 @@
 
 namespace Sandbox;
 
-public class RpgPlayerController : BaseComponent
+public partial class RpgPlayerController : BaseComponent
 {
 	public bool EnableAutoWalk { get; set; }
 	public bool RunToggle { get; set; }
@@ -18,8 +18,6 @@ public class RpgPlayerController : BaseComponent
 		=> GameObject.GetComponent<CameraComponent>( true, true );
 	public CharacterController CharacterController => GameObject.GetComponent<CharacterController>( );
 	public Angles EyeAngles;
-	private HashSet<object> _thirdPersonBlockers = new HashSet<object>();
-	private HashSet<object> _lookBlockers = new HashSet<object>();
 
 	public override void OnStart()
 	{
@@ -31,6 +29,8 @@ public class RpgPlayerController : BaseComponent
 
 	public override void Update()
 	{
+		UpdateBlockers();
+
 		// TODO: Figure out how to stop the player from looking around when
 		// rotating a draggable object.
 		if ( !IsLookBlocked )
@@ -93,11 +93,4 @@ public class RpgPlayerController : BaseComponent
 				affordance.DoInteract( GameObject, emptyHand );
 		}
 	}
-
-	public void BlockThirdPerson( object blocker ) => _thirdPersonBlockers.Add( blocker );
-	public void UnblockThirdPerson( object blocker ) => _thirdPersonBlockers.Remove( blocker );
-	public bool IsThirdPersonBlocked => _thirdPersonBlockers.Any();
-	public void BlockLook( object blocker ) => _lookBlockers.Add( blocker );
-	public void UnblockLook( object blocker ) => _lookBlockers.Remove( blocker );
-	public bool IsLookBlocked => _lookBlockers.Any();
 }
