@@ -15,12 +15,11 @@ public class LookRotateComponent : BaseComponent
 		var inputVec = new Vector2( Input.AnalogLook.yaw, Input.AnalogLook.pitch );
 		var xInput = inputVec.x * XSpeed * Time.Delta * (InvertX ? -1 : 1);
 		var yInput = inputVec.y * YSpeed * Time.Delta * (InvertY ? -1 : 1);
-		var worldTx = Transform.World;
 		var upRotation = Rotation.FromAxis( Camera.Main.Rotation.Up, xInput );
 		var rightRotation = Rotation.FromAxis( Camera.Main.Rotation.Right, yInput );
-		Transform.Rotation = worldTx
-			.RotateAround( worldTx.Position, upRotation )
-			.RotateAround( worldTx.Position, rightRotation )
+		Transform.Rotation = Transform.World
+			.RotateAround( Transform.Position, upRotation )
+			.RotateAround( Transform.Position, rightRotation )
 			.Rotation;
 	}
 }
