@@ -18,8 +18,9 @@ public class LookRotateComponent : BaseComponent
 		var worldTx = Transform.World;
 		var upRotation = Rotation.FromAxis( Camera.Main.Rotation.Up, xInput );
 		var rightRotation = Rotation.FromAxis( Camera.Main.Rotation.Right, yInput );
-		worldTx = worldTx.RotateAround( worldTx.Position, upRotation );
-		worldTx = worldTx.RotateAround( worldTx.Position, rightRotation );
-		Transform.Rotation = worldTx.Rotation;
+		Transform.Rotation = worldTx
+			.RotateAround( worldTx.Position, upRotation )
+			.RotateAround( worldTx.Position, rightRotation )
+			.Rotation;
 	}
 }
