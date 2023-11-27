@@ -1,0 +1,35 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Small Office",
+      "Type": "map",
+      "Org": "duccsoft",
+      "Ident": "small_office",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.ceiling_plaster_01#33577",
+        "facepunch.floor_tile_marble#18685",
+        "facepunch.office_ceiling_a#18747",
+        "exorealms.40cef63c954cc29f#41174",
+        "eurorp.frame_single#8971",
+        "eurorp.frame_double#8972",
+        "facepunch.carpet_a#18621",
+        "hdr.dark_carpet#41416",
+        "facepunch.carpet_b#18623"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/office/office.vmap"
+      }
+    }
+  }
+}
