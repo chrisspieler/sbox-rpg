@@ -2,11 +2,14 @@
 using Sandbox;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
+using Sandbox.Utility;
 
 namespace Editor.Inspectors;
 
 
 [CanEdit( typeof(GameObject) )]
+[CanEdit( typeof( PrefabScene ) )]
 public class GameObjectInspector : Widget
 {
 	GameObject TargetObject;
@@ -92,6 +95,18 @@ public class GameObjectInspector : Widget
 		s.OpenAt( source.ScreenRect.BottomLeft, animateOffset: new Vector2( 0, -4 ) );
 		s.FixedWidth = source.Width;
 	}
+
+	protected override void OnContextMenu( ContextMenuEvent e )
+	{
+		if ( Helpers.HasComponentInClipboard() )
+		{
+			var menu = new Menu( this );
+			menu.AddOption( "Paste Component As New", action: () => Helpers.PasteComponentAsNew( TargetObject ) );
+			menu.OpenAtCursor( true );
+		}
+		
+		base.OnContextMenu( e );
+	}
 }
 
 public class ComponentList : Widget
@@ -156,10 +171,19 @@ public class ComponentList : Widget
 			Rebuild();
 		} ).Enabled = canMoveDown;
 
-		menu.AddOption( "Remove Component", action: () => component.Destroy() );
-		//menu.AddOption( "Copy To Clipboard" );
-		//menu.AddOption( "Paste As New" );
-		//menu.AddOption( "Paste Values" );
+		menu.AddOption( "Remove Component", action: () =>
+		{
+			component.Destroy();
+			SceneEditorSession.Active.Scene.EditLog( "Removed Component", component );
+		} );
+		menu.AddOption( "Copy To Clipboard", action: () => Helpers.CopyComponent( component ) );
+
+		if ( Helpers.HasComponentInClipboard() )
+		{
+			menu.AddOption( "Paste Values", action: () => Helpers.PasteComponentValues( component ) );
+			menu.AddOption( "Paste As New", action: () => Helpers.PasteComponentAsNew( component.GameObject ) );
+		}
+		
 		//menu.AddOption( "Open In Window.." );
 		menu.AddSeparator();
 

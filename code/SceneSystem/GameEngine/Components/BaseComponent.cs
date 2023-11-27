@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sandbox;
+using System;
+using System.Threading;
 
 public abstract partial class BaseComponent
 {
@@ -8,6 +10,11 @@ public abstract partial class BaseComponent
 	public GameObject GameObject { get; internal set; }
 
 	public GameObjectFlags Flags { get; set; } = GameObjectFlags.None;
+
+	/// <summary>
+	/// Allow creating tasks that are automatically cancelled when the GameObject is destroyed.
+	/// </summary>
+	protected TaskSource Task => GameObject.Task;
 
 
 	bool _isInitialized = false;
@@ -111,37 +118,46 @@ public abstract partial class BaseComponent
 		onPostDeserialize = null;
 	}
 
-	internal void UpdateEnabledStatus()
+	internal Action UpdateEnabledStatus()
 	{
 		var state = _enabled && Scene is not null && GameObject is not null && GameObject.Active;
-		if ( state == _enabledState ) return;
+		if ( state == _enabledState ) return null;
 
 		_enabledState = state;
 
 		if ( _enabledState )
 		{
-			InitializeComponent();
-
-			if ( ShouldExecute )
+			return () =>
 			{
-				ExceptionWrap( "OnEnabled", OnEnabled );
+				InitializeComponent();
 
-				OnComponentActivated?.Invoke();
-			}
+				if ( ShouldExecute )
+				{
+
+						ExceptionWrap( "OnEnabled", OnEnabled );
+						OnComponentActivated?.Invoke();
+				
+				}
+			};
 		}
 		else
 		{
-			if ( ShouldExecute )
+			return () =>
 			{
-				ExceptionWrap( "OnDisabled", OnDisabled );
+				if ( ShouldExecute )
+				{
+					ExceptionWrap( "OnDisabled", OnDisabled );
 
-				OnComponentDeactivated?.Invoke();
-			}
+					OnComponentDeactivated?.Invoke();
+				}
+			};
 		}
 	}
 
 	public void Destroy()
 	{
+		GameObject.Components.RemoveAll( x => x == this );
+
 		ExceptionWrap( "OnDestroy", OnDestroy );
 
 		if ( _enabledState )
@@ -156,8 +172,6 @@ public abstract partial class BaseComponent
 				OnComponentDeactivated?.Invoke();
 			}
 		}
-
-		GameObject.Components.RemoveAll( x => x == this );
 	}
 
 	public virtual void Reset()
