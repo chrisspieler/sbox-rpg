@@ -1484,8 +1484,7 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "It\u0027s cool to your loving touch.",
-          "SpeakerName": null
+          "DialogueText": "It\u0027s cool to your loving touch."
         }
       ]
     },
@@ -2021,8 +2020,12 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Talk",
-          "DialogueText": "Ayo! What\u0027s quacking, Ducc Dynasty?",
-          "SpeakerName": "ducc"
+          "DialogueText": "Ayo! What\u0027s quacking, Ducc Dynasty?"
+        },
+        {
+          "__type": "DisplayNameComponent",
+          "__enabled": true,
+          "Name": "ducc"
         }
       ]
     },
@@ -2046,8 +2049,7 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "This dialogue is not sponsored.",
-          "SpeakerName": null
+          "DialogueText": "This dialogue is not sponsored."
         },
         {
           "__type": "ModelCollider",
@@ -2087,8 +2089,7 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "You can\u0027t find the HDMI port.",
-          "SpeakerName": null
+          "DialogueText": "You can\u0027t find the HDMI port."
         }
       ]
     }

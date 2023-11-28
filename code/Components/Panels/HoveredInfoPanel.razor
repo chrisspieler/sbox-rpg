@@ -6,13 +6,29 @@
 <root>
     @if ( Hovered != null)
     {
-        <div id="name">@Hovered.Name</div>
+        <div id="name">@HoveredName</div>
     }
 </root>
 
 @code {
     public static HoveredInfoPanel Instance { get; private set; }
-    public GameObject Hovered { get; set;}
+    public GameObject Hovered 
+    {
+        get => _hovered;
+        set
+        {
+            _hovered = value;
+            if ( Hovered == null )
+            {
+                HoveredName = null;
+                return;
+            }
+            var nameComponent = Hovered.GetComponent<DisplayNameComponent>();
+            HoveredName = nameComponent?.Name;
+        }
+    }
+    private GameObject _hovered;
+    public string HoveredName { get; private set; }
 
     public HoveredInfoPanel()
     {
