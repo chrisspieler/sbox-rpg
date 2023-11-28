@@ -27,6 +27,13 @@ public class EmptyHandState : HandState
 
 	private void HandleInteraction()
 	{
+		if ( DialoguePanel.Instance.IsDialogueActive )
+		{
+			Unhover( Hovered );
+			Hovered = null;
+			return;
+		}
+
 		var tr = Scene.PhysicsWorld.Trace
 			.Ray( InteractionRay, InteractionReach )
 			.WithTag( "interactable" )
@@ -60,6 +67,9 @@ public class EmptyHandState : HandState
 
 	private void Unhover( GameObject go )
 	{
+		if ( go == null )
+			return;
+
 		if ( go.TryGetComponent<HighlightOutline>( out var outline ) )
 		{
 			outline.Destroy();
