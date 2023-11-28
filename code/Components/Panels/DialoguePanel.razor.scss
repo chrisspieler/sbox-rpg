@@ -1,0 +1,49 @@
+﻿$light-bg: #dce0e0;
+$light-border: #151517;
+$dark-bg: #151517F0;
+$dark-border: #b9c4c4;
+
+DialoguePanel {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+
+    > #namePlate {
+        background-color: $light-bg;
+        color: $light-border;
+        height: 55px;
+        width: 350px;
+        border-radius: 30px 30px 0px 0px;
+        font-size: 48px;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    > #dialogueFrame {
+        height: 300px;
+        width: 800px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+        padding: 25px;
+        background-color: $dark-bg;
+        border-color: $dark-border;
+        border-width: 8px;
+        border-top-width: 2px;
+        border-left-width: 4px;
+        border-radius: 0px 30px 30px 30px;
+
+        &.no-speaker {
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        > Label {
+            color: white;
+            font-size: 36px;
+        }
+    }
+}
