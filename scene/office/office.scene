@@ -2042,7 +2042,7 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "This dialogue is not sponsored."
+          "DialogueText": "Maximum sugar, no taste."
         },
         {
           "__type": "ModelCollider",
@@ -2051,6 +2051,11 @@
           "Model": "models/sbox_props/cola_can/cola_can.vmdl",
           "Static": false,
           "Surface": null
+        },
+        {
+          "__type": "DisplayNameComponent",
+          "__enabled": true,
+          "Name": "Wacky Parody Soda"
         }
       ]
     },
@@ -2082,7 +2087,7 @@
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "You can\u0027t find the HDMI port."
+          "DialogueText": "Hmm... you can\u0027t find the HDMI port."
         }
       ]
     }

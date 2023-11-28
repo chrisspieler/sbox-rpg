@@ -5,7 +5,7 @@ namespace Sandbox;
 public partial class DialoguePanel : PanelComponent
 {
 	public static DialoguePanel Instance { get; private set; }
-	public static float DefaultCharacterDelay { get; set; } = 0.09f;
+	public static float DefaultCharacterDelay { get; set; } = 0.05f;
 	public bool IsDialogueActive => _currentCommand is not null;
 
 	public string SpeakerName

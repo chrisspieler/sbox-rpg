@@ -43,7 +43,20 @@ public class DialoguePrintCommand : DialogueCommand
 		_dialogueFragment.Text = Text.Substring(0, _currentCharacter + 1);
 		_dialogueFragment.StateHasChanged();
 		_currentCharacter++;
-		_nextCharacter = CharacterDelay;
+		if ( _currentCharacter < Text.Length )
+			_nextCharacter = GetDelayForChar( Text[_currentCharacter - 1] ) ;
 		return true;
+	}
+
+	private float GetDelayForChar( char c )
+	{
+		var specialDelayFactor = c switch
+		{
+			'!' or '?' or '.' => 5f,
+			',' => 3.5f,
+			' ' or '\t' => 0f,
+			_ => 1f
+		};
+		return CharacterDelay * specialDelayFactor;
 	}
 }
