@@ -9,13 +9,12 @@ public class SimpleDialogueComponent : AffordanceComponent
 
 	public override void DoInteract( GameObject user, HandState state = null )
 	{
-		var commands = new List<DialogueCommand>();
+		var builder = new DialogueBuilder();
 		if ( GameObject.TryGetComponent<DisplayNameComponent>( out var nameComponent ) )
 		{
-			commands.Add( new DialogueSetSpeakerCommand() { SpeakerName = nameComponent.Name } );
+			builder.SetSpeaker( nameComponent.Name );
 		}
-		commands.Add( new DialoguePrintCommand() { Text = DialogueText } );
-		commands.Add( new DialoguePromptContinueCommand() );
-		DialoguePanel.Instance.BeginDialogue( commands );
+		builder.AddBlock( DialogueText );
+		DialoguePanel.Instance.BeginDialogue( builder.Commands );
 	}
 }

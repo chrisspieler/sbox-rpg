@@ -62,18 +62,23 @@ public partial class DialoguePanel : PanelComponent
 
 	public void BeginDialogue( List<DialogueCommand> commands )
 	{
-		Clear();
+		ClearAll();
 		_dialogueCommands = commands;
 	}
 
-	public void Clear()
+	public void ClearAll()
 	{
 		SpeakerName = null;
-		DialogueFrame?.DeleteChildren( true );
+		ClearDialogueFrame();
 		_currentCommand = null;
 		_dialogueCommands.Clear();
 		_currentCommandIndex = 0;
 		StateHasChanged();
+	}
+
+	public void ClearDialogueFrame()
+	{
+		DialogueFrame?.DeleteChildren( true );
 	}
 
 	public void PushDialogueFragment( Panel dialogueFragment )
