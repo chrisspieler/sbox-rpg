@@ -18,6 +18,8 @@ public partial class RpgPlayerController : BaseComponent
 		=> GameObject.GetComponent<CameraComponent>( true, true );
 	public CharacterController CharacterController => GameObject.GetComponent<CharacterController>( );
 	public Angles EyeAngles;
+	// Consider making a separate partial file for state.
+	public bool IsFirstPerson => CameraState.CurrentState is FirstPersonCameraState;
 
 	public override void OnStart()
 	{

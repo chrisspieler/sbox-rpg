@@ -23,12 +23,12 @@ public class HoldDataComponent : BaseComponent
 		var otherHoldData = hand.GetComponent<HoldDataComponent>();
 		if ( otherHoldData is null )
 		{
-			hand.Transform.Position = Transform.Position + HoldPosition;
+			hand.Transform.Position = hand.Transform.Position.LerpTo( Transform.Position + HoldPosition, Time.Delta * 10f );
 			hand.Transform.Rotation = Transform.Rotation * HoldRotation;
 			return;
 		}
 		var thisHoldPos = Transform.World.PointToWorld( HoldPosition );
-		hand.Transform.Position = thisHoldPos;
+		hand.Transform.Position = hand.Transform.Position.LerpTo( thisHoldPos, Time.Delta * 10f );
 		hand.Transform.Rotation = Transform.Rotation * HoldRotation * otherHoldData.HoldRotation.Inverse;
 		hand.WithAllFingerCurl( FingerCurl );
 

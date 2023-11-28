@@ -80,11 +80,14 @@ public class DraggingHandState : HandState
 
 	private void ResetTransform()
 	{
-		// Normally, the position and rotation of the hand is set by the
-		// hold data of the held object. In case that data doesn't exist,
-		// we provide a sensible default here.
-		Transform.Position = Dragged.Transform.Position;
-		Transform.Rotation = Rotation.Identity;
+		if ( Dragged.GetComponent<HoldDataComponent>() is null )
+		{
+			// Normally, the position and rotation of the hand is set by the
+			// hold data of the held object. In case that data doesn't exist,
+			// we provide a sensible default here.
+			Transform.Position = Dragged.Transform.Position;
+			Transform.Rotation = Rotation.Identity;
+		}
 		// The held object should never affect the scale of the hand.
 		Transform.Scale = 1f;
 	}

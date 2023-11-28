@@ -2,20 +2,30 @@
 
 public class EmptyHandState : HandState
 {
+	[Property] public Vector3 CameraOffset { get; set; } = new Vector3( 20, 0f, 20f );
+	[Property] public Rotation DefaultRotation { get; set; } = Rotation.From( 0f, 0f, 0f );
 	[Property] public bool DebugDraw { get; set; }
 
 	public GameObject Hovered { get; private set; }
 
-	public override void OnEnabled() => Initialize();
-	public override void OnStart() => Initialize();
-
-	private void Initialize()
+	public override void Update()
 	{
-		if ( HandModel is not null )
-			HandModel.Enabled = false;
+		HandleAnimation();
+		HandleInteraction();
 	}
 
-	public override void Update()
+	private void HandleAnimation()
+	{
+		HandModel?.SetEnabled( Controller.IsFirstPerson );
+		var targetPosition = Controller.Eye.Transform.Position;
+		var offset = CameraOffset.WithZ( CameraOffset.z + MathF.Sin( Time.Now * 2f ) );
+		targetPosition += offset * Controller.Eye.Transform.Rotation;
+		Transform.Position = Transform.Position.LerpTo( targetPosition, Time.Delta * 10f );
+		Transform.Rotation = DefaultRotation.Angles().WithYaw( Controller.Eye.Transform.Rotation.Yaw() ).ToRotation();
+		GetComponent<WorldHandAnimator>()?.WithAllFingerCurl( 0.2f );
+	}
+
+	private void HandleInteraction()
 	{
 		var tr = Scene.PhysicsWorld.Trace
 			.Ray( InteractionRay, InteractionReach )
