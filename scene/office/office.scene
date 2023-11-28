@@ -1483,8 +1483,10 @@
         {
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
+          "AdvanceAfterDisplay": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "It\u0027s cool to your loving touch."
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
         }
       ]
     },
@@ -2039,12 +2041,6 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "SimpleDialogueComponent",
-          "__enabled": true,
-          "DialogueStartPrompt": "Examine",
-          "DialogueText": "Maximum sugar, no taste."
-        },
-        {
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
@@ -2056,6 +2052,22 @@
           "__type": "DisplayNameComponent",
           "__enabled": true,
           "Name": "Wacky Parody Soda"
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": false,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "Maximum sugar, no taste.",
+          "DisableAfterDisplay": true
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": false,
+          "DialogueStartPrompt": "Examine2",
+          "DialogueText": "In certain jurisdictions, this soda is a crime.",
+          "DisableAfterDisplay": false
         }
       ]
     },
@@ -2086,8 +2098,18 @@
         {
           "__type": "SimpleDialogueComponent",
           "__enabled": true,
+          "AdvanceAfterDisplay": true,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "Hmm... you can\u0027t find the HDMI port."
+          "DialogueText": "Hmm...",
+          "DisableAfterDisplay": false
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": false,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "You can\u0027t find the HDMI port.",
+          "DisableAfterDisplay": false
         }
       ]
     }

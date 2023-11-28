@@ -87,16 +87,34 @@ public class EmptyHandState : HandState
 		outline.Enabled = true;
 		go.Tags.Add( "hovered" );
 		HoveredInfoPanel.Instance.Hovered = go;
-		var affordances = go.GetComponents<AffordanceComponent>();
+		var affordances = GetAffordancesFromHovered();
 		foreach ( var affordance in affordances )
 		{
 			InputGlyphsPanel.Instance.AddGlyph( new InputGlyphData
 			{
 				ActionName = affordance.ActionButton,
 				DisplayText = affordance.AffordanceText,
-				RemovalPredicate = () => !go.Tags.Has( "hovered" )
+				RemovalPredicate = () => !go.Tags.Has( "hovered" ) || !affordance.Enabled
 			} );
 		}
+	}
+
+	public IEnumerable<AffordanceComponent> GetAffordancesFromHovered()
+	{
+		if ( Hovered?.IsValid != true )
+			return null;
+
+		var affordances = Hovered.GetComponents<AffordanceComponent>();
+		var addedAffordances = new List<AffordanceComponent>();
+		foreach ( var affordance in affordances )
+		{
+			// If multiple components use the same action button on the same GameObject, only add the first one.
+			if ( addedAffordances.Any( a => a.ActionButton == affordance.ActionButton ) )
+				continue;
+
+			addedAffordances.Add( affordance );
+		}
+		return addedAffordances;
 	}
 
 	private void DoDebugDraw( PhysicsTraceResult tr )

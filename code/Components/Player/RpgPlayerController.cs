@@ -83,7 +83,7 @@ public partial class RpgPlayerController : BaseComponent
 		if ( emptyHand is null || emptyHand.Hovered is null )
 			return;
 
-		var affordances = emptyHand.Hovered.GetComponents<AffordanceComponent>().ToList();
+		var affordances = emptyHand.GetAffordancesFromHovered();
 
 		// If there's nothing we can do with the hovered object, just return.
 		if ( !affordances.Any() )

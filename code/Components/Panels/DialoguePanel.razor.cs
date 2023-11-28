@@ -66,6 +66,11 @@ public partial class DialoguePanel : PanelComponent
 		_dialogueCommands = commands;
 	}
 
+	public void PushCommands( IEnumerable<DialogueCommand> commands )
+	{
+		_dialogueCommands.AddRange( commands );
+	}
+
 	public void ClearAll()
 	{
 		SpeakerName = null;
@@ -89,6 +94,6 @@ public partial class DialoguePanel : PanelComponent
 
 	protected override int BuildHash()
 	{
-		return HashCode.Combine( SpeakerName, _currentCommand );
+		return HashCode.Combine( SpeakerName, _currentCommand, _dialogueCommands.Count );
 	}
 }
