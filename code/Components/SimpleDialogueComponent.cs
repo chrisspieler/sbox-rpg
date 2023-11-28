@@ -24,6 +24,10 @@ public class SimpleDialogueComponent : AffordanceComponent
 		{
 			builder.SetSpeaker( nameComponent.Name );
 		}
+		else if ( !DialoguePanel.Instance.IsDialogueActive )
+		{
+			builder.SetSpeaker( null );
+		}
 		builder.AddBlock( DialogueText );
 		if ( DialoguePanel.Instance.IsDialogueActive )
 		{
