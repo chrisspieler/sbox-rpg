@@ -25,7 +25,17 @@
         "eurorp.frame_double#8972",
         "facepunch.carpet_a#18621",
         "hdr.dark_carpet#41416",
-        "facepunch.carpet_b#18623"
+        "facepunch.carpet_b#18623",
+        "baik.pokertable#43130",
+        "facepunch.windowframe_metal_c#33595",
+        "facepunch.windowframe_metal_b#33593",
+        "facepunch.plaster_trim_01#43491",
+        "facepunch.concrete_glossy#18629",
+        "ambientcg.concrete_015#34413",
+        "facepunch.floor_lino#18664",
+        "facepunch.trim_a_metal#18736",
+        "facepunch.plaster_trim_painted_blend_01#43494",
+        "facepunch.concrete_trim_clean_01#43473"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/office/office.vmap"

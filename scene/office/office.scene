@@ -1116,7 +1116,273 @@
     {
       "Id": "d7e66f7e-fd9c-4125-8268-e0eb2113ea33",
       "Name": "Ceiling Light",
-      "Position": "-94.22511,329.7709,123.231",
+      "Position": "-94.22511,162.525,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "384ef624-2614-4636-947d-ab85953e132a",
+      "Name": "Ceiling Light (6)",
+      "Position": "-509.6074,162.525,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "9f4f24e0-454c-4072-8ef3-222243710b5e",
+      "Name": "Ceiling Light (7)",
+      "Position": "-509.6074,-200.0648,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "2be184c0-67a7-481a-b01b-848164f9b344",
+      "Name": "Ceiling Light (8)",
+      "Position": "-509.6074,702.1116,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "d5a131f8-a992-4399-a806-5c77f13785d8",
+      "Name": "Ceiling Light (9)",
+      "Position": "-871.6042,731.213,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "93b32493-42df-49cf-bd8c-dd1938d9c8d3",
+      "Name": "Ceiling Light (10)",
+      "Position": "-1284.337,769.2811,123.2304",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "5dcf8694-eb71-43fe-b1ac-2cd36cb0a65c",
+      "Name": "Ceiling Light (11)",
+      "Position": "-1199.989,450.5904,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "3c014c41-35cf-4a12-8e38-07d4197e6431",
+      "Name": "Ceiling Light (12)",
+      "Position": "-1114.448,319.538,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "84f4596d-aa12-480a-a862-e3f72d9a9fc2",
+      "Name": "Ceiling Light (13)",
+      "Position": "-1282.233,326.8608,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "3a9cebb3-64f9-47de-8571-8e5f0f9d1397",
+      "Name": "Ceiling Light (14)",
+      "Position": "-932.7045,407.3163,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "7144f3e2-7449-4725-9477-b4f290374840",
+      "Name": "Ceiling Light (15)",
+      "Position": "-766.7348,402.1442,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "39e9370c-c588-4d33-b256-ab0cc20dfc6f",
+      "Name": "Ceiling Light (16)",
+      "Position": "-833.3113,-112.2588,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "1e35fe60-4a5d-4fda-ac8c-07d8283c89e4",
+      "Name": "Ceiling Light (18)",
+      "Position": "-841.2855,-391.4626,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "66983963-510b-4f12-b84d-fc6742fffdea",
+      "Name": "Ceiling Light (19)",
+      "Position": "-1180.373,-47.99227,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "5ee0aa61-d89b-4790-8eb3-8af3101c5216",
+      "Name": "Ceiling Light (20)",
+      "Position": "-1174.977,-369.1919,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "f6caabb1-72b8-4015-9611-a1284bf53584",
+      "Name": "Ceiling Light (17)",
+      "Position": "-831.2509,213.9094,123.2302",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "58bdfae8-35f9-46e7-9dc2-b5ff01cc7f4f",
+      "Name": "Ceiling Light (4)",
+      "Position": "-149.1111,546.5865,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "d96b7795-8582-4fbe-963b-0689e1f9171d",
+      "Name": "Ceiling Light (5)",
+      "Position": "-149.1111,833.4141,123.231",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "e0e9fab0-3576-477b-a408-1723e4e47fb0",
+      "Name": "Wall Light",
+      "Position": "208.398,868.9481,-31.67923",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "e8e6bec0-b962-4ef6-82c9-a7df3a0b54af",
+      "Name": "Wall Light",
+      "Position": "156.8803,400.34,-126.1554",
       "Enabled": true,
       "Components": [
         {
@@ -1130,7 +1396,7 @@
     {
       "Id": "8ef9ab12-fd45-413a-862e-7bb9ca51e632",
       "Name": "Ceiling Light (1)",
-      "Position": "-94.22511,-75.06094,123.231",
+      "Position": "-94.22511,-122.6415,123.231",
       "Enabled": true,
       "Components": [
         {
@@ -1192,24 +1458,6 @@
           "Model": "models/props/trim_sheets/desk/wooden_desk/wooden_desk_01.vmdl",
           "Static": true,
           "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "8cd94805-e83f-473b-8a09-3c5664318135",
-      "Name": "wooden_desk_01",
-      "Position": "211.7893,-1199.319,-1301.923",
-      "Rotation": "0,0.707107,0,0.7071065",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/desk/wooden_desk/wooden_desk_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
         }
       ]
     },
