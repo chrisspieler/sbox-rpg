@@ -15,7 +15,7 @@
     {
       "Id": "22ecfa46-bf21-4c72-bed6-daf7199593a4",
       "Name": "Floor Plane",
-      "Position": "0,0,-33",
+      "Position": "-706.9537,64.02465,-32.99958",
       "Enabled": true,
       "Components": [
         {
@@ -40,7 +40,7 @@
           "__enabled": true,
           "LightColor": "0,0,0,1",
           "Shadows": true,
-          "SkyColor": "0.03745,0.03889,0.0396,1"
+          "SkyColor": "0,0,0,1"
         }
       ]
     },
@@ -1739,10 +1739,388 @@
       ]
     },
     {
+      "Id": "e3a1bcd1-1878-4fc1-a452-e2091001a7a0",
+      "Name": "toilet_a (4)",
+      "Position": "-1385.265,105.3006,-32.00012",
+      "Rotation": "0.0000000002141454,0.000000000000001450608,0.003592727,0.9999933",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": true,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
+        }
+      ]
+    },
+    {
+      "Id": "c13522a3-2a6c-484b-af42-0425532b4c46",
+      "Name": "toilet_a (1)",
+      "Position": "-1189.478,106.7074,-32.00012",
+      "Rotation": "0.0000000002141454,0.000000000000001450608,0.003592727,0.9999933",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": true,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
+        }
+      ]
+    },
+    {
+      "Id": "15c7ccd3-165e-4cf6-b7a2-0e9d925ee1ea",
+      "Name": "toilet_a (2)",
+      "Position": "-1190.339,226.5229,-32.00012",
+      "Rotation": "0.0000000002141454,0.000000000000001450608,0.003592727,0.9999933",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": true,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
+        }
+      ]
+    },
+    {
+      "Id": "e78649c4-5226-47e1-8c1b-f1d2fa0f90b5",
+      "Name": "toilet_a (3)",
+      "Position": "-1386.072,217.692,-32.00012",
+      "Rotation": "0.0000000002141454,0.000000000000001450608,0.003592727,0.9999933",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": true,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
+        }
+      ]
+    },
+    {
+      "Id": "3ad9d5f7-0126-4961-ac1e-d89a0a9b0e9a",
+      "Name": "toilet_a (5)",
+      "Position": "-1386.732,309.4833,-32.00012",
+      "Rotation": "0.0000000002141454,0.000000000000001450608,0.003592727,0.9999933",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
+          "Static": true,
+          "Surface": null
+        },
+        {
+          "__type": "SimpleDialogueComponent",
+          "__enabled": true,
+          "AdvanceAfterDisplay": true,
+          "DialogueStartPrompt": "Examine",
+          "DialogueText": "It\u0027s cool to your loving touch.",
+          "DisableAfterDisplay": false
+        }
+      ]
+    },
+    {
       "Id": "73d18df6-7460-4e2d-a23b-da688e4aac99",
       "Name": "office_desk",
       "Position": "-161.2694,-232.5232,-32.00005",
       "Rotation": "0.0000000596046,0.000000000000001832953,0.9999992,0.0008073291",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "c904bf00-7c48-4421-a5bd-2d40ca417b9c",
+      "Name": "office_desk (3)",
+      "Position": "-1363.34,-88.7699,-32",
+      "Rotation": "0.0000000596046,0.000000000000001832953,0.9999992,0.0008073291",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "55589533-cc63-463a-9558-fa19c416c315",
+      "Name": "office_desk (8)",
+      "Position": "-1286.312,-88.89429,-32",
+      "Rotation": "0.0000000596046,0.000000000000001832953,0.9999992,0.0008073291",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "add73aa5-7e43-434e-ba43-9c1b0867f314",
+      "Name": "office_desk (4)",
+      "Position": "-1363.438,-131.5045,-31.99987",
+      "Rotation": "-0.00000000003913799,-0.00000000000000484074,-0.0006566036,0.9999993",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "8ff0427d-9057-4cd2-86f4-2b0d3bbcca2a",
+      "Name": "office_desk (9)",
+      "Position": "-1283.867,-131.609,-31.99987",
+      "Rotation": "-0.00000000003913799,-0.00000000000000484074,-0.0006566036,0.9999993",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "b380b325-4d9f-4204-8328-818f0d24d556",
+      "Name": "office_desk (10)",
+      "Position": "-1224.579,-110.4112,-31.99987",
+      "Rotation": "0.00000004220622,-0.000000000000002981848,0.7081028,0.706108",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "574918b8-979c-4fe4-89a2-2990b5f79767",
+      "Name": "office_desk (5)",
+      "Position": "-1363.22,33.88458,-31.99987",
+      "Rotation": "-0.00000000003913799,-0.00000000000000484074,-0.0006566036,0.9999993",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "ad15a4aa-6e8e-4813-ab36-7be59b00a28a",
+      "Name": "office_desk (6)",
+      "Position": "-1284.929,33.78178,-31.99987",
+      "Rotation": "-0.00000000003913799,-0.00000000000000484074,-0.0006566036,0.9999993",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": true,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "43174324-c6d1-49b7-a83f-bf37c93e0a32",
+      "Name": "office_desk (7)",
+      "Position": "-1206.329,33.67856,-31.99987",
+      "Rotation": "-0.00000000003913799,-0.00000000000000484074,-0.0006566036,0.9999993",
       "Enabled": true,
       "Components": [
         {
