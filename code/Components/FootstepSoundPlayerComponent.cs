@@ -4,7 +4,7 @@ namespace Sandbox;
 
 public class FootstepSoundPlayerComponent : BaseComponent
 {
-	[Property] public AnimatedModelComponent Source 
+	[Property] public SkinnedModelRenderer Source 
 	{
 		get => _source;
 		set
@@ -20,12 +20,12 @@ public class FootstepSoundPlayerComponent : BaseComponent
 			}
 		}
 	}
-	private AnimatedModelComponent _source;
+	private SkinnedModelRenderer _source;
 	[Property] public bool DebugDraw { get; set; }
 	private CircularBuffer<SceneModel.FootstepEvent> _pastFootsteps = new( 5 );
 	private CircularBuffer<PhysicsTraceResult> _pastTraces = new( 5 );
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
 		if ( Source != null )
 		{
@@ -33,10 +33,8 @@ public class FootstepSoundPlayerComponent : BaseComponent
 		}
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
-		base.Update();
-
 		if ( DebugDraw )
 		{
 			DebugDrawFootText();
@@ -46,7 +44,7 @@ public class FootstepSoundPlayerComponent : BaseComponent
 
 	private void OnFootstepEvent( SceneModel.FootstepEvent footstepEvent )
 	{
-		var cc = GetComponent<CharacterController>();
+		var cc = Components.Get<CharacterController>();
 		if ( cc is not null )
 		{
 			footstepEvent.Volume = MathX.Remap( cc.Velocity.Length, 0f, 300f, 0.2f, 1f );

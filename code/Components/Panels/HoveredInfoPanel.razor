@@ -23,7 +23,7 @@
                 HoveredName = null;
                 return;
             }
-            var nameComponent = Hovered.GetComponent<DisplayNameComponent>();
+            var nameComponent = Hovered.Components.Get<DisplayNameComponent>();
             HoveredName = nameComponent?.Name;
         }
     }
@@ -35,10 +35,8 @@
         Instance = this;
     }
 
-    public override void Update()
+    protected override void OnUpdate()
     {
-        base.Update();
-
         // If the hovered GameObject is no longer hovered, clear it.
         if ( Hovered is not null && !Hovered.Tags.Has( "hovered" ) )
             Hovered = null;

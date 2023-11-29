@@ -2,7 +2,7 @@
 
 namespace Sandbox;
 
-public partial class InputGlyphsPanel
+public partial class InputGlyphsPanel : PanelComponent
 {
 	public static InputGlyphsPanel Instance { get; private set; }
 	private Dictionary<string, InputGlyphData> Glyphs { get; set; } = new();
@@ -18,7 +18,7 @@ public partial class InputGlyphsPanel
 		Panel.StateHasChanged();
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		var glyphs = Glyphs.Values.ToList();
 		foreach(var glyph in glyphs )

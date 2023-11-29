@@ -42,8 +42,8 @@ public class CameraComponent : BaseComponent
 
 	[Property]
 	public TagSet RenderExcludeTags { get; set; } = new();
-	
-	public override void DrawGizmos()
+
+	protected override void DrawGizmos()
 	{
 		if ( sceneCamera is null )
 			return;
@@ -126,7 +126,7 @@ public class CameraComponent : BaseComponent
 		camera.RenderTags.SetFrom( RenderTags );
 		camera.ExcludeTags.SetFrom( RenderExcludeTags );
 
-		foreach ( var c in GetComponents<ISceneCameraSetup>() )
+		foreach ( var c in Components.GetAll<ISceneCameraSetup>() )
 		{
 			c.SetupCamera( this, camera );
 		}

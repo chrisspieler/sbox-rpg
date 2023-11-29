@@ -7,9 +7,9 @@ public class DraggableComponent : AffordanceComponent
 	public override string AffordanceText => "Drag";
 	public override string ActionButton => "attack1";
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
-		Rigidbody ??= GameObject.GetComponent<PhysicsComponent>();
+		Rigidbody ??= GameObject.Components.Get<PhysicsComponent>();
 	}
 
 	public override void DoInteract( GameObject user, HandState hand )

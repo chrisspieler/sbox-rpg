@@ -2,7 +2,7 @@
 
 public class WorldHandAnimator : BaseComponent
 {
-	[Property] public AnimatedModelComponent Target { get; set; }
+	[Property] public SkinnedModelRenderer Target { get; set; }
 
 	public void WithAllFingerCurl( float value )
 	{

@@ -12,19 +12,20 @@ public class AffordanceComponent : BaseComponent
 
 	public virtual void DoInteract( GameObject user, HandState state = null ) { }
 
-	public override void OnEnabled()
+	protected override void OnEnabled()
 	{
 		base.OnEnabled();
 
 		GameObject.Tags.Add( "interactable" );
 	}
 
-	public override void OnDisabled()
+	protected override void OnDisabled()
 	{
 		base.OnDisabled();
 
 		var otherAffordances = GameObject
-			.GetComponents<AffordanceComponent>()
+			.Components
+			.GetAll<AffordanceComponent>( FindMode.EnabledInSelf )
 			.Where( c => c != this );
 		if ( !otherAffordances.Any() )
 			GameObject.Tags.Remove( "interactable" );

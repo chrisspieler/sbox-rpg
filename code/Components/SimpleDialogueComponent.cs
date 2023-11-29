@@ -20,7 +20,7 @@ public class SimpleDialogueComponent : AffordanceComponent
 		InteractionCounter++;
 
 		var builder = new DialogueBuilder();
-		if ( GameObject.TryGetComponent<DisplayNameComponent>( out var nameComponent ) )
+		if ( GameObject.Components.TryGet<DisplayNameComponent>( out var nameComponent ) )
 		{
 			builder.SetSpeaker( nameComponent.Name );
 		}
@@ -49,7 +49,10 @@ public class SimpleDialogueComponent : AffordanceComponent
 
 	private SimpleDialogueComponent GetNextDialogue()
 	{
-		var dialogueComponents = GameObject.GetComponents<SimpleDialogueComponent>().ToArray();
+		var dialogueComponents = GameObject
+			.Components
+			.GetAll<SimpleDialogueComponent>( FindMode.EnabledInSelf )
+			.ToArray();
 		var index = Array.IndexOf( dialogueComponents, this );
 		// If there's a next dialogue component, return it.
 		if ( index < dialogueComponents.Length - 1 )

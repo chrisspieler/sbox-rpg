@@ -2,8 +2,8 @@
 
 public class HoldingHandState : HandState
 {
-	public override void OnEnabled() => Initialize();
-	public override void OnStart() => Initialize();
+	protected override void OnEnabled() => Initialize();
+	protected override void OnStart() => Initialize();
 
 	public void Initialize()
 	{

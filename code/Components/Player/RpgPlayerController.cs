@@ -15,13 +15,13 @@ public partial class RpgPlayerController : BaseComponent
 	[Property] public CitizenAnimation AnimationHelper { get; set; }
 	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
 	public CameraComponent PlayerCam
-		=> GameObject.GetComponent<CameraComponent>( true, true );
-	public CharacterController CharacterController => GameObject.GetComponent<CharacterController>( );
+		=> GameObject.Components.Get<CameraComponent>( FindMode.EverythingInSelfAndDescendants );
+	public CharacterController CharacterController => GameObject.Components.Get<CharacterController>( );
 	public Angles EyeAngles;
 	// Consider making a separate partial file for state.
 	public bool IsFirstPerson => CameraState.CurrentState is FirstPersonCameraState;
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
 		var startAngle = Transform.Rotation.Forward.EulerAngles
 			.WithPitch( 0 )
@@ -29,7 +29,7 @@ public partial class RpgPlayerController : BaseComponent
 		EyeAngles = startAngle;
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		UpdateBlockers();
 
@@ -53,7 +53,7 @@ public partial class RpgPlayerController : BaseComponent
 		if ( Body is not null )
 		{
 			// TODO: Cache this, or make callers stop calling it every frame.
-			var renderer = Body.GetComponent<AnimatedModelComponent>( false );
+			var renderer = Body.Components.Get<SkinnedModelRenderer>();
 			renderer.Tint = renderer.Tint.WithAlpha( alpha );
 			renderer.ShouldCastShadows = castShadow;
 		}

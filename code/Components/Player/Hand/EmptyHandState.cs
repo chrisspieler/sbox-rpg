@@ -8,7 +8,7 @@ public class EmptyHandState : HandState
 
 	public GameObject Hovered { get; private set; }
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		HandleAnimation();
 		HandleInteraction();
@@ -22,7 +22,7 @@ public class EmptyHandState : HandState
 		targetPosition += offset * Controller.Eye.Transform.Rotation;
 		Transform.Position = Transform.Position.LerpTo( targetPosition, Time.Delta * 10f );
 		Transform.Rotation = DefaultRotation.Angles().WithYaw( Controller.Eye.Transform.Rotation.Yaw() ).ToRotation();
-		GetComponent<WorldHandAnimator>()?.WithAllFingerCurl( 0.2f );
+		Components.Get<WorldHandAnimator>()?.WithAllFingerCurl( 0.2f );
 	}
 
 	private void HandleInteraction()
@@ -70,7 +70,7 @@ public class EmptyHandState : HandState
 		if ( go == null )
 			return;
 
-		if ( go.TryGetComponent<HighlightOutline>( out var outline ) )
+		if ( go.Components.TryGet<HighlightOutline>( out var outline ) )
 		{
 			outline.Destroy();
 		}
@@ -79,10 +79,10 @@ public class EmptyHandState : HandState
 
 	private void Hover( GameObject go )
 	{
-		var outline = go.GetComponent<HighlightOutline>();
+		var outline = go.Components.Get<HighlightOutline>();
 		if ( outline is null )
 		{
-			outline = go.AddComponent<HighlightOutline>();
+			outline = go.Components.Create<HighlightOutline>();
 		}
 		outline.Enabled = true;
 		go.Tags.Add( "hovered" );
@@ -104,7 +104,7 @@ public class EmptyHandState : HandState
 		if ( Hovered?.IsValid != true )
 			return null;
 
-		var affordances = Hovered.GetComponents<AffordanceComponent>();
+		var affordances = Hovered.Components.GetAll<AffordanceComponent>( FindMode.EnabledInSelf );
 		var addedAffordances = new List<AffordanceComponent>();
 		foreach ( var affordance in affordances )
 		{

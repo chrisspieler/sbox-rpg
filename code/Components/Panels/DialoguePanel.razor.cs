@@ -40,7 +40,7 @@ public partial class DialoguePanel : PanelComponent
 	private List<DialogueCommand> _dialogueCommands = new();
 	private int _currentCommandIndex = 0;
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( _currentCommand is null && _currentCommandIndex < _dialogueCommands.Count )
 		{

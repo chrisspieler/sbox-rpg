@@ -10,7 +10,7 @@ public class DialogueSetSpeakerCommand : DialogueCommand
 		DialoguePanel.Instance.SpeakerName = SpeakerName;
 		if ( SpeakerGo is not null )
 		{
-			var displayNameComponent = SpeakerGo.GetOrAddComponent<DisplayNameComponent>();
+			var displayNameComponent = SpeakerGo.Components.GetOrCreate<DisplayNameComponent>();
 			displayNameComponent.Name = SpeakerName;
 		}
 		return false;

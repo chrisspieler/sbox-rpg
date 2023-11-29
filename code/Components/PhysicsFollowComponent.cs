@@ -8,18 +8,18 @@ public class PhysicsFollowComponent : BaseComponent
 	[Property] public float AngularVelocityDamping { get; set; } = 2.5f;
 	[Property] public bool DebugDraw { get; set; }
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
-		Rigidbody ??= GetComponent<PhysicsComponent>();
+		Rigidbody ??= Components.Get<PhysicsComponent>();
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( DebugDraw )
 			DoDebugDraw();
 	}
 
-	public override void FixedUpdate()
+	protected override void OnFixedUpdate()
 	{
 		if ( Target?.IsValid != true || Rigidbody is null )
 			return;

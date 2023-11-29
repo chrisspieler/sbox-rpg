@@ -49,7 +49,7 @@ public abstract class LocomotionState : PlayerState
 		}
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( RotateBodyWithCamera )
 		{
@@ -61,7 +61,7 @@ public abstract class LocomotionState : PlayerState
 			SetAnimation( animation );
 	}
 
-	public override void FixedUpdate()
+	protected override void OnFixedUpdate()
 	{
 		var moveDir = GetMovementDirection();
 		WishVelocity = moveDir * MoveSpeed;

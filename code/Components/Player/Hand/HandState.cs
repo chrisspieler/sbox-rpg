@@ -11,8 +11,8 @@ public abstract class HandState : PlayerState
 	/// that shall be used for interacting with via this hand.
 	/// </summary>
 	[Property] public GameObject InteractionRaySource { get; set; }
-	public AnimatedModelComponent HandModel => _handModel ??= GetComponent<AnimatedModelComponent>( false, true );
-	private AnimatedModelComponent _handModel;
+	public SkinnedModelRenderer HandModel => _handModel ??= Components.Get<SkinnedModelRenderer>( FindMode.EverythingInSelfAndDescendants );
+	private SkinnedModelRenderer _handModel;
 
 	public Ray InteractionRay => new( 
 						origin: InteractionRaySource.Transform.Position, 

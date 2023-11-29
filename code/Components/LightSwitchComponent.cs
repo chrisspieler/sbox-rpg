@@ -7,7 +7,7 @@ public class LightSwitchComponent : AffordanceComponent
 	[Property] public Color OffColor { get; set; } = Color.Black;
 	[Property] public string OffMaterialGroup { get; set; }
 	[Property] public PointLightComponent TargetLight { get; set; }
-	[Property] public ModelComponent TargetLightModel { get; set; }
+	[Property] public ModelRenderer TargetLightModel { get; set; }
 	public override string AffordanceText => "Toggle Light";
 
 	[Property] public bool IsOn
@@ -33,7 +33,7 @@ public class LightSwitchComponent : AffordanceComponent
 	}
 	private bool _isOn;
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
 		if ( IsOn )
 		{

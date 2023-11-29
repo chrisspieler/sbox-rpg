@@ -8,13 +8,13 @@ public class DynamicTextureComponent : BaseComponent
 
 	private RealTimeSince _lastTextureUpdate;
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( InputTexture is null || _lastTextureUpdate < 1f / MaxUpdatesPerSecond )
 			return;
 
 		_lastTextureUpdate = 0f;
-		var effects = GameObject.GetComponents<TextureEffectComponent>();
+		var effects = GameObject.Components.GetAll<TextureEffectComponent>( FindMode.EnabledInSelf );
 		var intermediateTexture = InputTexture;
 		foreach ( var effect in effects )
 		{

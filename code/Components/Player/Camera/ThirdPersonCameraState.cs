@@ -5,7 +5,7 @@ public class ThirdPersonCameraState : CameraState
 	[Property, Range( 50, 400 )] public float Distance { get; set; } = 200f;
 	[Property] public Vector3 Offset { get; set; } = Vector3.Zero.WithZ( -20f );
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( Input.Pressed( "flashlight" ) || Controller.IsThirdPersonBlocked )
 		{

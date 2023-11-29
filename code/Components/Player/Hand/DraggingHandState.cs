@@ -42,9 +42,9 @@ public class DraggingHandState : HandState
 	{
 		Dragged = dragged;
 		DragSource = dragSource;
-		DraggedRigidbody = Dragged.GetComponent<PhysicsComponent>();
+		DraggedRigidbody = Dragged.Components.Get<PhysicsComponent>();
 		// Prevent the dragged object from showing the drag prompt.
-		Dragged.GetComponent<DraggableComponent>().SetEnabled( false );
+		Dragged.Components.Get<DraggableComponent>().SetEnabled( false );
 		// Prevent the movement code from treating held objects as obstacles.
 		Dragged.Tags.Add( "held" );
 
@@ -62,7 +62,7 @@ public class DraggingHandState : HandState
 		EnsureDragTargetExists();
 
 		// The dragged object will be moved from the center by directly setting its velocity.
-		var centerDrag = Dragged.GetOrAddComponent<PhysicsFollowComponent>();
+		var centerDrag = Dragged.Components.GetOrCreate<PhysicsFollowComponent>();
 		centerDrag.Target = DragTarget;
 		centerDrag.Rigidbody = DraggedRigidbody;
 
@@ -80,7 +80,7 @@ public class DraggingHandState : HandState
 
 	private void ResetTransform()
 	{
-		if ( Dragged.GetComponent<HoldDataComponent>() is null )
+		if ( Dragged.Components.Get<HoldDataComponent>() is null )
 		{
 			// Normally, the position and rotation of the hand is set by the
 			// hold data of the held object. In case that data doesn't exist,
@@ -101,13 +101,13 @@ public class DraggingHandState : HandState
 		}
 	}
 
-	public override void OnDisabled()
+	protected override void OnDisabled()
 	{
 		Dragged?.Tags?.Remove( "held" );
 
-		Dragged?.GetComponent<LookRotateComponent>()?.SetEnabled( false );
-		Dragged?.GetComponent<DraggableComponent>( false )?.SetEnabled( true );
-		Dragged?.GetComponent<PhysicsFollowComponent>()?.Destroy();
+		Dragged?.Components.Get<LookRotateComponent>()?.SetEnabled( false );
+		Dragged?.Components.Get<DraggableComponent>( true )?.SetEnabled( true );
+		Dragged?.Components.Get<PhysicsFollowComponent>()?.Destroy();
 
 		if ( DraggedRigidbody is not null )
 		{
@@ -123,7 +123,7 @@ public class DraggingHandState : HandState
 		DragTarget?.Destroy();
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( Dragged?.IsValid != true || !Input.Down( "attack1" ) )
 		{
@@ -134,8 +134,8 @@ public class DraggingHandState : HandState
 		UpdateDistance();
 		DragTarget.Transform.Position = DragRay.Project( CurrentDragDistance );
 
-		var holdData = Dragged.GetComponent<HoldDataComponent>();
-		var handAnimator = GetComponent<WorldHandAnimator>();
+		var holdData = Dragged.Components.Get<HoldDataComponent>();
+		var handAnimator = Components.Get<WorldHandAnimator>();
 		if ( holdData is not null && handAnimator is not null )
 		{
 			// Set the hand position and rotation based on the hold data.
@@ -143,9 +143,9 @@ public class DraggingHandState : HandState
 		}
 	}
 
-	public override void FixedUpdate()
+	protected override void OnFixedUpdate()
 	{
-		DraggedRigidbody ??= Dragged.GetComponent<PhysicsComponent>();
+		DraggedRigidbody ??= Dragged.Components.Get<PhysicsComponent>();
 
 		if ( Dragged is null || DraggedRigidbody is null )
 		{
@@ -156,12 +156,12 @@ public class DraggingHandState : HandState
 		if ( Input.Down( "attack2" ) )
 		{
 			DraggedRigidbody.AngularVelocity = Vector3.Zero;
-			Dragged.GetOrAddComponent<LookRotateComponent>().SetEnabled( true );
+			Dragged.Components.GetOrCreate<LookRotateComponent>().SetEnabled( true );
 			Controller.BlockLook( this );
 		}
 		else
 		{
-			Dragged.GetComponent<LookRotateComponent>()?.SetEnabled( false );
+			Dragged.Components.Get<LookRotateComponent>()?.SetEnabled( false );
 			Controller.UnblockLook( this );
 		}
 	}

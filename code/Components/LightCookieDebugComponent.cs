@@ -5,11 +5,9 @@ public class LightCookieDebugComponent : BaseComponent
 	[Property] public SpotLightComponent SpotLight { get; set; }
 	[Property] public bool IgnoreDepth { get; set; } = false;
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
-		base.Update();
-
-		SpotLight ??= GetComponent<SpotLightComponent>();
+		SpotLight ??= Components.Get<SpotLightComponent>();
 		if ( SpotLight is null )
 			return;
 

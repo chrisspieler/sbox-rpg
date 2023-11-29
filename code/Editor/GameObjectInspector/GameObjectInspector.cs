@@ -91,7 +91,7 @@ public class GameObjectInspector : Widget
 	public void AddComponentDialog( Button source )
 	{
 		var s = new ComponentTypeSelector( this );
-		s.OnSelect += ( t ) => TargetObject.AddComponent( t );
+		s.OnSelect += ( t ) => TargetObject.Components.Create( t );
 		s.OpenAt( source.ScreenRect.BottomLeft, animateOffset: new Vector2( 0, -4 ) );
 		s.FixedWidth = source.Width;
 	}
@@ -111,10 +111,10 @@ public class GameObjectInspector : Widget
 
 public class ComponentList : Widget
 {
-	List<BaseComponent> componentList; // todo - SerializedObject should support lists, arrays
+	global::ComponentList componentList; // todo - SerializedObject should support lists, arrays
 	Guid GameObjectId;
 
-	public ComponentList( Guid gameObjectId, List<BaseComponent> components ) : base( null )
+	public ComponentList( Guid gameObjectId, global::ComponentList components ) : base( null )
 	{
 		GameObjectId = gameObjectId;
 		componentList = components;
@@ -128,7 +128,7 @@ public class ComponentList : Widget
 	{
 		Layout.Clear( true );
 
-		foreach ( var o in componentList )
+		foreach ( var o in componentList.GetAll() )
 		{
 			if ( o is null ) continue;
 
@@ -153,21 +153,19 @@ public class ComponentList : Widget
 		menu.AddOption( "Reset", action: () => component.Reset() );
 		menu.AddSeparator();
 
-		var componentIndex = componentList.IndexOf( component );
+		var componentIndex = componentList.GetAll().ToList().IndexOf( component );
 		var canMoveUp = componentList.Count > 1 && componentIndex > 0;
 		var canMoveDown = componentList.Count > 1 && componentIndex < componentList.Count - 1;
 
 		menu.AddOption( "Move Up", action: () =>
 		{
-			componentList.RemoveAt( componentIndex );
-			componentList.Insert( componentIndex - 1, component );
+			componentList.Move( component, -1 );
 			Rebuild();
 		} ).Enabled = canMoveUp;
 
 		menu.AddOption( "Move Down", action: () =>
 		{
-			componentList.RemoveAt( componentIndex );
-			componentList.Insert( componentIndex + 1, component );
+			componentList.Move( component, +1 );
 			Rebuild();
 		} ).Enabled = canMoveDown;
 

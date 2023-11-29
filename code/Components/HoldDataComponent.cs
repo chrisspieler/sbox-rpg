@@ -7,7 +7,7 @@ public class HoldDataComponent : BaseComponent
 	[Property, Range( 0, 1 )] public float FingerCurl { get; set; } = 0.6f;
 	[Property] public bool DebugDraw { get; set; }
 
-	public override void DrawGizmos()
+	protected override void DrawGizmos()
 	{
 		Gizmo.Draw.Color = Color.Cyan;
 		Gizmo.Draw.LineCylinder( HoldPosition, HoldPosition + HoldRotation.Forward * 0.25f, 2f, 2f, 16 );
@@ -20,7 +20,7 @@ public class HoldDataComponent : BaseComponent
 		if ( hand.GameObject.Parent != GameObject )
 			hand.GameObject.Parent = GameObject;
 
-		var otherHoldData = hand.GetComponent<HoldDataComponent>();
+		var otherHoldData = hand.Components.Get<HoldDataComponent>();
 		if ( otherHoldData is null )
 		{
 			hand.Transform.Position = hand.Transform.Position.LerpTo( Transform.Position + HoldPosition, Time.Delta * 10f );

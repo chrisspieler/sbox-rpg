@@ -7,21 +7,19 @@ public class PlayerStateMachine : BaseComponent
 	public PlayerState CurrentState { get; private set; }
 	public PlayerState PreviousState { get; private set; }
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
 		base.OnStart();
 
-		var activeStates = GameObject.Components
-			.OfType<PlayerState>()
-			.Where( state => state.Enabled )
+		var activeStates = GameObject
+			.Components
+			.GetAll<PlayerState>( FindMode.EnabledInSelf )
 			.ToArray();
 		// If no states are active...
 		if ( !activeStates.Any() )
 		{
 			// ...get the first state and try to enable it...
-			var firstState = GameObject.Components
-				.OfType<PlayerState>()
-				.FirstOrDefault();
+			var firstState = Components.Get<PlayerState>();
 			if ( firstState is not null )
 			{
 				CurrentState = firstState;
@@ -49,7 +47,7 @@ public class PlayerStateMachine : BaseComponent
 	public T ChangeState<T>( )
 		where T : PlayerState
 	{
-		var nextState = GameObject.GetComponent<T>( false )
+		var nextState = Components.Get<T>( FindMode.EverythingInSelf )
 			?? throw new Exception( $"({GameObject.Name} has no state: {TypeLibrary.GetType<T>().Name})" );
 		if ( CurrentState is not null )
 		{

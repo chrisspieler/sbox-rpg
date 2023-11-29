@@ -3,7 +3,7 @@
 public class PlayerState : BaseComponent
 {
 	protected PlayerStateMachine StateMachine
-		=> _stateMachine ??= GetComponent<PlayerStateMachine>();
+		=> _stateMachine ??= Components.Get<PlayerStateMachine>();
 	private PlayerStateMachine _stateMachine;
 	public RpgPlayerController Controller => StateMachine?.Controller;
 	public GameObject Player => StateMachine?.GameObject?.Parent;

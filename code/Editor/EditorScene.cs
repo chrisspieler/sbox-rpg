@@ -44,14 +44,14 @@ public static class EditorScene
 			var go = scene.CreateObject();
 			go.Name = "Main Camera";
 			go.Transform.Local = new Transform( Vector3.Up * 100 + Vector3.Backward * 300 );
-			go.AddComponent<CameraComponent>();
+			go.Components.Create<CameraComponent>();
 		}
 
 		{
 			var go = scene.CreateObject();
 			go.Name = "Directional Light";
 			go.Transform.Local = new Transform( Vector3.Up * 200, Rotation.From( 80, 45, 0 ) );
-			go.AddComponent<DirectionalLightComponent>();
+			go.Components.Create<DirectionalLightComponent>();
 		}
 
 		var newSession = new SceneEditorSession( scene );
@@ -78,9 +78,13 @@ public static class EditorScene
 				return;
 			}
 
+			LoadingScreen.IsVisible = true;
+			LoadingScreen.Title = "Loading Scene..";
+
 			var current = activeSession.Scene.Save();
 
 			GameManager.ActiveScene = new Scene();
+			GameManager.ActiveScene.StartLoading();
 			GameManager.ActiveScene.Load( current );
 		}
 		else
@@ -221,7 +225,6 @@ public static class EditorScene
 
 	static void UpdatePrefabsInScene( Scene scene, PrefabFile prefab )
 	{
-		using var activeScope = SceneUtility.DeferInitializationScope( "Update Prefabs" );
 		var changedPath = prefab.ResourcePath;
 
 		using ( scene.Push() )

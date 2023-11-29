@@ -30,7 +30,7 @@ public class VideoPlayerComponent : BaseComponent
 	protected VideoPlayer VideoPlayer;
 	protected TimeSince VideoLastUpdated { get; set; }
 
-	public override void OnStart()
+	protected override void OnStart()
 	{
 		base.OnStart();
 
@@ -63,10 +63,8 @@ public class VideoPlayerComponent : BaseComponent
 		IsInitializing = false;
 	}
 
-	public override void Update()
+	protected override void OnUpdate()
 	{
-		base.Update();
-
 		VideoPlayer?.Present();
 	}
 

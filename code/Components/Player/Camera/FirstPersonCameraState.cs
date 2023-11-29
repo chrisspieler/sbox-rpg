@@ -2,7 +2,7 @@
 
 public class FirstPersonCameraState : CameraState
 {
-	public override void Update()
+	protected override void OnUpdate()
 	{
 		if ( Input.Pressed( "flashlight" ) && !Controller.IsThirdPersonBlocked )
 		{
