@@ -31,7 +31,7 @@
     {
       "Id": "22ecfa46-bf21-4c72-bed6-daf7199593a4",
       "Name": "Floor Plane",
-      "Position": "-706.9537,64.02465,-32.99958",
+      "Position": "-706.9537,-644.9433,-32.99958",
       "Enabled": true,
       "Components": [
         {
@@ -39,6 +39,38 @@
           "__enabled": true,
           "IsTrigger": false,
           "Scale": "2000,2000,2",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "412ba699-2863-404b-a891-9ef690dd87a3",
+      "Name": "Floor Plane (1)",
+      "Position": "-1286.674,1300.845,-32.99924",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "2000,2000,2",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "0e27ece3-bc6f-4651-a19f-1d9a80ccdf82",
+      "Name": "Floor Plane (2)",
+      "Position": "-210.4676,460.9801,-32.99887",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "500,500,2",
           "Static": false,
           "Surface": null
         }
@@ -1262,7 +1294,7 @@
     {
       "Id": "9f4f24e0-454c-4072-8ef3-222243710b5e",
       "Name": "Ceiling Light (7)",
-      "Position": "-509.6074,-200.0648,123.231",
+      "Position": "-509.6074,-349.9856,123.231",
       "Enabled": true,
       "Components": [
         {
@@ -1500,7 +1532,35 @@
     {
       "Id": "e8e6bec0-b962-4ef6-82c9-a7df3a0b54af",
       "Name": "Wall Light",
-      "Position": "156.8803,400.34,-126.1554",
+      "Position": "145.0023,458.9178,-162.0638",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "5e660a13-933e-45d8-8070-125a6a54978b",
+      "Name": "Ceiling Light",
+      "Position": "145.0023,84.3061,-237.2381",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 400
+        }
+      ]
+    },
+    {
+      "Id": "ff66b065-06de-48ed-a7b8-c1f37f8a6a27",
+      "Name": "Ceiling Light (21)",
+      "Position": "-23.73342,84.3061,-237.9359",
       "Enabled": true,
       "Components": [
         {
@@ -3210,7 +3270,6 @@
   "Title": "office",
   "Description": "",
   "__references": [
-    "baik.vendingmachine",
     "duccsoft.duck_decoration",
     "facepunch.office_chair",
     "facepunch.office_desk",
