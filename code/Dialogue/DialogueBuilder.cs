@@ -28,6 +28,35 @@ public class DialogueBuilder
 		return this;
 	}
 
+	public DialogueBuilder AddAction( Action action )
+	{
+		Commands.Add( new DialogueActionCommand()
+		{
+			Action = action
+		} );
+		return this;
+	}
+
+	public DialogueBuilder BeginQuest<T>() where T : Quest, new()
+	{
+		Commands.Add( new DialogueActionCommand()
+		{
+			Action = () => Quest.Begin<T>()
+		} );
+		return this;
+	}
+
+	public DialogueBuilder PushObjective<T>( Objective objective)
+		where T : Quest
+	{
+		var quest = Quest.Get<T>();
+		Commands.Add( new DialogueActionCommand()
+		{
+			Action = () => quest.AddObjective( objective )
+		} );
+		return this;
+	}
+
 	public void Begin()
 	{
 		DialoguePanel.Instance.BeginDialogue( Commands );
