@@ -4,11 +4,13 @@
 @namespace Sandbox
 
 <root>
-    @if ( !IsDialogueActive )
-        return;
-    @if ( !string.IsNullOrWhiteSpace( SpeakerName) )
-    {
-        <div id="namePlate" style="font-size: @(SpeakerFontSize)px;" @ref=NamePlate>@SpeakerName</div>
-    }
-    <div id="dialogueFrame" class="@(DialogueFrameClass)" @ref=DialogueFrame></div>
+    <div id="container">
+        @if (!IsDialogueActive)
+            return;
+        @if (!string.IsNullOrWhiteSpace(SpeakerName))
+        {
+            <div id="namePlate" style="font-size: @(SpeakerFontSize)px;" @ref=NamePlate>@SpeakerName</div>
+        }
+        <div id="dialogueFrame" class="@(DialogueFrameClass)" @ref=DialogueFrame></div>
+    </div>
 </root>
