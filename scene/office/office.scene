@@ -2952,11 +2952,6 @@
           "Rigidbody": "0b47d8e9-840a-43f0-bab8-301152fc1889"
         },
         {
-          "__type": "DisplayNameComponent",
-          "__enabled": true,
-          "Name": "Fresh Coffee"
-        },
-        {
           "__type": "HoldDataComponent",
           "__enabled": true,
           "DebugDraw": false,
@@ -3007,11 +3002,6 @@
           "__enabled": false,
           "DragSpeed": 50,
           "Rigidbody": "3831a498-48ec-4e9f-9380-47f446980a72"
-        },
-        {
-          "__type": "DisplayNameComponent",
-          "__enabled": true,
-          "Name": "Tepid Coffee"
         },
         {
           "__type": "HoldDataComponent",
@@ -3067,11 +3057,6 @@
           "Rigidbody": "1b1ee131-fc17-44c5-bd30-c161106fc399"
         },
         {
-          "__type": "DisplayNameComponent",
-          "__enabled": true,
-          "Name": "Discarded Coffee"
-        },
-        {
           "__type": "HoldDataComponent",
           "__enabled": true,
           "DebugDraw": false,
@@ -3104,11 +3089,6 @@
           "Model": "models/vendingmachine/vendingmachine.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "DisplayNameComponent",
-          "__enabled": true,
-          "Name": "Drinks Machine"
         },
         {
           "__type": "SimpleDialogueComponent",
