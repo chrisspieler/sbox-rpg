@@ -8,8 +8,13 @@ public partial class RpgPlayerController
 	public void BlockLook( BaseComponent blocker ) => _lookBlockers.Add( blocker );
 	public void UnblockLook( BaseComponent blocker ) => _lookBlockers.Remove( blocker );
 	public bool IsLookBlocked => _lookBlockers.Any();
+	public void BlockMovement( BaseComponent blocker ) => _movementBlockers.Add( blocker );
+	public void UnblockMovement( BaseComponent blocker ) => _movementBlockers.Remove( blocker );
+	public bool IsMovementBlocked => _movementBlockers.Any();
+
 	private HashSet<BaseComponent> _thirdPersonBlockers = new HashSet<BaseComponent>();
 	private HashSet<BaseComponent> _lookBlockers = new HashSet<BaseComponent>();
+	private HashSet<BaseComponent> _movementBlockers = new HashSet<BaseComponent>();
 
 	private void UpdateBlockers()
 	{

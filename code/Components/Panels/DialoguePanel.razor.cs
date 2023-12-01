@@ -6,7 +6,7 @@ public partial class DialoguePanel : PanelComponent
 {
 	public static DialoguePanel Instance { get; private set; }
 	public static float DefaultCharacterDelay { get; set; } = 0.05f;
-	public bool IsDialogueActive => _currentCommand is not null;
+	public bool IsDialogueActive => CurrentCommand is not null;
 
 	public string SpeakerName
 	{
@@ -30,32 +30,51 @@ public partial class DialoguePanel : PanelComponent
 	public string DialogueFrameClass => string.IsNullOrWhiteSpace( SpeakerName ) ? "no-speaker" : "speaker";
 	private Panel DialogueFrame { get; set; }
 	private Panel NamePlate { get; set; }
-
+	public bool LockPlayer { get; set; } = true;
+	
 	public DialoguePanel()
 	{
 		Instance = this;
 	}
 
-	public DialogueCommand _currentCommand { get; private set; }
+	public DialogueCommand CurrentCommand
+	{
+		get => _currentCommand;
+		set
+		{
+			_currentCommand = value;
+
+			if ( LockPlayer && _currentCommand is not null )
+			{
+				RpgPlayerController.Instance.BlockLook( this );
+				RpgPlayerController.Instance.BlockMovement( this );
+				return;
+			}
+
+			RpgPlayerController.Instance.UnblockLook( this );
+			RpgPlayerController.Instance.UnblockMovement( this );
+		}
+	}
+	private DialogueCommand _currentCommand;
 	private List<DialogueCommand> _dialogueCommands = new();
 	private int _currentCommandIndex = 0;
 
 	protected override void OnUpdate()
 	{
-		if ( _currentCommand is null && _currentCommandIndex < _dialogueCommands.Count )
+		if ( CurrentCommand is null && _currentCommandIndex < _dialogueCommands.Count )
 		{
-			_currentCommand = _dialogueCommands[_currentCommandIndex];
+			CurrentCommand = _dialogueCommands[_currentCommandIndex];
 		}
 
 		// Process as many commands as will complete in a single tick, and
 		// if the current command does not end, we'll execute it again next tick.
-		while ( _currentCommand?.Execute() == false )
+		while ( CurrentCommand?.Execute() == false )
 		{
-			_currentCommand = null;
+			CurrentCommand = null;
 			_currentCommandIndex++;
 			if ( _currentCommandIndex < _dialogueCommands.Count )
 			{
-				_currentCommand = _dialogueCommands[_currentCommandIndex];
+				CurrentCommand = _dialogueCommands[_currentCommandIndex];
 			}
 		}
 	}
@@ -75,9 +94,10 @@ public partial class DialoguePanel : PanelComponent
 	{
 		SpeakerName = null;
 		ClearDialogueFrame();
-		_currentCommand = null;
+		CurrentCommand = null;
 		_dialogueCommands.Clear();
 		_currentCommandIndex = 0;
+		LockPlayer = true;
 		StateHasChanged();
 	}
 
@@ -94,6 +114,6 @@ public partial class DialoguePanel : PanelComponent
 
 	protected override int BuildHash()
 	{
-		return HashCode.Combine( SpeakerName, _currentCommand, _dialogueCommands.Count );
+		return HashCode.Combine( SpeakerName, CurrentCommand, _dialogueCommands.Count );
 	}
 }

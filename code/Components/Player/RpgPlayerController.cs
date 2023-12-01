@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace Sandbox;
+﻿namespace Sandbox;
 
 public partial class RpgPlayerController : BaseComponent
 {
+	public static RpgPlayerController Instance { get; private set; }
+
 	public bool EnableAutoWalk { get; set; }
 	public bool RunToggle { get; set; }
 	[Property] public GameObject Body { get; private set; }
@@ -20,6 +20,11 @@ public partial class RpgPlayerController : BaseComponent
 	public Angles EyeAngles;
 	// Consider making a separate partial file for state.
 	public bool IsFirstPerson => CameraState.CurrentState is FirstPersonCameraState;
+
+	public RpgPlayerController()
+	{
+		Instance = this;
+	}
 
 	protected override void OnStart()
 	{

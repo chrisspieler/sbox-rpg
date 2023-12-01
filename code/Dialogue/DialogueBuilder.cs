@@ -57,6 +57,17 @@ public class DialogueBuilder
 		return this;
 	}
 
+	public DialogueBuilder UnlockPlayer()
+	{
+		// For most dialogue, we don't want the player to move around, so we
+		// lock them in place by default.
+		Commands.Add( new DialogueActionCommand()
+		{
+			Action = () => DialoguePanel.Instance.LockPlayer = false
+		} );
+		return this;
+	}
+
 	public void Begin()
 	{
 		DialoguePanel.Instance.BeginDialogue( Commands );

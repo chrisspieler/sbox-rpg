@@ -10,6 +10,9 @@ public abstract class LocomotionState : PlayerState
 
 	protected virtual Vector3 GetMovementDirection( )
 	{
+		if ( Controller.IsMovementBlocked )
+			return Vector3.Zero;
+
 		var eyeRotation = Controller.EyeAngles.ToRotation();
 		var inputVec = Input.AnalogMove;
 		if ( Controller.EnableAutoWalk )
