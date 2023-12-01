@@ -109,7 +109,7 @@ public class DraggingHandState : HandState
 		Dragged?.Components.Get<DraggableComponent>( true )?.SetEnabled( true );
 		Dragged?.Components.Get<PhysicsFollowComponent>()?.Destroy();
 
-		if ( DraggedRigidbody is not null )
+		if ( DraggedRigidbody?.Enabled == true )
 		{
 			DraggedRigidbody.Velocity *= ThrowSpeedFactor;
 			var spinStrength = DraggedRigidbody.Velocity.Length * ThrowSpinFactor;
@@ -125,7 +125,7 @@ public class DraggingHandState : HandState
 
 	protected override void OnUpdate()
 	{
-		if ( Dragged?.IsValid != true || !Input.Down( "attack1" ) )
+		if ( Dragged?.IsValid != true || !Dragged.Tags.Has( "held" ) || !Input.Down( "attack1" ) )
 		{
 			ChangeState<EmptyHandState>();
 			return;
@@ -147,7 +147,7 @@ public class DraggingHandState : HandState
 	{
 		DraggedRigidbody ??= Dragged.Components.Get<PhysicsComponent>();
 
-		if ( Dragged is null || DraggedRigidbody is null )
+		if ( Dragged?.IsValid != true || DraggedRigidbody is null )
 		{
 			ChangeState<EmptyHandState>();
 			return;

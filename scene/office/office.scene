@@ -1637,6 +1637,77 @@
           "Static": true,
           "Surface": null
         }
+      ],
+      "Children": [
+        {
+          "Id": "d955d3d3-e130-4783-9322-b2dfb5136e97",
+          "Name": "Ducc NPC",
+          "Position": "5.442956,-9.27392,34",
+          "Rotation": "0.00000003956278,-0.0000000000000007306885,0.6637531,-0.7479509",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": null,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "DuccScript",
+              "__enabled": true
+            }
+          ],
+          "Children": [
+            {
+              "Id": "d805a462-db69-4789-802a-34639c5d7d23",
+              "Name": "Quest Item Drop Collider",
+              "Position": "0.3334706,-2.290473,10.63491",
+              "Rotation": "-0.00000003956283,-0.0000000000000006142212,-0.663754,-0.7479519",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TriggerCollectorComponent",
+                  "__enabled": true,
+                  "DebugDraw": true,
+                  "ExcludeAllTags": null,
+                  "IncludeAllTags": "coffee"
+                },
+                {
+                  "__type": "ColliderBoxComponent",
+                  "__enabled": true,
+                  "IsTrigger": true,
+                  "Scale": "24.6,19.6,23.53336",
+                  "Static": false,
+                  "Surface": null
+                }
+              ]
+            },
+            {
+              "Id": "80ed4b55-4875-48b1-9095-871f31d61323",
+              "Name": "Ducc Hold Point",
+              "Position": "5.168373,-5.463913,6.266736",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TriggerSnapPointComponent",
+                  "__enabled": true,
+                  "CollectorTarget": "d805a462-db69-4789-802a-34639c5d7d23"
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -2799,78 +2870,6 @@
       ]
     },
     {
-      "Id": "d955d3d3-e130-4783-9322-b2dfb5136e97",
-      "Name": "duck_decoration",
-      "Position": "7.094505,-421.2932,1.999983",
-      "Rotation": "0.00000005949782,0.000000000000005072535,0.9982077,-0.05983608",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/duck_decoration/duck_decoration.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/duck_decoration/duck_decoration.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DuccScript",
-          "__enabled": true
-        }
-      ]
-    },
-    {
-      "Id": "f7358603-3450-4ed8-a431-80ef0763b503",
-      "Name": "Ducc\u0027s Pepsi Max",
-      "Position": "23.67578,-416.9438,1.999992",
-      "Rotation": "-0.00000002965104,0.0000000000000003235615,-0.4974619,0.8674858",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/sbox_props/cola_can/cola_can.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/sbox_props/cola_can/cola_can.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "SimpleDialogueComponent",
-          "__enabled": true,
-          "AdvanceAfterDisplay": false,
-          "DialogueStartPrompt": "Examine",
-          "DialogueText": "Maximum sugar, no taste.",
-          "DisableAfterDisplay": true
-        },
-        {
-          "__type": "SimpleDialogueComponent",
-          "__enabled": true,
-          "AdvanceAfterDisplay": false,
-          "DialogueStartPrompt": "Examine",
-          "DialogueText": "In certain jurisdictions, this soda is a crime.",
-          "DisableAfterDisplay": false
-        }
-      ]
-    },
-    {
       "Id": "e72c6f5d-3ff5-4124-b30f-66db5f9f7ebf",
       "Name": "tv",
       "Position": "-162.0723,-235.2404,-0.00007025161",
@@ -2916,6 +2915,7 @@
       "Id": "0b47d8e9-840a-43f0-bab8-301152fc1889",
       "Name": "Fresh Coffee",
       "Position": "-1254.794,-96.65061,0.1191064",
+      "Tags": "coffee",
       "Enabled": true,
       "Components": [
         {
@@ -2942,7 +2942,7 @@
         },
         {
           "__type": "DraggableComponent",
-          "__enabled": false,
+          "__enabled": true,
           "DragSpeed": 50,
           "Rigidbody": "0b47d8e9-840a-43f0-bab8-301152fc1889"
         },
@@ -2968,6 +2968,7 @@
       "Id": "3831a498-48ec-4e9f-9380-47f446980a72",
       "Name": "Tepid Coffee",
       "Position": "-1379.214,703.1538,4.796735",
+      "Tags": "coffee",
       "Enabled": true,
       "Components": [
         {
@@ -2994,7 +2995,7 @@
         },
         {
           "__type": "DraggableComponent",
-          "__enabled": false,
+          "__enabled": true,
           "DragSpeed": 50,
           "Rigidbody": "3831a498-48ec-4e9f-9380-47f446980a72"
         },
@@ -3021,6 +3022,7 @@
       "Name": "Discarded Coffee",
       "Position": "-1061.656,883.0543,-30.64097",
       "Rotation": "-0.008443484,-0.02222604,0.7932109,-0.6084832",
+      "Tags": "coffee",
       "Enabled": true,
       "Components": [
         {
@@ -3047,7 +3049,7 @@
         },
         {
           "__type": "DraggableComponent",
-          "__enabled": false,
+          "__enabled": true,
           "DragSpeed": 50,
           "Rigidbody": "1b1ee131-fc17-44c5-bd30-c161106fc399"
         },
@@ -3488,7 +3490,6 @@
     "facepunch.office_desk",
     "facepunch.office_screen_01",
     "facepunch.pallet",
-    "facepunch.soda_can",
     "facepunch.storage_box_01",
     "facepunch.storage_box_02",
     "facepunch.storage_plastic_box_01",

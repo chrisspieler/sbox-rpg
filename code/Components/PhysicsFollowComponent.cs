@@ -21,7 +21,7 @@ public class PhysicsFollowComponent : BaseComponent
 
 	protected override void OnFixedUpdate()
 	{
-		if ( Target?.IsValid != true || Rigidbody is null )
+		if ( Target?.IsValid != true || Rigidbody?.Enabled != true )
 			return;
 
 		var goalPos = Target.Transform.Position;
