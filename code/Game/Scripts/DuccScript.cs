@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using System.Collections;
+
+namespace Sandbox;
 
 public class DuccScript : AffordanceComponent
 {
@@ -8,7 +10,8 @@ public class DuccScript : AffordanceComponent
 
 	protected override void OnStart()
 	{
-		var onboardingQuest = Quest.Begin<OnboardingQuest>();
+		var onboardingQuest = Quest.Get<OnboardingQuest>();
+		onboardingQuest.Begin();
 		var firstObjective = new Objective()
 		{
 			Description = "Speak to ducc, your new manager.",
@@ -21,8 +24,9 @@ public class DuccScript : AffordanceComponent
 	{
 		_interactionCounter++;
 
+		var coffeeQuest = Quest.Get<DuccCoffeeQuest>();
 		// Reminder to get coffee.
-		if ( Quest.HasBegun<DuccCoffeeQuest>() )
+		if ( coffeeQuest.State == Quest.QuestState.InProgress )
 		{
 			DuccCoffeeQuest.CoffeeReminderDialogue.Begin();
 			return;
@@ -48,7 +52,6 @@ public class DuccScript : AffordanceComponent
 			.AddBlock( "I have an important task for you, yes." )
 			.AddBlock( "You will be fetching me coffee." )
 		    .BeginQuest<DuccCoffeeQuest>()
-			.PushObjective<DuccCoffeeQuest>( new Objective( "Bring ducc some coffee." ))
 			.AddBlock( "Now, get to it!" );
 
 	private DialogueBuilder FlavorDialogue

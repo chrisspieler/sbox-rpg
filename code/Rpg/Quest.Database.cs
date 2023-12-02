@@ -24,19 +24,6 @@ public abstract partial class Quest
 		_questDb.Clear();
 	}
 
-	public static Quest Begin<T>() where T : Quest, new()
-	{
-		var quest = _questDb
-			.Values
-			.OfType<T>()
-			.FirstOrDefault() ?? new T();
-		quest.State = QuestState.InProgress;
-		return quest;
-	}
-
-	public static bool HasBegun<T>() where T : Quest
-		=> _questDb.Values.OfType<T>().Any( x => x.State != QuestState.NotStarted );
-
 	public static Quest Get<T> () where T : Quest
 		=> _questDb.Values.OfType<T>().FirstOrDefault();
 

@@ -44,6 +44,30 @@ public abstract partial class Quest
 		}
 	}
 
+	public void Begin()
+	{
+		Assert.True( State == QuestState.NotStarted, $"Quest {Id} is already started" );
+		State = QuestState.InProgress;
+		OnBegin();
+	}
+
+	public void Complete()
+	{
+		Assert.True( State == QuestState.InProgress, $"Quest {Id} is not in progress" );
+		State = QuestState.Completed;
+		OnEnd();
+	}
+
+	public void Fail()
+	{
+		Assert.True( State == QuestState.InProgress, $"Quest {Id} is not in progress" );
+		State = QuestState.Failed;
+		OnEnd();
+	}
+
+	protected virtual void OnBegin() { }
+	protected virtual void OnEnd() { }
+
 	public IEnumerable<Objective> GetCompletedObjectives() => CompletedObjectives;
 	public IEnumerable<Objective> GetActiveObjectives() => ActiveObjectives;
 	public void AddObjective( Objective objective ) => ActiveObjectives.Add( objective );

@@ -4,6 +4,11 @@ public class DialogueBuilder
 {
 	public List<DialogueCommand> Commands { get; private set; } = new();
 
+	public static DialogueBuilder Create( string speaker = null )
+	{
+		return new DialogueBuilder().SetSpeaker( speaker );
+	}
+
 	public DialogueBuilder SetSpeaker( string speakerName, GameObject speakerGo = null )
 	{
 		Commands.Add( new DialogueSetSpeakerCommand()
@@ -41,7 +46,7 @@ public class DialogueBuilder
 	{
 		Commands.Add( new DialogueActionCommand()
 		{
-			Action = () => Quest.Begin<T>()
+			Action = () => Quest.Get<T>().Begin()
 		} );
 		return this;
 	}

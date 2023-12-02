@@ -1,11 +1,23 @@
-﻿using System.Numerics;
-
-namespace Sandbox;
+﻿namespace Sandbox;
 
 public class TriggerSnapPointComponent : BaseComponent
 {
 	[Property] public TriggerCollectorComponent CollectorTarget { get; set; }
-	[Property] public GameObject Snapped { get; set; }
+	[Property] public GameObject Snapped 
+	{
+		get => _snapped;
+		set
+		{
+			var oldValue = _snapped;
+			_snapped = value;
+			if ( _snapped != oldValue )
+			{
+				SnappedChanged?.Invoke( this, _snapped );
+			}
+		}
+	}
+	private GameObject _snapped;
+	public event EventHandler<GameObject> SnappedChanged;
 
 	protected override void OnStart()
 	{
@@ -34,5 +46,6 @@ public class TriggerSnapPointComponent : BaseComponent
 		collider.Transform.LocalPosition = Vector3.Zero;
 		collider.Transform.LocalRotation = Rotation.Identity;
 		Snapped = collider.GameObject;
+		SnappedChanged?.Invoke( this, Snapped );
 	}
 }

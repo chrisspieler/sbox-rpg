@@ -1647,25 +1647,9 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Npc",
               "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "MaterialOverride": null,
-              "Model": "models/duck_decoration/duck_decoration.vmdl",
-              "ShouldCastShadows": true,
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "ModelCollider",
-              "__enabled": true,
-              "IsTrigger": false,
-              "Model": "models/duck_decoration/duck_decoration.vmdl",
-              "Static": false,
-              "Surface": null
-            },
-            {
-              "__type": "DuccScript",
-              "__enabled": true
+              "Id": "ducc"
             }
           ],
           "Children": [
@@ -1674,13 +1658,12 @@
               "Name": "Quest Item Drop Collider",
               "Position": "0.3334706,-2.290473,10.63491",
               "Rotation": "-0.00000003956283,-0.0000000000000006142212,-0.663754,-0.7479519",
-              "Enabled": true,
               "Components": [
                 {
                   "__type": "TriggerCollectorComponent",
                   "__enabled": true,
                   "DebugDraw": true,
-                  "ExcludeAllTags": null,
+                  "ExcludeAllTags": "",
                   "IncludeAllTags": "coffee"
                 },
                 {
@@ -1703,6 +1686,35 @@
                   "__type": "TriggerSnapPointComponent",
                   "__enabled": true,
                   "CollectorTarget": "d805a462-db69-4789-802a-34639c5d7d23"
+                }
+              ]
+            },
+            {
+              "Id": "2ee8882f-9312-4d12-8fd0-9345923ba7c3",
+              "Name": "Ducc Model",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": null,
+                  "Model": "models/duck_decoration/duck_decoration.vmdl",
+                  "ShouldCastShadows": true,
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "ModelCollider",
+                  "__enabled": true,
+                  "IsTrigger": false,
+                  "Model": "models/duck_decoration/duck_decoration.vmdl",
+                  "Static": false,
+                  "Surface": null
+                },
+                {
+                  "__type": "DuccScript",
+                  "__enabled": true
                 }
               ]
             }
@@ -3012,7 +3024,7 @@
           "__enabled": true,
           "AdvanceAfterDisplay": false,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "A lukewarm coffee sits abandoned on the break room table.",
+          "DialogueText": "This lukewarm coffee sat abandoned on the break room table.",
           "DisableAfterDisplay": false
         }
       ]
@@ -3066,7 +3078,7 @@
           "__enabled": true,
           "AdvanceAfterDisplay": false,
           "DialogueStartPrompt": "Examine",
-          "DialogueText": "A cold, funky brew was left beside the bin.",
+          "DialogueText": "This cold, funky brew was left beside the bin.",
           "DisableAfterDisplay": false
         }
       ]
