@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox.Diagnostics;
+
+namespace Sandbox;
 
 public class DuccCoffeeQuest : Quest
 {
@@ -20,16 +22,7 @@ public class DuccCoffeeQuest : Quest
 	{
 		AddObjective( new Objective("Bring ducc a coffee", () => GaveDuccCoffee) );
 		Ducc = Npc.Get( "ducc" );
-		if ( Ducc == null )
-		{
-			Log.Error( "Ducc not found!" );
-			return;
-		}
-		else
-		{
-			Log.Info( "Found ducc" );
-		}
-
+		Assert.NotNull( Ducc );
 		Ducc.SetHoldEnabled( true );
 		Ducc.HeldObjectChanged += HeldObjectChanged;
 	}
