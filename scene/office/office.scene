@@ -1662,7 +1662,7 @@
                 {
                   "__type": "TriggerCollectorComponent",
                   "__enabled": true,
-                  "DebugDraw": true,
+                  "DebugDraw": false,
                   "ExcludeAllTags": "",
                   "IncludeAllTags": "coffee"
                 },
