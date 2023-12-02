@@ -68,6 +68,7 @@ public class DuccCoffeeQuest : Quest
 			CoffeeQuality = 0;
 		}
 		GaveDuccCoffee = true;
+		Ducc.HeldObjectChanged -= HeldObjectChanged;
 		if ( CoffeeQuality >= 1 )
 		{
 			Complete();
