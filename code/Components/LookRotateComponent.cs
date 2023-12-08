@@ -3,7 +3,7 @@
 /// <summary>
 /// A component that rotates its GameObject using AnalogLook.
 /// </summary>
-public class LookRotateComponent : BaseComponent
+public class LookRotateComponent : Component
 {
 	[Property, Range(0, 1080f, 20f)] public float XSpeed { get; set; } = 720f;
 	[Property] public bool InvertX { get; set; } = true;

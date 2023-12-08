@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class TriggerCollectorComponent : BaseComponent, BaseComponent.ITriggerListener
+public class TriggerCollectorComponent : Component, Component.ITriggerListener
 {
 	[Property] public bool DebugDraw { get; set; }
 	[Property] public TagSet IncludeAllTags { get; set; } = new();

@@ -2,7 +2,7 @@
 
 public static class BaseComponentExtensions
 {
-	public static void SetEnabled( this BaseComponent component, bool enabled )
+	public static void SetEnabled( this Component component, bool enabled )
 	{
 		component.Enabled = enabled;
 	}

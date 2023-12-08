@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class PlayerState : BaseComponent
+public class PlayerState : Component
 {
 	protected PlayerStateMachine StateMachine
 		=> _stateMachine ??= Components.Get<PlayerStateMachine>();

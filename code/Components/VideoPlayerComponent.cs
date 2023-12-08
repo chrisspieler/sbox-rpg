@@ -5,7 +5,7 @@ namespace Sandbox;
 [Title( "Video Player" )]
 [Category( "Light" )]
 [Icon( "videocam", "red", "white" )]
-public class VideoPlayerComponent : BaseComponent
+public class VideoPlayerComponent : Component
 {
 	[Property]
 	public DynamicTextureComponent TextureTarget { get; set; }

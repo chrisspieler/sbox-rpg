@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public abstract class TextureEffectComponent : BaseComponent
+public abstract class TextureEffectComponent : Component
 {
 	public abstract Texture Apply( Texture texture );
 

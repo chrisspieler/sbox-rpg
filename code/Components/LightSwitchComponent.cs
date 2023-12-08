@@ -6,7 +6,7 @@ public class LightSwitchComponent : AffordanceComponent
 	[Property] public string OnMaterialGroup { get; set; }
 	[Property] public Color OffColor { get; set; } = Color.Black;
 	[Property] public string OffMaterialGroup { get; set; }
-	[Property] public PointLightComponent TargetLight { get; set; }
+	[Property] public PointLight TargetLight { get; set; }
 	[Property] public ModelRenderer TargetLightModel { get; set; }
 	public override string AffordanceText => "Toggle Light";
 

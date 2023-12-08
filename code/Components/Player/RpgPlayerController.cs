@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public partial class RpgPlayerController : BaseComponent
+public partial class RpgPlayerController : Component
 {
 	public static RpgPlayerController Instance { get; private set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class QuestDebugOverlayComponent : BaseComponent
+public class QuestDebugOverlayComponent : Component
 {
 	private const int TEXT_START_Y = 10;
 	private const int TEXT_LINE_HEIGHT = 20;

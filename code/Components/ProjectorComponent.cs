@@ -2,7 +2,7 @@
 
 public class ProjectorComponent : DynamicTextureComponent
 {
-	[Property] public SpotLightComponent Light { get; set; }
+	[Property] public SpotLight Light { get; set; }
 
 	public override void OnPostEffect()
 	{

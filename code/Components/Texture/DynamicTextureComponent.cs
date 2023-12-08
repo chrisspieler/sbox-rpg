@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class DynamicTextureComponent : BaseComponent
+public class DynamicTextureComponent : Component
 {
 	[Property, Range(1, 60, 1)] public float MaxUpdatesPerSecond { get; set; } = 15f;
 	public Texture InputTexture { get; private set; }

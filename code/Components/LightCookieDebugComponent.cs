@@ -1,13 +1,13 @@
 ﻿namespace Sandbox;
 
-public class LightCookieDebugComponent : BaseComponent
+public class LightCookieDebugComponent : Component
 {
-	[Property] public SpotLightComponent SpotLight { get; set; }
+	[Property] public SpotLight SpotLight { get; set; }
 	[Property] public bool IgnoreDepth { get; set; } = false;
 
 	protected override void OnUpdate()
 	{
-		SpotLight ??= Components.Get<SpotLightComponent>();
+		SpotLight ??= Components.Get<SpotLight>();
 		if ( SpotLight is null )
 			return;
 

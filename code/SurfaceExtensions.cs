@@ -8,7 +8,8 @@ public static class SurfaceExtensions
 
 		if ( !string.IsNullOrWhiteSpace( sound ) )
 		{
-			Sound.FromWorld( sound, tr.EndPosition ).SetVolume( volume );
+			var hSnd = Sound.Play( sound, tr.EndPosition );
+			hSnd.Volume = volume;
 		}
 		else
 		{

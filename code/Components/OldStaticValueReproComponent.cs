@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class OldStaticValueReproComponent : BaseComponent
+public class OldStaticValueReproComponent : Component
 {
 	private static int _staticCounter = 0;
 	private static Dictionary<float, object> _staticDictionary = new();

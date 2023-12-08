@@ -2,19 +2,19 @@
 
 public partial class RpgPlayerController
 {
-	public void BlockThirdPerson( BaseComponent blocker ) => _thirdPersonBlockers.Add( blocker );
-	public void UnblockThirdPerson( BaseComponent blocker ) => _thirdPersonBlockers.Remove( blocker );
+	public void BlockThirdPerson( Component blocker ) => _thirdPersonBlockers.Add( blocker );
+	public void UnblockThirdPerson( Component blocker ) => _thirdPersonBlockers.Remove( blocker );
 	public bool IsThirdPersonBlocked => _thirdPersonBlockers.Any();
-	public void BlockLook( BaseComponent blocker ) => _lookBlockers.Add( blocker );
-	public void UnblockLook( BaseComponent blocker ) => _lookBlockers.Remove( blocker );
+	public void BlockLook( Component blocker ) => _lookBlockers.Add( blocker );
+	public void UnblockLook( Component blocker ) => _lookBlockers.Remove( blocker );
 	public bool IsLookBlocked => _lookBlockers.Any();
-	public void BlockMovement( BaseComponent blocker ) => _movementBlockers.Add( blocker );
-	public void UnblockMovement( BaseComponent blocker ) => _movementBlockers.Remove( blocker );
+	public void BlockMovement( Component blocker ) => _movementBlockers.Add( blocker );
+	public void UnblockMovement( Component blocker ) => _movementBlockers.Remove( blocker );
 	public bool IsMovementBlocked => _movementBlockers.Any();
 
-	private HashSet<BaseComponent> _thirdPersonBlockers = new HashSet<BaseComponent>();
-	private HashSet<BaseComponent> _lookBlockers = new HashSet<BaseComponent>();
-	private HashSet<BaseComponent> _movementBlockers = new HashSet<BaseComponent>();
+	private HashSet<Component> _thirdPersonBlockers = new HashSet<Component>();
+	private HashSet<Component> _lookBlockers = new HashSet<Component>();
+	private HashSet<Component> _movementBlockers = new HashSet<Component>();
 
 	private void UpdateBlockers()
 	{
@@ -22,7 +22,7 @@ public partial class RpgPlayerController
 		UpdateBlockerSet( _lookBlockers );
 	}
 
-	private static void UpdateBlockerSet( HashSet<BaseComponent> blockerSource )
+	private static void UpdateBlockerSet( HashSet<Component> blockerSource )
 	{
 		var blockers = blockerSource.ToArray();
 		foreach ( var blocker in blockers )

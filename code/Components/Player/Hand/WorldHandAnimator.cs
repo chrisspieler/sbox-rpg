@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class WorldHandAnimator : BaseComponent
+public class WorldHandAnimator : Component
 {
 	[Property] public SkinnedModelRenderer Target { get; set; }
 

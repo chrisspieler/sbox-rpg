@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class PhysicsFollowComponent : BaseComponent
+public class PhysicsFollowComponent : Component
 {
 	[Property] public PhysicsComponent Rigidbody { get; set; }
 	[Property] public GameObject Target { get; set; }

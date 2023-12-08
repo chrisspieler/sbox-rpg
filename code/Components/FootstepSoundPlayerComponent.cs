@@ -2,7 +2,7 @@
 
 namespace Sandbox;
 
-public class FootstepSoundPlayerComponent : BaseComponent
+public class FootstepSoundPlayerComponent : Component
 {
 	[Property] public SkinnedModelRenderer Source 
 	{

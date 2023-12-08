@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class PlayerStateMachine : BaseComponent
+public class PlayerStateMachine : Component
 {
 	[Property] public RpgPlayerController Controller { get; set; }
 	public PlayerState NextState { get; private set; }

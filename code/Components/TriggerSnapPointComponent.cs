@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class TriggerSnapPointComponent : BaseComponent
+public class TriggerSnapPointComponent : Component
 {
 	[Property] public TriggerCollectorComponent CollectorTarget { get; set; }
 	[Property] public GameObject Snapped 

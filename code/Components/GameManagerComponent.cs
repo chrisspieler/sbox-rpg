@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class GameManagerComponent : BaseComponent
+public class GameManagerComponent : Component
 {
 	protected override void OnAwake()
 	{

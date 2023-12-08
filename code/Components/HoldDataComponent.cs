@@ -1,6 +1,6 @@
 ﻿namespace Sandbox;
 
-public class HoldDataComponent : BaseComponent
+public class HoldDataComponent : Component
 {
 	[Property] public Vector3 HoldPosition { get; set; }
 	[Property] public Rotation HoldRotation { get; set; }

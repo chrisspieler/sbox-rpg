@@ -5,7 +5,7 @@
 /// The action key and some text are displayed to the player when they are
 /// able to act.
 /// </summary>
-public class AffordanceComponent : BaseComponent
+public class AffordanceComponent : Component
 {
 	public virtual string AffordanceText => "Use";
 	public virtual string ActionButton => "use";
