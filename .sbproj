@@ -209,6 +209,7 @@
           "GroupName": "Movement"
         }
       ]
-    }
+    },
+    "StartupScene": "scene/office/office.scene"
   }
 }
