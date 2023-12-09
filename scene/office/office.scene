@@ -3508,6 +3508,16 @@
       "Position": "10.04355,-146.4097,-32.00005",
       "Rotation": "0.00000005604877,0.000000000000003498483,0.9403422,0.3402306",
       "Enabled": true,
+      "Components": [
+        {
+          "__type": "Outfit",
+          "__enabled": true,
+          "Jacket": "models/citizen_clothes/jacket/puffer_jacket/puffer_jacket_blue.clothing",
+          "Legs": "models/citizen_clothes/trousers/cargopants/binman_trousers.clothing",
+          "Shirt": "models/citizen_clothes/shirt/tanktop/tanktop.clothing",
+          "Target": "6c62d76a-1bf0-4474-aa52-527e283f66c6"
+        }
+      ],
       "Children": [
         {
           "Id": "af0bb4b6-47c3-4388-80f9-7aee1605349f",
