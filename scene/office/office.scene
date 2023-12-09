@@ -59,7 +59,7 @@
           "Acceleration": 10,
           "GroundAngle": 45,
           "Height": 64,
-          "IgnoreLayers": "held",
+          "IgnoreLayers": "held,player,trigger",
           "Radius": 16,
           "StepHeight": 18
         },
@@ -1220,6 +1220,57 @@
               "IgnoreZ": true,
               "MoveSpeed": 160,
               "RotateBodyWithCamera": true
+            }
+          ]
+        },
+        {
+          "Id": "aa45eba1-4dbb-4cb8-b08a-456695f24648",
+          "Name": "Feet Collider",
+          "Position": "-0.000000000000009769963,0.0000000000004796163,10.64018",
+          "Tags": "player",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ColliderSphereComponent",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Radius": 13,
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c35e1b54-fb87-48e6-bf3a-60b8548970d6",
+          "Name": "Bell End Collider",
+          "Position": "0.0000002438723,-0.0000004626662,60.89289",
+          "Tags": "player",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ColliderSphereComponent",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Radius": 13,
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3d378938-5130-4862-890b-0643eead8445",
+          "Name": "Body Collider",
+          "Position": "-0.0000000000000164313,0.000000000001473932,34.04616",
+          "Tags": "player",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ColliderBoxComponent",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Scale": "15,15,50",
+              "Static": false,
+              "Surface": null
             }
           ]
         }
@@ -3450,11 +3501,102 @@
           "DisableAfterDisplay": false
         }
       ]
+    },
+    {
+      "Id": "a2078aa1-6912-489c-8305-c9cfb0087dfd",
+      "Name": "Dubiously Dressed Andy",
+      "Position": "10.04355,-146.4097,-32.00005",
+      "Rotation": "0.00000005604877,0.000000000000003498483,0.9403422,0.3402306",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "af0bb4b6-47c3-4388-80f9-7aee1605349f",
+          "Name": "Look Collector",
+          "Position": "0,0,0",
+          "Tags": "trigger",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Looker",
+              "__enabled": true,
+              "Animator": "6c62d76a-1bf0-4474-aa52-527e283f66c6",
+              "TriggerCollector": "af0bb4b6-47c3-4388-80f9-7aee1605349f"
+            },
+            {
+              "__type": "ColliderSphereComponent",
+              "__enabled": true,
+              "IsTrigger": true,
+              "Radius": 149.46666,
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "TriggerCollectorComponent",
+              "__enabled": true,
+              "DebugDraw": false,
+              "ExcludeAllTags": "",
+              "IncludeAllTags": "player"
+            }
+          ]
+        },
+        {
+          "Id": "6c62d76a-1bf0-4474-aa52-527e283f66c6",
+          "Name": "Model",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__enabled": true,
+              "IsTrigger": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "SimpleDialogueComponent",
+              "__enabled": true,
+              "AdvanceAfterDisplay": false,
+              "DialogueStartPrompt": "Talk",
+              "DialogueText": "How do I look? Please... be honest.",
+              "DisableAfterDisplay": false
+            },
+            {
+              "__type": "DisplayNameComponent",
+              "__enabled": true,
+              "Name": "Dubiously Dressed Andy"
+            },
+            {
+              "__type": "CitizenAnimation",
+              "__enabled": true,
+              "EyeSource": null,
+              "Height": 1,
+              "IkLeftFoot": null,
+              "IkLeftHand": null,
+              "IkRightFoot": null,
+              "IkRightHand": null,
+              "LookAtObject": null,
+              "Target": "6c62d76a-1bf0-4474-aa52-527e283f66c6"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
-    "UseFixedUpdate": true,
     "Lerping": true,
+    "UseFixedUpdate": true,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "MaxFixedUpdates": 5,
