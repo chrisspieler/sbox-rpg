@@ -27,16 +27,7 @@ public partial class Outfit
 				sceneModel.Update( 0.1f );
 			}
 
-			if ( apparel.HideBodyGroups.HasFlag( Clothing.BodyGroups.Head ) )
-				Target.SceneModel.SetBodyGroup( "head", 1 );
-			if ( apparel.HideBodyGroups.HasFlag( Clothing.BodyGroups.Chest ) )
-				Target.SceneModel.SetBodyGroup( "Chest", 1 );
-			if ( apparel.HideBodyGroups.HasFlag( Clothing.BodyGroups.Hands ) )
-				Target.SceneModel.SetBodyGroup( "Hands", 1 );
-			if ( apparel.HideBodyGroups.HasFlag( Clothing.BodyGroups.Legs ) )	
-				Target.SceneModel.SetBodyGroup( "Legs", 1 );
-			if ( apparel.HideBodyGroups.HasFlag( Clothing.BodyGroups.Feet ) )
-				Target.SceneModel.SetBodyGroup( "Feet", 1 );
+			apparel.HideBodyGroups.ApplyToModel( Target.SceneModel );
 		}
 	}
 
@@ -47,10 +38,6 @@ public partial class Outfit
 			model.Delete();
 		}
 		_editorClothing.Clear();
-		Target.SceneModel.SetBodyGroup( "head", 0 );
-		Target.SceneModel.SetBodyGroup( "Chest", 0 );
-		Target.SceneModel.SetBodyGroup( "Hands", 0 );
-		Target.SceneModel.SetBodyGroup( "Legs", 0 );
-		Target.SceneModel.SetBodyGroup( "Feet", 0 );
+		ClearBodyGroups();
 	}
 }

@@ -83,4 +83,13 @@ public partial class Outfit : Component, Component.ExecuteInEditor
 			EditorDeleteClothing();
 		}
 	}
+
+	private void ClearBodyGroups()
+	{
+		Target.SceneModel.SetBodyGroup( "head", 0 );
+		Target.SceneModel.SetBodyGroup( "Chest", 0 );
+		Target.SceneModel.SetBodyGroup( "Hands", 0 );
+		Target.SceneModel.SetBodyGroup( "Legs", 0 );
+		Target.SceneModel.SetBodyGroup( "Feet", 0 );
+	}
 }
