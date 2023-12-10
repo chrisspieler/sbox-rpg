@@ -146,6 +146,7 @@ public class Outfit : Component, Component.ExecuteInEditor
 		var clothingGo = new GameObject( true, name );
 		clothingGo.Parent = Target.GameObject;
 		clothingGo.Transform.World = Target.Transform.World;
+		clothingGo.Tags.Add( "clothing" );
 		var renderer = clothingGo.Components.Create<SkinnedModelRenderer>();
 		renderer.Model = Model.Load( clothing.Model );
 		renderer.BoneMergeTarget = Target;

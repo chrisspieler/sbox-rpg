@@ -61,6 +61,13 @@ public partial class RpgPlayerController : Component
 			var renderer = Body.Components.Get<SkinnedModelRenderer>();
 			renderer.Tint = renderer.Tint.WithAlpha( alpha );
 			renderer.ShouldCastShadows = castShadow;
+			var clothing = Body.Children.Where( c => c.Tags.Has( "clothing" ) );
+			foreach ( var child in clothing )
+			{
+				var childRenderer = child.Components.Get<SkinnedModelRenderer>();
+				childRenderer.Tint = childRenderer.Tint.WithAlpha( alpha );
+				childRenderer.ShouldCastShadows = castShadow;
+			}
 		}
 	}
 
