@@ -9,6 +9,9 @@ public partial class Outfit
 		if ( Target is null || Target.SceneModel is null )
 			return;
 
+		var humanData = Components.Get<Human>();
+		var skinMaterial = humanData?.SkinMaterial;
+
 		foreach( var apparel in EquippedApparel )
 		{
 			if ( apparel is null )
@@ -18,6 +21,10 @@ public partial class Outfit
 			{
 				var renderer = CreateClothes( apparel.Name, model );
 				_clothingObjects.Add( renderer );
+				if ( skinMaterial is not null )
+				{
+					renderer.SceneModel.SetMaterialOverride( skinMaterial, "skin" );
+				}
 			}
 
 			apparel.HideBodyGroups.ApplyToModel( Target.SceneModel );

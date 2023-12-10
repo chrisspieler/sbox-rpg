@@ -3528,6 +3528,14 @@
             "data/items/clothing/shoes_slippers.apparel"
           ],
           "Target": "6c62d76a-1bf0-4474-aa52-527e283f66c6"
+        },
+        {
+          "__type": "Human",
+          "__enabled": true,
+          "Age": "Adult",
+          "Body": "6c62d76a-1bf0-4474-aa52-527e283f66c6",
+          "Gender": "Masculine",
+          "SkinTone": "Light"
         }
       ],
       "Children": [

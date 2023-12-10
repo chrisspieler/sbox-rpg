@@ -9,7 +9,10 @@ public partial class Outfit
 		if ( Target is null || Target.SceneModel is null )
 			return;
 
-		foreach( var apparel in EquippedApparel )
+		var humanData = Components.Get<Human>();
+		var skinMaterial = humanData?.SkinMaterial;
+
+		foreach ( var apparel in EquippedApparel )
 		{
 			if ( apparel?.EquippedModels is null )
 				continue;
@@ -18,11 +21,14 @@ public partial class Outfit
 
 			foreach( var model in apparel.EquippedModels )
 			{
-				var loadedModel = Model.Load( model );
 				var parent = Target.SceneModel;
 				var sceneModel = new SceneModel( world, model, parent.Transform );
 				_editorClothing.Add( sceneModel );
 				parent.AddChild( "clothing", sceneModel );
+				if ( skinMaterial is not null )
+				{
+					sceneModel.SetMaterialOverride( skinMaterial, "skin" );
+				}
 				sceneModel.MergeBones( parent );
 				sceneModel.Update( 0.1f );
 			}

@@ -60,7 +60,7 @@ public partial class Outfit : Component, Component.ExecuteInEditor
 		DeleteClothing();
 	}
 
-	private void UpdateOutfit()
+	public void UpdateOutfit()
 	{
 		if ( GameManager.IsPlaying )
 		{
@@ -86,6 +86,9 @@ public partial class Outfit : Component, Component.ExecuteInEditor
 
 	private void ClearBodyGroups()
 	{
+		if ( Target?.SceneModel is null )
+			return;
+
 		Target.SceneModel.SetBodyGroup( "head", 0 );
 		Target.SceneModel.SetBodyGroup( "Chest", 0 );
 		Target.SceneModel.SetBodyGroup( "Hands", 0 );
