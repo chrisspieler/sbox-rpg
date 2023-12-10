@@ -61,12 +61,11 @@ public partial class RpgPlayerController : Component
 			var renderer = Body.Components.Get<SkinnedModelRenderer>();
 			renderer.Tint = renderer.Tint.WithAlpha( alpha );
 			renderer.ShouldCastShadows = castShadow;
-			var clothing = Body.Children.Where( c => c.Tags.Has( "clothing" ) );
-			foreach ( var child in clothing )
+			var outfit = Components.Get<Outfit>( true );
+			if ( outfit is not null )
 			{
-				var childRenderer = child.Components.Get<SkinnedModelRenderer>();
-				childRenderer.Tint = childRenderer.Tint.WithAlpha( alpha );
-				childRenderer.ShouldCastShadows = castShadow;
+				// Quick and dirty fix for body group issues when switching out of first person.
+				outfit.Enabled = alpha > 0;
 			}
 		}
 	}
