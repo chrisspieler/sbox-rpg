@@ -1,0 +1,11 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/trousers/loosejeans/models/loose_jeans.vmdl"
+  ],
+  "Slots": "Legs",
+  "HideBodyGroups": "Legs",
+  "Name": "Loose Jeans",
+  "Weight": 2.5,
+  "Value": 30,
+  "__references": []
+}

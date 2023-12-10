@@ -1,0 +1,11 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/trousers/cargopants/models/brown_cargo_pants.vmdl"
+  ],
+  "Slots": "Legs",
+  "HideBodyGroups": "Legs",
+  "Name": "Cargo Pants",
+  "Weight": 2.5,
+  "Value": 45,
+  "__references": []
+}

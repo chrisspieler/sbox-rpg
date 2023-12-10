@@ -1,0 +1,11 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/shoes/slippers/models/slippers.vmdl"
+  ],
+  "Slots": "Feet",
+  "HideBodyGroups": 0,
+  "Name": "Slippers",
+  "Weight": 0.5,
+  "Value": 15,
+  "__references": []
+}

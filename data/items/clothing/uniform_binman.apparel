@@ -1,0 +1,13 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/shirt/polo_shirt/models/binman_shirt.vmdl",
+    "models/citizen_clothes/trousers/cargopants/models/binman_trousers.vmdl",
+    "models/citizen_clothes/shoes/boots/models/black_boots.vmdl"
+  ],
+  "Slots": "Legs, Feet",
+  "HideBodyGroups": "Chest, Legs, Feet",
+  "Name": "Binman Uniform",
+  "Weight": 8,
+  "Value": 250,
+  "__references": []
+}

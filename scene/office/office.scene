@@ -79,6 +79,16 @@
           "__enabled": true,
           "DebugDraw": false,
           "Source": "24459ae6-e48f-453c-8e8f-82076e54b7b8"
+        },
+        {
+          "__type": "Outfit",
+          "__enabled": true,
+          "EquippedApparel": [
+            "data/items/clothing/pants_cargo.apparel",
+            "data/items/clothing/shoes_sneakers.apparel",
+            "data/items/clothing/shirt_buttoned.apparel"
+          ],
+          "Target": "24459ae6-e48f-453c-8e8f-82076e54b7b8"
         }
       ],
       "Children": [
@@ -3512,9 +3522,11 @@
         {
           "__type": "Outfit",
           "__enabled": true,
-          "Jacket": "models/citizen_clothes/jacket/puffer_jacket/puffer_jacket_blue.clothing",
-          "Legs": "models/citizen_clothes/trousers/cargopants/binman_trousers.clothing",
-          "Shirt": "models/citizen_clothes/shirt/tanktop/tanktop.clothing",
+          "EquippedApparel": [
+            "data/items/clothing/pants_jeans.apparel",
+            "data/items/clothing/shirt_casual.apparel",
+            "data/items/clothing/shoes_slippers.apparel"
+          ],
           "Target": "6c62d76a-1bf0-4474-aa52-527e283f66c6"
         }
       ],

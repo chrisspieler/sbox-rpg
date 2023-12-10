@@ -1,0 +1,11 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/shirt/buttoned_shirt/models/buttoned_shirt.vmdl"
+  ],
+  "Slots": "Torso",
+  "HideBodyGroups": "Chest",
+  "Name": "White Buttoned Shirt",
+  "Weight": 1.5,
+  "Value": 35,
+  "__references": []
+}

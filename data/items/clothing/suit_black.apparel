@@ -1,0 +1,12 @@
+{
+  "EquippedModels": [
+    "models/citizen_clothes/jacket/suitjacket/suitjacket.vmdl",
+    "models/citizen_clothes/trousers/smarttrousers/smarttrousers.vmdl"
+  ],
+  "Slots": "Legs",
+  "HideBodyGroups": "Chest, Legs",
+  "Name": "Black Suit",
+  "Weight": 5,
+  "Value": 2000,
+  "__references": []
+}
