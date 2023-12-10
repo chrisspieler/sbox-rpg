@@ -15,7 +15,7 @@ public class LightSwitchComponent : AffordanceComponent
 		get => _isOn;
 		set
 		{
-			if ( !global::GameManager.IsPlaying )
+			if ( !GameManager.IsPlaying )
 			{
 				_isOn = value;
 				return;

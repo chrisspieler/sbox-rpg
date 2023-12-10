@@ -56,7 +56,7 @@ public class Outfit : Component, Component.ExecuteInEditor
 
 	private void UpdateOutfit()
 	{
-		if ( global::GameManager.IsPlaying )
+		if ( GameManager.IsPlaying )
 		{
 			RuntimeUpdateOutfit();
 		}
@@ -68,7 +68,7 @@ public class Outfit : Component, Component.ExecuteInEditor
 
 	private void DeleteClothing()
 	{
-		if ( global::GameManager.IsPlaying )
+		if ( GameManager.IsPlaying )
 		{
 			RuntimeDeleteClothing();
 		}
