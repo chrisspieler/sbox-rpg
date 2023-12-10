@@ -1,9 +1,11 @@
 {
-  "EquippedModels": null,
-  "Slots": "Head",
-  "HideBodyGroups": 0,
-  "Name": null,
-  "Weight": 0,
-  "Value": 0,
+  "EquippedModels": [
+    "models/citizen_clothes/shirt/tshirt/models/tshirt.vmdl"
+  ],
+  "Slots": "Torso",
+  "HideBodyGroups": "Chest",
+  "Name": "Casual T-Shirt",
+  "Weight": 1.5,
+  "Value": 20,
   "__references": []
 }

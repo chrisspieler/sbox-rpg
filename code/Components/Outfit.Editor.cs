@@ -11,10 +11,11 @@ public partial class Outfit
 
 		foreach( var apparel in EquippedApparel )
 		{
-			if ( apparel is null )
+			if ( apparel?.EquippedModels is null )
 				continue;
 
 			var world = Target.SceneModel.World;
+
 			foreach( var model in apparel.EquippedModels )
 			{
 				var loadedModel = Model.Load( model );

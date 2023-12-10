@@ -14,8 +14,7 @@ public partial class Outfit : Component, Component.ExecuteInEditor
 
 	protected override void OnUpdate()
 	{
-		if ( EquippedApparel == null )
-			return;
+		EquippedApparel ??= new();
 
 		var currentHash = 0;
 		foreach( var apparel in EquippedApparel )
