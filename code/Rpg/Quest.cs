@@ -22,16 +22,9 @@ public abstract partial class Quest
 	{
 		Assert.False( _questDb.ContainsKey( Id ), $"Duplicate quest ID created: {Id}" );
 		_questDb[Id] = this;
-		Event.Register( this );
 	}
 
-	~Quest()
-	{
-		Event.Unregister( this );
-	}
-
-	[Event( "game.tick" )]
-	private void OnTick()
+	public void Update()
 	{
 		var objectives = ActiveObjectives.ToArray();
 		foreach( var objective in objectives )

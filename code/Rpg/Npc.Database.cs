@@ -4,8 +4,7 @@ public partial class Npc
 {
 	private static Dictionary<string, Npc> _npcDb = new();
 
-	[Event( "game.stop" )]
-	private static void OnStop()
+	public static void InitializeNpcs()
 	{
 		_npcDb.Clear();
 	}

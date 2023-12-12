@@ -4,11 +4,9 @@ public abstract partial class Quest
 {
 	private static Dictionary<string, Quest> _questDb = new();
 
-	[Event( "game.start" )]
-	private static void OnStart()
+	public static void InitializeQuests()
 	{
-		if ( _questDb.Any() )
-			return;
+		_questDb.Clear();
 
 		var quests = TypeLibrary.GetTypes<Quest>()
 			.Where( t => !t.IsAbstract );
@@ -16,12 +14,6 @@ public abstract partial class Quest
 		{
 			TypeLibrary.Create<Quest>( quest.Identity );
 		}
-	}
-
-	[Event( "game.stop" )]
-	private static void OnStop()
-	{
-		_questDb.Clear();
 	}
 
 	public static Quest Get<T> () where T : Quest

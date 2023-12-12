@@ -20,10 +20,6 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "GameManagerComponent",
-          "__enabled": true
-        },
-        {
           "__type": "QuestDebugOverlayComponent",
           "__enabled": true
         }
@@ -139,6 +135,7 @@
               "BodyGroups": 18446744073709551615,
               "BoneMergeTarget": null,
               "CreateBoneObjects": true,
+              "MaterialGroup": null,
               "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
               "ShouldCastShadows": true,
@@ -219,6 +216,7 @@
                       "BodyGroups": 18446744073709551615,
                       "BoneMergeTarget": null,
                       "CreateBoneObjects": false,
+                      "MaterialGroup": null,
                       "MaterialOverride": null,
                       "Model": "models/hands_discgolf/hand_toon_right.vmdl",
                       "ShouldCastShadows": true,
@@ -290,6 +288,7 @@
                       "BodyGroups": 18446744073709551615,
                       "BoneMergeTarget": null,
                       "CreateBoneObjects": false,
+                      "MaterialGroup": null,
                       "MaterialOverride": null,
                       "Model": "models/hands_discgolf/hand_toon_left.vmdl",
                       "ShouldCastShadows": true,
@@ -1647,6 +1646,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/desk/wooden_desk/wooden_desk_01.vmdl",
           "ShouldCastShadows": true,
@@ -1723,6 +1723,7 @@
                   "__type": "ModelRenderer",
                   "__enabled": true,
                   "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
                   "MaterialOverride": null,
                   "Model": "models/duck_decoration/duck_decoration.vmdl",
                   "ShouldCastShadows": true,
@@ -1757,6 +1758,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1783,6 +1785,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1809,6 +1812,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1835,6 +1839,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1861,6 +1866,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1887,6 +1893,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/partitions/office_screen_01.vmdl",
           "ShouldCastShadows": true,
@@ -1912,6 +1919,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_chair/office_chair.vmdl",
           "ShouldCastShadows": true,
@@ -1928,7 +1936,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -1957,6 +1967,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_chair/office_chair.vmdl",
           "ShouldCastShadows": true,
@@ -1973,7 +1984,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2002,6 +2015,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2036,6 +2050,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2070,6 +2085,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2104,6 +2120,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2138,6 +2155,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2172,6 +2190,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/toilet_a/toilet_a.vmdl",
           "ShouldCastShadows": true,
@@ -2206,6 +2225,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2232,6 +2252,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2258,6 +2279,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2284,6 +2306,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2310,6 +2333,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2336,6 +2360,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2362,6 +2387,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2388,6 +2414,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2414,6 +2441,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2440,6 +2468,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2466,6 +2495,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
           "ShouldCastShadows": true,
@@ -2492,6 +2522,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/utility/trolley_02.vmdl",
           "ShouldCastShadows": true,
@@ -2504,96 +2535,6 @@
           "Model": "models/props/trim_sheets/utility/trolley_02.vmdl",
           "Static": false,
           "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "971861b6-b8a8-48eb-9dd0-011d1cac8cbd",
-      "Name": "Plastic Tub",
-      "Position": "-368.9984,-53.14421,-32.00005",
-      "Rotation": "0.0000000008612552,0,0.01444946,0.9998956",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DraggableComponent",
-          "__enabled": true,
-          "DragSpeed": 1,
-          "Rigidbody": "971861b6-b8a8-48eb-9dd0-011d1cac8cbd"
-        },
-        {
-          "__type": "PhysicsComponent",
-          "__enabled": true,
-          "Gravity": true
-        },
-        {
-          "__type": "HoldDataComponent",
-          "__enabled": true,
-          "DebugDraw": false,
-          "FingerCurl": 0.63,
-          "HoldPosition": "-1.266666,13.33333,15.2",
-          "HoldRotation": "0.5793278,0.4055098,-0.5791285,0.4056493"
-        }
-      ]
-    },
-    {
-      "Id": "57baa636-cd5c-43d1-8aca-86b02a7f3d18",
-      "Name": "Plastic Tub",
-      "Position": "-349.8077,-53.40196,-32.00005",
-      "Rotation": "0.0000000009437535,0.0000000000000004230178,0.0158336,0.9998746",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DraggableComponent",
-          "__enabled": true,
-          "DragSpeed": 1,
-          "Rigidbody": "57baa636-cd5c-43d1-8aca-86b02a7f3d18"
-        },
-        {
-          "__type": "PhysicsComponent",
-          "__enabled": true,
-          "Gravity": true
-        },
-        {
-          "__type": "HoldDataComponent",
-          "__enabled": true,
-          "DebugDraw": false,
-          "FingerCurl": 0.63,
-          "HoldPosition": "-1.266666,13.33333,15.2",
-          "HoldRotation": "0.5793278,0.4055098,-0.5791285,0.4056493"
         }
       ]
     },
@@ -2608,6 +2549,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
           "ShouldCastShadows": true,
@@ -2630,52 +2572,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
-        },
-        {
-          "__type": "HoldDataComponent",
-          "__enabled": true,
-          "DebugDraw": false,
-          "FingerCurl": 0.63,
-          "HoldPosition": "-1.266666,13.33333,15.2",
-          "HoldRotation": "0.5793278,0.4055098,-0.5791285,0.4056493"
-        }
-      ]
-    },
-    {
-      "Id": "595cc8c0-1b97-4e81-8db1-97a1ee0f3e5a",
-      "Name": "Plastic Tub",
-      "Position": "-361.2988,-46.20298,-16.53941",
-      "Rotation": "0.000000006736039,0.0000000000000007591974,0.113012,0.9935933",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DraggableComponent",
-          "__enabled": true,
-          "DragSpeed": 1,
-          "Rigidbody": "595cc8c0-1b97-4e81-8db1-97a1ee0f3e5a"
-        },
-        {
-          "__type": "PhysicsComponent",
-          "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "HoldDataComponent",
@@ -2698,6 +2597,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_box_01.vmdl",
           "ShouldCastShadows": true,
@@ -2714,7 +2614,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2743,6 +2645,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_box_01.vmdl",
           "ShouldCastShadows": true,
@@ -2759,7 +2662,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2788,6 +2693,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_box_01.vmdl",
           "ShouldCastShadows": true,
@@ -2804,7 +2710,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2833,6 +2741,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_box_02.vmdl",
           "ShouldCastShadows": true,
@@ -2849,7 +2758,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2878,6 +2789,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/trim_sheets/storage/storage_box_02.vmdl",
           "ShouldCastShadows": true,
@@ -2894,7 +2806,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "DraggableComponent",
@@ -2923,6 +2837,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/tv/tv.vmdl",
           "ShouldCastShadows": true,
@@ -2965,6 +2880,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "assets/untitled_12.vmdl",
           "ShouldCastShadows": true,
@@ -2973,7 +2889,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "ModelCollider",
@@ -3018,6 +2936,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "assets/untitled_12.vmdl",
           "ShouldCastShadows": true,
@@ -3026,7 +2945,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "ModelCollider",
@@ -3072,6 +2993,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "assets/untitled_12.vmdl",
           "ShouldCastShadows": true,
@@ -3080,7 +3002,9 @@
         {
           "__type": "PhysicsComponent",
           "__enabled": true,
-          "Gravity": true
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0
         },
         {
           "__type": "ModelCollider",
@@ -3125,8 +3049,9 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/vendingmachine/vendingmachine.vmdl",
+          "Model": "models/dev/error.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         },
@@ -3142,7 +3067,7 @@
           "__type": "ModelCollider",
           "__enabled": true,
           "IsTrigger": false,
-          "Model": "models/vendingmachine/vendingmachine.vmdl",
+          "Model": "models/dev/error.vmdl",
           "Static": false,
           "Surface": null
         }
@@ -3159,6 +3084,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/city_props/vending/vending_machine.vmdl",
           "ShouldCastShadows": true,
@@ -3193,6 +3119,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/city_props/cafe/cafe_table.vmdl",
           "ShouldCastShadows": true,
@@ -3219,6 +3146,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/city_props/cafe/cafe_chair.vmdl",
           "ShouldCastShadows": true,
@@ -3245,6 +3173,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/city_props/cafe/cafe_chair.vmdl",
           "ShouldCastShadows": true,
@@ -3270,6 +3199,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/glitchvid/trashcan_indoor01.vmdl",
           "ShouldCastShadows": true,
@@ -3296,6 +3226,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/sbox_props/pallet/pallet.vmdl",
           "ShouldCastShadows": true,
@@ -3323,6 +3254,7 @@
               "__type": "ModelRenderer",
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
               "MaterialOverride": null,
               "Model": "models/sbox_props/cardboard_box/cardboard_box.vmdl",
               "ShouldCastShadows": true,
@@ -3359,6 +3291,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/pallet_truck/pallet_truck.vmdl",
           "ShouldCastShadows": true,
@@ -3385,6 +3318,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/props/couch/couch.vmdl",
           "ShouldCastShadows": true,
@@ -3411,6 +3345,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/modern_coffee_table_01.vmdl",
           "ShouldCastShadows": true,
@@ -3437,6 +3372,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "custom/custmodels/ikea_chair.vmdl",
           "ShouldCastShadows": true,
@@ -3462,6 +3398,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/table/round_table_from_the_matrix_construct.vmdl",
           "ShouldCastShadows": true,
@@ -3489,6 +3426,7 @@
           "__type": "ModelRenderer",
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": null,
           "Model": "models/arcadecabinet/arcademachine_01.vmdl",
           "ShouldCastShadows": true,
@@ -3581,6 +3519,7 @@
               "BodyGroups": 18446744073709551615,
               "BoneMergeTarget": null,
               "CreateBoneObjects": false,
+              "MaterialGroup": null,
               "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
               "ShouldCastShadows": true,
@@ -3625,13 +3564,13 @@
     }
   ],
   "SceneProperties": {
-    "Lerping": true,
-    "UseFixedUpdate": true,
-    "ThreadedAnimation": true,
     "TimeScale": 1,
     "MaxFixedUpdates": 5,
     "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "NetworkFrequency": 60,
+    "Lerping": true,
+    "UseFixedUpdate": true,
+    "ThreadedAnimation": true
   },
   "Title": "office",
   "Description": "",

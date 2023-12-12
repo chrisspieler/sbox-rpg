@@ -1,0 +1,56 @@
+{
+  "RootObject": {
+    "Id": "add35c3f-20d0-45de-bd88-ed6184dd5035",
+    "Name": "Plastic Tub",
+    "Position": "-370.3704,-59.03385,-32.00003",
+    "Rotation": "0.000000001506155,0.0000000000000004476366,0.02526912,0.9996805",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__enabled": true,
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "DraggableComponent",
+        "__enabled": true,
+        "DragSpeed": 1,
+        "Rigidbody": "add35c3f-20d0-45de-bd88-ed6184dd5035"
+      },
+      {
+        "__type": "PhysicsComponent",
+        "__enabled": true,
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0
+      },
+      {
+        "__type": "HoldDataComponent",
+        "__enabled": true,
+        "DebugDraw": false,
+        "FingerCurl": 0.63,
+        "HoldPosition": "-1.266666,13.33333,15.2",
+        "HoldRotation": "0.5793278,0.4055098,-0.5791285,0.4056493"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.storage_plastic_box_01"
+  ]
+}
