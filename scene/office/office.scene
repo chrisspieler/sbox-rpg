@@ -2541,50 +2541,10 @@
     {
       "Id": "add35c3f-20d0-45de-bd88-ed6184dd5035",
       "Name": "Plastic Tub",
-      "Position": "-362.8416,-26.39781,-32.00005",
+      "Position": "-370.3704,-59.03385,-32.00003",
       "Rotation": "0.000000001506155,0.0000000000000004476366,0.02526912,0.9996805",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "DraggableComponent",
-          "__enabled": true,
-          "DragSpeed": 1,
-          "Rigidbody": "add35c3f-20d0-45de-bd88-ed6184dd5035"
-        },
-        {
-          "__type": "PhysicsComponent",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0
-        },
-        {
-          "__type": "HoldDataComponent",
-          "__enabled": true,
-          "DebugDraw": false,
-          "FingerCurl": 0.63,
-          "HoldPosition": "-1.266666,13.33333,15.2",
-          "HoldRotation": "0.5793278,0.4055098,-0.5791285,0.4056493"
-        }
-      ]
+      "__Prefab": "prefabs/props/plastic_tub.prefab"
     },
     {
       "Id": "02b2fe0d-dba5-4333-ac22-b0c3abbe88c6",
@@ -3561,6 +3521,38 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "759a9322-7010-4791-92b2-99e5b13936c1",
+      "Name": "Plastic Tub",
+      "Position": "-348.1328,-57.23095,-31.99993",
+      "Rotation": "-0.000000003820951,0.00000000000000001474369,-0.06410491,0.9979431",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/plastic_tub.prefab"
+    },
+    {
+      "Id": "ad05c5d2-771f-4503-a126-274632c8b2b2",
+      "Name": "Plastic Tub",
+      "Position": "-358.8565,-52.15904,-16.40695",
+      "Rotation": "-0.00000001291895,-0.00000000000000002714793,-0.216744,0.9762286",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/plastic_tub.prefab"
+    },
+    {
+      "Id": "85f74b8e-77c4-4a6a-a6c1-4e11032018a4",
+      "Name": "Plastic Tub",
+      "Position": "-369.0443,-26.44034,-31.99993",
+      "Rotation": "0.00000000606888,-0.000000000000000020778,0.1018189,0.9948031",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/plastic_tub.prefab"
+    },
+    {
+      "Id": "8126e759-e015-4f6a-a1e1-bedf96557d38",
+      "Name": "Plastic Tub",
+      "Position": "-347.4124,-27.26748,-31.99992",
+      "Rotation": "-0.000000007413457,-0.0000000000000006076287,-0.1243771,0.9922349",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/plastic_tub.prefab"
     }
   ],
   "SceneProperties": {
@@ -3585,7 +3577,6 @@
     "facepunch.pallet",
     "facepunch.storage_box_01",
     "facepunch.storage_box_02",
-    "facepunch.storage_plastic_box_01",
     "facepunch.toilet_a",
     "facepunch.trolley_02",
     "facepunch.tv",
