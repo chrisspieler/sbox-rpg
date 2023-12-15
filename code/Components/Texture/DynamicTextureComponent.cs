@@ -3,6 +3,7 @@
 public class DynamicTextureComponent : Component
 {
 	[Property, Range(1, 60, 1)] public float MaxUpdatesPerSecond { get; set; } = 15f;
+	[Property] public bool DebugDraw { get; set; } = false;
 	public Texture InputTexture { get; private set; }
 	public Texture OutputTexture { get; private set; }
 
@@ -10,6 +11,14 @@ public class DynamicTextureComponent : Component
 
 	protected override void OnUpdate()
 	{
+		if ( DebugDraw )
+		{
+			Gizmo.Draw.IgnoreDepth = true;
+
+			Gizmo.Draw.Sprite( Vector3.Zero, new Vector2( 30 ), InputTexture, true );
+			Gizmo.Draw.Sprite( Vector3.Zero + Vector3.Left * 40f, new Vector2( 30 ), OutputTexture, true );
+		}
+
 		if ( InputTexture is null || _lastTextureUpdate < 1f / MaxUpdatesPerSecond )
 			return;
 
@@ -48,6 +57,12 @@ public class DynamicTextureComponent : Component
 									.WithDynamicUsage()
 									.WithUAVBinding()
 									.Finish();
+	}
+
+	public void SetTexture( Texture texture )
+	{
+		InputTexture?.Dispose();
+		InputTexture = texture;
 	}
 
 	public virtual void OnPostEffect() { }
