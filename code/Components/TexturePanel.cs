@@ -30,10 +30,6 @@ public sealed class TexturePanel : Component
 		_rootPanel = PanelSource?.Panel?.FindRootPanel();
 		if ( _rootPanel is null )
 			return;
-
-		var worldPanel = Components.Get<WorldPanel>();
-		// Prevent the worldpanel from rendering in the world.
-		// worldPanel?.SetEnabled( false );
 	}
 	
 	private void CreateInputTexture()

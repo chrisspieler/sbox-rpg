@@ -1597,20 +1597,6 @@
       ]
     },
     {
-      "Id": "84bf0d38-3515-4e50-bbb8-acd1752d128b",
-      "Name": "Ceiling Light (22)",
-      "Position": "-94.22511,152.8951,123.231",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "PointLight",
-          "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Radius": 400
-        }
-      ]
-    },
-    {
       "Id": "953f3549-2efa-4280-9e0b-90875210525b",
       "Name": "Ceiling Light (2)",
       "Position": "-18.44003,-410.6711,123.231",
@@ -3616,6 +3602,52 @@
           "__type": "TextureTestPanel",
           "__enabled": true,
           "MyStringValue": "Hello World!"
+        }
+      ]
+    },
+    {
+      "Id": "f2cc90e2-361c-4c09-86c9-9587344019a9",
+      "Name": "Projector",
+      "Position": "-9.323934,-1.37614,103.4805",
+      "Rotation": "-0.07558696,0.0722844,0.7187526,0.687354",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "WorldPanel",
+          "__enabled": true,
+          "HorizontalAlign": "Left",
+          "LookAtCamera": false,
+          "PanelSize": "512,512",
+          "RenderScale": 1,
+          "VerticalAlign": "Top"
+        },
+        {
+          "__type": "TextureTestPanel",
+          "__enabled": true,
+          "MyStringValue": "Hello World!"
+        },
+        {
+          "__type": "SpotLight",
+          "__enabled": true,
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 45,
+          "Cookie": null,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 500
+        },
+        {
+          "__type": "ProjectorComponent",
+          "__enabled": true,
+          "DebugDraw": false,
+          "Light": "f2cc90e2-361c-4c09-86c9-9587344019a9",
+          "MaxUpdatesPerSecond": 15
+        },
+        {
+          "__type": "TexturePanel",
+          "__enabled": true,
+          "PanelSource": "f2cc90e2-361c-4c09-86c9-9587344019a9",
+          "TextureTarget": "f2cc90e2-361c-4c09-86c9-9587344019a9"
         }
       ]
     },

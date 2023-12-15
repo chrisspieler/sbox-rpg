@@ -5,11 +5,18 @@ TextureTestPanel
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #444;
+	background-image: url("videos/tv_static.mp4");
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
 	border-radius: 20px;
+
+	.blur {
+		background-color: rgba(0, 0, 0, 0.9);
+		backdrop-filter: blur(10px);
+		border-radius: 20px;
+		padding: 50px;
+	}
 
 	.title
 	{
