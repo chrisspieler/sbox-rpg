@@ -2,7 +2,7 @@
 
 public class PhysicsFollowComponent : Component
 {
-	[Property] public PhysicsComponent Rigidbody { get; set; }
+	[Property] public Rigidbody Rigidbody { get; set; }
 	[Property] public GameObject Target { get; set; }
 	[Property] public float FollowForce { get; set; } = 50f;
 	[Property] public float AngularVelocityDamping { get; set; } = 2.5f;
@@ -10,7 +10,7 @@ public class PhysicsFollowComponent : Component
 
 	protected override void OnStart()
 	{
-		Rigidbody ??= Components.Get<PhysicsComponent>();
+		Rigidbody ??= Components.Get<Rigidbody>();
 	}
 
 	protected override void OnUpdate()

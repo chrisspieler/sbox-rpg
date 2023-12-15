@@ -35,14 +35,14 @@ public class DraggingHandState : HandState
 		}
 	}
 	private float _currentDragDistance;
-	private PhysicsComponent DraggedRigidbody { get; set; }
+	private Rigidbody DraggedRigidbody { get; set; }
 	private GameObject _originalParent;
 
 	public void Initialize( GameObject dragged, GameObject dragSource )
 	{
 		Dragged = dragged;
 		DragSource = dragSource;
-		DraggedRigidbody = Dragged.Components.Get<PhysicsComponent>();
+		DraggedRigidbody = Dragged.Components.Get<Rigidbody>();
 		// Prevent the dragged object from showing the drag prompt.
 		Dragged.Components.Get<DraggableComponent>().SetEnabled( false );
 		// Prevent the movement code from treating held objects as obstacles.
@@ -145,7 +145,7 @@ public class DraggingHandState : HandState
 
 	protected override void OnFixedUpdate()
 	{
-		DraggedRigidbody ??= Dragged.Components.Get<PhysicsComponent>();
+		DraggedRigidbody ??= Dragged.Components.Get<Rigidbody>();
 
 		if ( Dragged?.IsValid != true || DraggedRigidbody is null )
 		{
@@ -171,7 +171,7 @@ public class DraggingHandState : HandState
 		var mouseInput = Input.MouseWheel * 30.0f;
 		if ( mouseInput != 0 )
 		{
-			CurrentDragDistance += mouseInput;
+			CurrentDragDistance += mouseInput.y;
 			var minDistance = MinDragDistance * InteractionReach;
 			var maxDistance = MaxDragDistance * InteractionReach;
 			CurrentDragDistance = CurrentDragDistance.Clamp( minDistance, maxDistance );

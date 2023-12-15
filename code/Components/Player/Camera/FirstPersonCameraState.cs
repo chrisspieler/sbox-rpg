@@ -15,7 +15,7 @@ public class FirstPersonCameraState : CameraState
 		Controller.PlayerCam.FieldOfView = FieldOfView;
 
 		var mouseInput = Input.MouseWheel * 30.0f;
-		if ( mouseInput < 0 && !Controller.IsThirdPersonBlocked )
+		if ( mouseInput.y < 0 && !Controller.IsThirdPersonBlocked )
 		{
 			var thirdPerson = StateMachine.ChangeState<ThirdPersonCameraState>();
 			thirdPerson.Distance = 50f;

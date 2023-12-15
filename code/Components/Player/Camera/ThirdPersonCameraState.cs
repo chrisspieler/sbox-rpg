@@ -18,7 +18,7 @@ public class ThirdPersonCameraState : CameraState
 		Controller.PlayerCam.FieldOfView = FieldOfView;
 
 		var mouseInput = Input.MouseWheel * 30.0f;
-		Distance -= mouseInput;
+		Distance -= mouseInput.y;
 		Distance = Distance.Clamp( 49f, 400f );
 		if ( Distance < 50f )
 		{

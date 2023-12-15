@@ -42,7 +42,7 @@ public class TriggerSnapPointComponent : Component
 		// If this object is being dragged, this will terminate the drag.
 		collider.GameObject.Tags.Remove( "held" );
 		collider.Components.Get<DraggableComponent>()?.SetEnabled( false );
-		collider.Components.Get<PhysicsComponent>()?.SetEnabled( false );
+		collider.Components.Get<Rigidbody>()?.SetEnabled( false );
 		collider.Transform.LocalPosition = Vector3.Zero;
 		collider.Transform.LocalRotation = Rotation.Identity;
 		Snapped = collider.GameObject;
