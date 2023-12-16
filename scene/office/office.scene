@@ -3718,6 +3718,22 @@
           "TextureTarget": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
         }
       ]
+    },
+    {
+      "Id": "65cc8b5b-7c4a-4b9f-bfbc-0801bdaef216",
+      "Name": "Plane",
+      "Position": "-230.0914,-254.1965,60.68237",
+      "Rotation": "-0.5000005,0.5000002,0.4999999,0.4999995",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Mirror",
+          "__enabled": true,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
