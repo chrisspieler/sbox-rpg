@@ -21,7 +21,7 @@
       "Components": [
         {
           "__type": "QuestDebugOverlayComponent",
-          "__enabled": true
+          "__enabled": false
         }
       ]
     },
@@ -3724,12 +3724,14 @@
       "Name": "Plane",
       "Position": "-230.0914,-254.1965,60.68237",
       "Rotation": "-0.5000005,0.5000002,0.4999999,0.4999995",
+      "Scale": "0.6,1.533334,1",
       "Enabled": true,
       "Components": [
         {
           "__type": "Mirror",
           "__enabled": true,
-          "Model": "models/dev/plane.vmdl",
+          "ClipPlaneOffset": 1,
+          "Model": "models/mirror.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         }

@@ -73,7 +73,6 @@ PS
 
 
         o = Tex2D( g_tColor, vScreenUv );
-
 		return o;
 	}
 }
