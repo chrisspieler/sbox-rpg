@@ -35,6 +35,11 @@ public abstract class LocomotionState : PlayerState
 			return;
 
 		var targetAngle = new Angles( 0, Controller.EyeAngles.yaw, 0 ).ToRotation();
+		if ( Controller.IsFirstPerson )
+		{
+			body.Transform.Rotation = targetAngle;
+			return;
+		}
 
 		var cc = Controller.CharacterController;
 		var v = cc.Velocity.WithZ( 0 );
