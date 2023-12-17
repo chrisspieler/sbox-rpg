@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox.Citizen;
+
+namespace Sandbox;
 
 public class RunState : GroundedState
 {
@@ -19,13 +21,13 @@ public class RunState : GroundedState
 		}
 	}
 
-	protected override void SetAnimation( CitizenAnimation animation )
+	protected override void SetAnimation( CitizenAnimationHelper animation )
 	{
 		var cc = Controller.CharacterController;
 		// Scale down velocity to avoid leaning forward too much.
 		animation.WithVelocity( cc.Velocity * 0.7f );
 		animation.IsGrounded = true;
 		animation.WithLook( Controller.EyeAngles.Forward, 1, 0.5f, 0.5f );
-		animation.MoveStyle = CitizenAnimation.MoveStyles.Run;
+		animation.MoveStyle = CitizenAnimationHelper.MoveStyles.Run;
 	}
 }

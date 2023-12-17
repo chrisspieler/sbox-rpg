@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox.Citizen;
+
+namespace Sandbox;
 
 public abstract class LocomotionState : PlayerState
 {
@@ -73,7 +75,7 @@ public abstract class LocomotionState : PlayerState
 	}
 
 	protected abstract void HandleUpdate();
-	protected abstract void SetAnimation( CitizenAnimation animation );
+	protected abstract void SetAnimation( CitizenAnimationHelper animation );
 	/// <summary>
 	/// Set the properties of the character controller or perform
 	/// a state change if necessary.

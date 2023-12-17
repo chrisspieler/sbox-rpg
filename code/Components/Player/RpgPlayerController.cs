@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox.Citizen;
+
+namespace Sandbox;
 
 public partial class RpgPlayerController : Component
 {
@@ -7,12 +9,13 @@ public partial class RpgPlayerController : Component
 	public bool EnableAutoWalk { get; set; }
 	public bool RunToggle { get; set; }
 	[Property] public GameObject Body { get; private set; }
+	[Property] public SkinnedModelRenderer BodyModel { get; private set; }
 	[Property] public GameObject Eye { get; private set; }
 	[Property] public PlayerStateMachine CameraState { get; private set; }
 	[Property] public PlayerStateMachine MovementState { get; private set; }
 	[Property] public PlayerStateMachine PrimaryHandState { get; private set; }
 	[Property] public PlayerStateMachine SecondaryHandState { get; private set; }
-	[Property] public CitizenAnimation AnimationHelper { get; set; }
+	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	public Ray EyeRay => new( Eye.Transform.Position, EyeAngles.ToRotation().Forward );
 	public CameraComponent PlayerCam
 		=> GameObject.Components.Get<CameraComponent>( FindMode.EverythingInSelfAndDescendants );
@@ -55,12 +58,10 @@ public partial class RpgPlayerController : Component
 	// TODO: Consider moving this to a separate file.
 	public void SetBodyTransparency( float alpha, bool castShadow = true )
 	{
-		if ( Body is not null )
+		if ( BodyModel is not null )
 		{
-			// TODO: Cache this, or make callers stop calling it every frame.
-			var renderer = Body.Components.Get<SkinnedModelRenderer>();
-			renderer.Tint = renderer.Tint.WithAlpha( alpha );
-			renderer.ShouldCastShadows = castShadow;
+			BodyModel.Tint = BodyModel.Tint.WithAlpha( alpha );
+			BodyModel.ShouldCastShadows = castShadow;
 			var outfit = Components.Get<Outfit>( true );
 			if ( outfit is not null )
 			{

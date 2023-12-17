@@ -1,4 +1,6 @@
-﻿namespace Sandbox;
+﻿using Sandbox.Citizen;
+
+namespace Sandbox;
 
 public class AirborneState : LocomotionState
 {
@@ -10,7 +12,7 @@ public class AirborneState : LocomotionState
 
 	}
 
-	protected override void SetAnimation( CitizenAnimation animation )
+	protected override void SetAnimation( CitizenAnimationHelper animation )
 	{
 		var cc = Controller.CharacterController;
 		animation.WithVelocity( cc.Velocity );

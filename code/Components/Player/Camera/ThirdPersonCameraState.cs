@@ -14,7 +14,7 @@ public class ThirdPersonCameraState : CameraState
 			return;
 		}
 
-		Controller.SetBodyTransparency( 1f );
+		Controller.PlayerCam.RenderExcludeTags.Remove( "thirdperson" );
 		Controller.PlayerCam.FieldOfView = FieldOfView;
 
 		var mouseInput = Input.MouseWheel * 30.0f;
