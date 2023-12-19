@@ -61,7 +61,7 @@ public partial class RpgPlayerController : Component
 		if ( BodyModel is not null )
 		{
 			BodyModel.Tint = BodyModel.Tint.WithAlpha( alpha );
-			BodyModel.ShouldCastShadows = castShadow;
+			BodyModel.RenderType = castShadow ? ModelRenderer.ShadowRenderType.On : ModelRenderer.ShadowRenderType.Off;
 			var outfit = Components.Get<Outfit>( true );
 			if ( outfit is not null )
 			{

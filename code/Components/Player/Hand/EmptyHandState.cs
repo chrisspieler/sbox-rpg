@@ -43,8 +43,7 @@ public class EmptyHandState : HandState
 
 		if ( tr.Hit )
 		{
-			// There's no chance that GameObject wouldn't be a GameObject... right?
-			Hovered = (GameObject)tr.Body.GameObject;
+			Hovered = tr.Body.GetGameObject();
 		}
 		else
 		{
