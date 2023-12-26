@@ -4433,31 +4433,35 @@
           "Model": "62013dc8-77be-4e49-a83e-c37a4a9547e1"
         },
         {
-          "__type": "VideoPlayerComponent",
-          "__enabled": false,
-          "Loop": true,
-          "TextureTarget": "62013dc8-77be-4e49-a83e-c37a4a9547e1",
-          "VideoPath": "videos/tv_static.mp4"
-        },
-        {
           "__type": "TexturePanel",
           "__enabled": true,
-          "PanelSource": "62013dc8-77be-4e49-a83e-c37a4a9547e1",
-          "TextureTarget": "62013dc8-77be-4e49-a83e-c37a4a9547e1"
-        },
+          "CurrentPanelBounds": {},
+          "CurrentPanelScale": 0,
+          "CurrentPanelScaleFromScreen": 0,
+          "CurrentPanelScaleToScreen": 0,
+          "CurrentScreenSize": "1167,655",
+          "CustomPanelBounds": {
+            "Size": "1000,1000"
+          },
+          "MarginPercent": 0,
+          "TextureTarget": "62013dc8-77be-4e49-a83e-c37a4a9547e1",
+          "UseScreenBounds": false
+        }
+      ],
+      "Children": [
         {
-          "__type": "WorldPanel",
-          "__enabled": true,
-          "HorizontalAlign": "Left",
-          "LookAtCamera": false,
-          "PanelSize": "512,512",
-          "RenderScale": 0.5,
-          "VerticalAlign": "Top"
-        },
-        {
-          "__type": "TextureTestPanel",
-          "__enabled": true,
-          "MyStringValue": "Hello World!"
+          "Id": "cc2fcc00-b099-4948-afba-8ae93eb9f046",
+          "Name": "Panel",
+          "Position": "0,0,0",
+          "Rotation": "0.00000005917293,-0.000000000000001744043,0.9927568,0.1201401",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextureTestPanel",
+              "__enabled": true,
+              "MyStringValue": "Hello, television!"
+            }
+          ]
         }
       ]
     },
@@ -4468,20 +4472,6 @@
       "Rotation": "-0.07558696,0.0722844,0.7187526,0.687354",
       "Enabled": true,
       "Components": [
-        {
-          "__type": "WorldPanel",
-          "__enabled": true,
-          "HorizontalAlign": "Left",
-          "LookAtCamera": false,
-          "PanelSize": "512,512",
-          "RenderScale": 0.5,
-          "VerticalAlign": "Top"
-        },
-        {
-          "__type": "TextureTestPanel",
-          "__enabled": true,
-          "MyStringValue": "Hello World!"
-        },
         {
           "__type": "SpotLight",
           "__enabled": true,
@@ -4502,8 +4492,32 @@
         {
           "__type": "TexturePanel",
           "__enabled": true,
-          "PanelSource": "f2cc90e2-361c-4c09-86c9-9587344019a9",
-          "TextureTarget": "f2cc90e2-361c-4c09-86c9-9587344019a9"
+          "CurrentPanelBounds": {},
+          "CurrentPanelScale": 0,
+          "CurrentPanelScaleFromScreen": 0,
+          "CurrentPanelScaleToScreen": 0,
+          "CurrentScreenSize": "1167,655",
+          "CustomPanelBounds": {
+            "Size": "1000,1000"
+          },
+          "MarginPercent": 30,
+          "TextureTarget": "f2cc90e2-361c-4c09-86c9-9587344019a9",
+          "UseScreenBounds": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "add18efc-bf6b-44af-a7ba-6c3bd931f588",
+          "Name": "Panel",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextureTestPanel",
+              "__enabled": true,
+              "MyStringValue": "Hello, projector!"
+            }
+          ]
         }
       ]
     },
@@ -4546,15 +4560,6 @@
           "Rigidbody": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
         },
         {
-          "__type": "WorldPanel",
-          "__enabled": true,
-          "HorizontalAlign": "Left",
-          "LookAtCamera": false,
-          "PanelSize": "512,512",
-          "RenderScale": 0.5,
-          "VerticalAlign": "Top"
-        },
-        {
           "__type": "TextureTestPanel",
           "__enabled": true,
           "MyStringValue": "Hello World!"
@@ -4570,8 +4575,17 @@
         {
           "__type": "TexturePanel",
           "__enabled": true,
-          "PanelSource": "a3bb8239-d2f1-4adb-9450-658e1a0ab235",
-          "TextureTarget": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
+          "CurrentPanelBounds": {},
+          "CurrentPanelScale": 0,
+          "CurrentPanelScaleFromScreen": 0,
+          "CurrentPanelScaleToScreen": 0,
+          "CurrentScreenSize": "1167,655",
+          "CustomPanelBounds": {
+            "Size": "1000,1000"
+          },
+          "MarginPercent": 30,
+          "TextureTarget": "a3bb8239-d2f1-4adb-9450-658e1a0ab235",
+          "UseScreenBounds": false
         }
       ]
     },
