@@ -3526,7 +3526,7 @@
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": null,
-          "Model": "models/dev/error.vmdl",
+          "Model": "models/vendingmachine/vendingmachine.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -4308,6 +4308,7 @@
   "Title": "office",
   "Description": "",
   "__references": [
+    "baik.vendingmachine",
     "cillmadethis.chair_poang",
     "duccsoft.duck_decoration",
     "facepunch.cardboard_box",

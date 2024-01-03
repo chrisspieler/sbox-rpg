@@ -4,6 +4,15 @@ public sealed class MonitorComponent : DynamicTextureComponent
 {
 	[Property] public ModelRenderer Model { get; set; }
 	[Property] public string AttributeName { get; set; } = "screen";
+	public override Texture OutputTexture
+	{
+		get => base.OutputTexture;
+		protected set
+		{
+			base.OutputTexture = value;
+			ApplyMaterialOverride();
+		}
+	}
 
 	private Material _screenMaterial;
 

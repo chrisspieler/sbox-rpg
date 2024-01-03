@@ -4,8 +4,8 @@ public class DynamicTextureComponent : Component
 {
 	[Property, Range(1, 60, 1)] public float MaxUpdatesPerSecond { get; set; } = 15f;
 	[Property] public bool DebugDraw { get; set; } = false;
-	public Texture InputTexture { get; private set; }
-	public Texture OutputTexture { get; private set; }
+	public virtual Texture InputTexture { get; protected set; }
+	public virtual Texture OutputTexture { get; protected set; }
 
 	private RealTimeSince _lastTextureUpdate;
 
