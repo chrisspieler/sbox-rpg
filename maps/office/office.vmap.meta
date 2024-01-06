@@ -37,7 +37,9 @@
         "facepunch.plaster_trim_painted_blend_01#43494",
         "facepunch.concrete_trim_clean_01#43473",
         "facepunch.glass_a#19946",
-        "eurorp.door04_right_01#12559"
+        "eurorp.door04_right_01#12559",
+        "facepunch.glass_c#19949",
+        "eurorp.door00_right#9934"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/office/office.vmap"
