@@ -3388,6 +3388,21 @@
               "PlaybackTime": 0,
               "VideoPath": "videos/tv_static.mp4"
             }
+          ],
+          "Children": [
+            {
+              "Id": "3e442544-e639-402b-aab6-dc259214a676",
+              "Name": "Object",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TextureTestPanel",
+                  "__enabled": true,
+                  "MyStringValue": "Hello from Jason\u0027s fancy CRT!"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -4131,8 +4146,8 @@
     {
       "Id": "62013dc8-77be-4e49-a83e-c37a4a9547e1",
       "Name": "tv_medium_onstand",
-      "Position": "132.7208,35.2125,-31.99992",
-      "Rotation": "-0.00000005917294,0.000000000000001744043,-0.9927571,0.1201401",
+      "Position": "155.2077,-202.5653,-0.00003814694",
+      "Rotation": "-0.000000006685214,-0.000000000000004454766,-0.1121594,-0.9936906",
       "Enabled": true,
       "Components": [
         {
@@ -4217,6 +4232,20 @@
               "VideoPath": "videos/bridge.mp4"
             }
           ]
+        },
+        {
+          "Id": "358eb166-203c-49f3-8dec-f7807c31ee9d",
+          "Name": "Point Light",
+          "Position": "7.593768,0.0000136632,32.43794",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PointLight",
+              "__enabled": true,
+              "LightColor": "0.16337,0.16337,0.16337,1",
+              "Radius": 150
+            }
+          ]
         }
       ]
     },
@@ -4296,8 +4325,8 @@
     {
       "Id": "a3bb8239-d2f1-4adb-9450-658e1a0ab235",
       "Name": "litizen (rizzed up)",
-      "Position": "-13.77602,-207.5527,-31.99981",
-      "Rotation": "-0.0000003737916,0.00000001818882,0.7348337,0.6782482",
+      "Position": "-131.4593,507.9559,-32.00031",
+      "Rotation": "-0.0000001982058,0.0000003293362,0.9929878,-0.1182258",
       "Enabled": true,
       "Components": [
         {
