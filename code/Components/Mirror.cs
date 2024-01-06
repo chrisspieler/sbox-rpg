@@ -36,7 +36,7 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 				return _sceneObject.Bounds;
 			}
 
-			return new BBox( base.Transform.Position, 16f );
+			return BBox.FromPositionAndSize( Transform.Position, 16f );
 		}
 	}
 
@@ -194,13 +194,13 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 		_scenePortal.RenderingEnabled = true;
 		_scenePortal.Transform = Transform.World;
 		Plane p = new( Transform.Position, Transform.Rotation.Up );
-		var viewMatrix = Matrix.CreateWorld( Camera.Position, Camera.Rotation.Forward, Camera.Rotation.Up );
+		var viewMatrix = Matrix.CreateWorld( Camera.Main.Position, Camera.Main.Rotation.Forward, Camera.Main.Rotation.Up );
 		var reflectMatrix = ReflectMatrix( viewMatrix, p );
 
-		_scenePortal.ViewPosition = reflectMatrix.Transform( Camera.Position ); ;
-		_scenePortal.ViewRotation = ReflectRotation( Camera.Rotation, Transform.Rotation.Up );
+		_scenePortal.ViewPosition = reflectMatrix.Transform( Camera.Main.Position ); ;
+		_scenePortal.ViewRotation = ReflectRotation( Camera.Main.Rotation, Transform.Rotation.Up );
 		_scenePortal.Aspect = Screen.Width / Screen.Height;
-		_scenePortal.FieldOfView = MathF.Atan( MathF.Tan( Camera.FieldOfView.DegreeToRadian() * 0.41f ) * (_scenePortal.Aspect * 0.75f ) ).RadianToDegree() * 2.0f;
+		_scenePortal.FieldOfView = MathF.Atan( MathF.Tan( Camera.Main.FieldOfView.DegreeToRadian() * 0.41f ) * (_scenePortal.Aspect * 0.75f ) ).RadianToDegree() * 2.0f;
 
 		var clipPlane = new Plane( Transform.Position - _scenePortal.ViewPosition, Transform.Rotation.Up );
 		clipPlane.Distance -= ClipPlaneOffset;

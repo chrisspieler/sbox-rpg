@@ -37,7 +37,7 @@ public class VideoPlayerComponent : Component
 		IsInitializing = true;
 
 		PlayFile( VideoPath );
-		WaitUntilReady();
+		_ = WaitUntilReady();
 	}
 
 	protected virtual void OnTextureData( ReadOnlySpan<byte> span, Vector2 size )
