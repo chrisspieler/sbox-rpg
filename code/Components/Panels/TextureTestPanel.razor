@@ -3,7 +3,7 @@
 @inherits PanelComponent
 
 <root>
-    <div @ref=BlurBox class="blur box" style="transform: translateX(@CurrentRotation) rotateZ(@CurrentRotation);">
+    <div @ref=BlurBox class="blur box" style="transform: translateX(@(CurrentRotation * 3f)) rotateZ(@CurrentRotation);">
 	    <div class="title">@MyStringValue</div>
     </div>
 </root>

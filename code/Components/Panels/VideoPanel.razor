@@ -1,0 +1,77 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+</root>
+
+@code
+{
+
+    [Property] public string VideoPath 
+    {
+        get => _videoPath;
+        set
+        {
+            _videoPath = value;
+            LoadVideo( _videoPath );
+        }
+    }
+    private string _videoPath = "videos/tv_static.mp4";
+    private VideoPlayer _videoPlayer;
+
+    public Texture VideoTexture 
+    {
+        get => _videoTexture;
+        private set
+        {
+            _videoTexture?.Dispose();
+            _videoTexture = value;
+            Panel.Style.SetBackgroundImage( _videoTexture );
+        }
+    }
+    private Texture _videoTexture;
+    [Property] public bool Loop { get; set; } = true;
+    [Property] public float PlaybackTime => _videoPlayer?.PlaybackTime ?? 0f;
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( VideoPath, VideoTexture );
+
+    protected override void OnEnabled()
+    {
+        base.OnEnabled();
+
+        LoadVideo( VideoPath );
+    }
+
+    protected override void OnUpdate()
+    {
+        if ( _videoPlayer is null ) return;
+
+        if ( Loop && _videoPlayer.PlaybackTime >= _videoPlayer.Duration )
+        {
+            _videoPlayer.Seek( 0f );
+        }
+        _videoPlayer.Present();
+    }
+
+    private void LoadVideo( string path )
+    {
+        if ( string.IsNullOrWhiteSpace( path ) ) return;
+        _videoPlayer?.Dispose();
+        _videoPlayer = new VideoPlayer();
+        _videoPlayer.OnLoaded = () => VideoTexture = _videoPlayer.Texture;
+        var isLocalFile = FileSystem.Mounted.FileExists( path );
+        if ( isLocalFile)
+        {
+            _videoPlayer.Play( FileSystem.Mounted, path );
+        }
+        else
+        {
+            _videoPlayer.Play( path );
+        }
+    }
+
+}

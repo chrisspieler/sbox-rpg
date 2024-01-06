@@ -1,4 +1,5 @@
 {
+  "Id": "1b3d56a9-81c8-4b6b-a245-eb09ad8d5a2f",
   "GameObjects": [
     {
       "Id": "4bea63f9-be20-4e15-8eab-3dc9de5346ef",
@@ -9,6 +10,8 @@
           "__type": "MapInstance",
           "__enabled": true,
           "MapName": "duccsoft.small_office",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
@@ -2444,7 +2447,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -2493,7 +2497,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3084,7 +3089,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3133,7 +3139,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3182,7 +3189,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3231,7 +3239,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3280,7 +3289,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "DraggableComponent",
@@ -3364,7 +3374,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
@@ -3421,7 +3432,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
@@ -3479,7 +3491,8 @@
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
-          "Locking": {}
+          "Locking": {},
+          "StartAsleep": false
         },
         {
           "__type": "ModelCollider",
@@ -4114,13 +4127,36 @@
           "CurrentPanelScale": 0,
           "CurrentPanelScaleFromScreen": 0,
           "CurrentPanelScaleToScreen": 0,
-          "CurrentScreenSize": "1090,612",
+          "CurrentScreenSize": "1290,726",
           "CustomPanelBounds": {
             "Size": "1000,1000"
           },
           "MarginPercent": 0,
           "TextureTarget": "62013dc8-77be-4e49-a83e-c37a4a9547e1",
           "UseScreenBounds": false
+        },
+        {
+          "__type": "DraggableComponent",
+          "__enabled": true,
+          "DragSpeed": 50,
+          "Rigidbody": "62013dc8-77be-4e49-a83e-c37a4a9547e1"
+        },
+        {
+          "__type": "Rigidbody",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "StartAsleep": false
+        },
+        {
+          "__type": "HoldDataComponent",
+          "__enabled": true,
+          "DebugDraw": false,
+          "FingerCurl": 0.6,
+          "HoldPosition": "0,50.13334,42.20001",
+          "HoldRotation": "0,0,-0.7535635,0.6573751"
         }
       ],
       "Children": [
@@ -4132,9 +4168,11 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "TextureTestPanel",
+              "__type": "VideoPanel",
               "__enabled": true,
-              "MyStringValue": "Hello, television!"
+              "Loop": true,
+              "PlaybackTime": 0,
+              "VideoPath": "videos/bridge.mp4"
             }
           ]
         }
@@ -4150,12 +4188,12 @@
         {
           "__type": "SpotLight",
           "__enabled": true,
-          "Attenuation": 1,
+          "Attenuation": 0.21,
           "ConeInner": 15,
           "ConeOuter": 45,
           "Cookie": null,
           "LightColor": "0.91373,0.98039,1,1",
-          "Radius": 500
+          "Radius": 2000
         },
         {
           "__type": "ProjectorComponent",
@@ -4171,7 +4209,7 @@
           "CurrentPanelScale": 0,
           "CurrentPanelScaleFromScreen": 0,
           "CurrentPanelScaleToScreen": 0,
-          "CurrentScreenSize": "1090,612",
+          "CurrentScreenSize": "1290,726",
           "CustomPanelBounds": {
             "Size": "1000,1000"
           },
@@ -4183,14 +4221,31 @@
       "Children": [
         {
           "Id": "add18efc-bf6b-44af-a7ba-6c3bd931f588",
-          "Name": "Panel",
+          "Name": "Video",
           "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
-              "__type": "TextureTestPanel",
+              "__type": "VideoPanel",
               "__enabled": true,
-              "MyStringValue": "Hello, projector!"
+              "Loop": true,
+              "PlaybackTime": 0,
+              "VideoPath": "videos/cry_tornado_small.mp4"
+            }
+          ],
+          "Children": [
+            {
+              "Id": "d0b104b0-c5e3-4f91-af61-16d0487da35b",
+              "Name": "Object",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TextureTestPanel",
+                  "__enabled": true,
+                  "MyStringValue": "Hello, PROJECTOR!!!!"
+                }
+              ]
             }
           ]
         }
@@ -4199,36 +4254,10 @@
     {
       "Id": "a3bb8239-d2f1-4adb-9450-658e1a0ab235",
       "Name": "litizen (rizzed up)",
-      "Position": "200.5924,-153.8005,-31.99994",
-      "Rotation": "-0.0000003251993,0.0000001721509,0.9343333,0.3564014",
+      "Position": "-13.77602,-207.5527,-31.99981",
+      "Rotation": "-0.0000003737916,0.00000001818882,0.7348337,0.6782482",
       "Enabled": true,
       "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {}
-        },
         {
           "__type": "DraggableComponent",
           "__enabled": true,
@@ -4250,13 +4279,32 @@
           "CurrentPanelScale": 0,
           "CurrentPanelScaleFromScreen": 0,
           "CurrentPanelScaleToScreen": 0,
-          "CurrentScreenSize": "1090,612",
+          "CurrentScreenSize": "1290,726",
           "CustomPanelBounds": {
             "Size": "1000,1000"
           },
           "MarginPercent": 30,
           "TextureTarget": "a3bb8239-d2f1-4adb-9450-658e1a0ab235",
           "UseScreenBounds": false
+        },
+        {
+          "__type": "ModelPhysics",
+          "__enabled": true,
+          "Locking": {},
+          "Model": "models/citizen/citizen.vmdl",
+          "Renderer": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__enabled": true,
+          "BodyGroups": 341,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ],
       "Children": [
@@ -4268,9 +4316,11 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "TextureTestPanel",
+              "__type": "VideoPanel",
               "__enabled": true,
-              "MyStringValue": "Hello, Citizen!"
+              "Loop": true,
+              "PlaybackTime": 0,
+              "VideoPath": "videos/tv_static.mp4"
             }
           ]
         }
