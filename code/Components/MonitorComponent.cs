@@ -4,6 +4,8 @@ public sealed class MonitorComponent : DynamicTextureComponent
 {
 	[Property] public ModelRenderer Model { get; set; }
 	[Property] public string AttributeName { get; set; } = "screen";
+	[Property] public string MaterialName { get; set; }
+
 	public override Texture OutputTexture
 	{
 		get => base.OutputTexture;
@@ -34,8 +36,20 @@ public sealed class MonitorComponent : DynamicTextureComponent
 		if ( !GameManager.IsPlaying || Model?.SceneObject is null )
 			return;
 
-		_screenMaterial = Material.Create( "ScreenMaterial", "generic" );
+		if ( !string.IsNullOrWhiteSpace( MaterialName ) )
+		{
+			_screenMaterial = Model.Model.Materials.FirstOrDefault( m => m.Name == MaterialName );
+			if ( _screenMaterial is null )
+			{
+				return;
+			}
+			_screenMaterial.Set( "Color", OutputTexture );
+			return;
+		}
+
+		_screenMaterial = Material.Load( "materials/lcd_screen.vmat" ).CreateCopy();
 		_screenMaterial.Set( "Color", OutputTexture );
+		_screenMaterial.Set( "SelfIllumMask", OutputTexture );
 
 		if ( string.IsNullOrWhiteSpace( AttributeName ) )
 		{
@@ -45,5 +59,7 @@ public sealed class MonitorComponent : DynamicTextureComponent
 		{
 			Model.SceneObject.SetMaterialOverride( _screenMaterial , AttributeName );
 		}
+
+		
 	}
 }

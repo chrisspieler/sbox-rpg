@@ -3348,6 +3348,47 @@
           "DialogueStartPrompt": "Examine",
           "DialogueText": "You can\u0027t find the HDMI port.",
           "DisableAfterDisplay": false
+        },
+        {
+          "__type": "MonitorComponent",
+          "__enabled": true,
+          "AttributeName": "",
+          "DebugDraw": false,
+          "MaterialName": "models/sbox_props/tv/tv_surface.vmat",
+          "MaxUpdatesPerSecond": 15,
+          "Model": "e72c6f5d-3ff5-4124-b30f-66db5f9f7ebf"
+        },
+        {
+          "__type": "TexturePanel",
+          "__enabled": true,
+          "CurrentPanelBounds": {},
+          "CurrentPanelScale": 0,
+          "CurrentPanelScaleFromScreen": 0,
+          "CurrentPanelScaleToScreen": 0,
+          "CurrentScreenSize": "1290,726",
+          "CustomPanelBounds": {
+            "Size": "1000,1000"
+          },
+          "MarginPercent": 0,
+          "TextureTarget": "e72c6f5d-3ff5-4124-b30f-66db5f9f7ebf",
+          "UseScreenBounds": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "11d4bbd1-b6d7-4255-a858-c8f6807e754c",
+          "Name": "Object",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "VideoPanel",
+              "__enabled": true,
+              "Loop": true,
+              "PlaybackTime": 0,
+              "VideoPath": "videos/tv_static.mp4"
+            }
+          ]
         }
       ]
     },
@@ -4117,6 +4158,7 @@
           "__enabled": true,
           "AttributeName": "screen",
           "DebugDraw": false,
+          "MaterialName": null,
           "MaxUpdatesPerSecond": 15,
           "Model": "62013dc8-77be-4e49-a83e-c37a4a9547e1"
         },
@@ -4262,13 +4304,14 @@
           "__type": "DraggableComponent",
           "__enabled": true,
           "DragSpeed": 50,
-          "Rigidbody": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
+          "Rigidbody": null
         },
         {
           "__type": "MonitorComponent",
           "__enabled": true,
           "AttributeName": "",
           "DebugDraw": false,
+          "MaterialName": null,
           "MaxUpdatesPerSecond": 15,
           "Model": "a3bb8239-d2f1-4adb-9450-658e1a0ab235"
         },
