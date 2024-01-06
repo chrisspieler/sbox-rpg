@@ -6,6 +6,8 @@ public sealed class MonitorComponent : DynamicTextureComponent
 	[Property] public string AttributeName { get; set; } = "screen";
 	[Property] public string MaterialName { get; set; }
 
+	private Dictionary<string, int> _materialIndices = new();
+
 	public override Texture OutputTexture
 	{
 		get => base.OutputTexture;
@@ -38,12 +40,14 @@ public sealed class MonitorComponent : DynamicTextureComponent
 
 		if ( !string.IsNullOrWhiteSpace( MaterialName ) )
 		{
-			_screenMaterial = Model.Model.Materials.FirstOrDefault( m => m.Name == MaterialName );
-			if ( _screenMaterial is null )
-			{
-				return;
-			}
+			UpdateMaterialIndices();
+			var originalMaterial = Model.Model.Materials.FirstOrDefault( m => m.Name == MaterialName );
+			if ( originalMaterial is null ) return;
+			var attribute = $"materialIndex{_materialIndices[MaterialName]}";
+			_screenMaterial = Material.Load( "materials/lcd_screen.vmat" ).CreateCopy();
+			Model.SceneObject.SetMaterialOverride( _screenMaterial, attribute );
 			_screenMaterial.Set( "Color", OutputTexture );
+			_screenMaterial.Set( "SelfIllumMask", OutputTexture );
 			return;
 		}
 
@@ -59,7 +63,18 @@ public sealed class MonitorComponent : DynamicTextureComponent
 		{
 			Model.SceneObject.SetMaterialOverride( _screenMaterial , AttributeName );
 		}
+	}
 
-		
+	private void UpdateMaterialIndices()
+	{
+		if ( Model?.SceneObject is null ) return;
+
+		_materialIndices.Clear();
+		var materials = Model.Model.Materials.ToArray();
+		for ( int i = 0; i < materials.Count(); i++ )
+		{
+			materials[i].Attributes.Set( "materialIndex" + i, 1 );
+			_materialIndices[materials[i].Name] = i;
+		}
 	}
 }
