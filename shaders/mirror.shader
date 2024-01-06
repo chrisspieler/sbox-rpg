@@ -66,7 +66,8 @@ PS
 	{
 		float4 o;
 		float2 psuv = i.vPositionSs.xy;
-		float2 vScreenUv = CalculateViewportUv( psuv ); // = ScreenspaceCorrectionMultiview( CalculateViewportUv( psuv) );
+		float2 vScreenUv = CalculateViewportUv( psuv);
+		vScreenUv *= g_vFrameBufferCopyInvSizeAndUvScale.zw;
 
 		// mirror
 		vScreenUv.x = 1 - vScreenUv.x;
