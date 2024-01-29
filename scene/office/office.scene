@@ -4148,7 +4148,7 @@
           "__type": "Mirror",
           "ClipPlaneOffset": 1,
           "DrawDebug": false,
-          "Model": "models/mirror.vmdl",
+          "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
         }

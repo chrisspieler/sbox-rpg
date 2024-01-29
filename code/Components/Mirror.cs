@@ -126,7 +126,8 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 			World = Scene.SceneWorld
 		};
 		_sceneCamera.ExcludeTags.Add( "firstperson" );
-		_sceneObject.RenderingEnabled = false;
+		_sceneObject.Batchable = false;
+		_sceneObject.RenderingEnabled = true;
 	}
 
 	protected override void OnEnabled()
@@ -135,7 +136,7 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 		Assert.NotNull( Scene );
 		_sceneObject = new SceneObject( Scene.SceneWorld, Model, Transform.World );
 		_sceneObject.Tags.SetFrom( GameObject.Tags );
-		_mirrorTexture = Texture.CreateRenderTarget( "mirror", ImageFormat.Default, new Vector2( 512 ) );
+		_mirrorTexture = Texture.CreateRenderTarget( "mirror", ImageFormat.RGBA8888, new Vector2( 1024 ) );
 		_sceneObject.Attributes.Set( "Color", _mirrorTexture );
 		UpdateObject();
 	}
