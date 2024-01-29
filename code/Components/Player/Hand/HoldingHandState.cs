@@ -12,6 +12,6 @@ public class HoldingHandState : HandState
 			HandModel.Enabled = true;
 			HandModel.SceneObject.RenderLayer = SceneRenderLayer.OverlayWithoutDepth;
 		}
-		Transform.Position = Camera.Main.Position + Transform.LocalPosition;
+		Transform.Position = Scene.Camera.Transform.Position + Transform.LocalPosition;
 	}
 }

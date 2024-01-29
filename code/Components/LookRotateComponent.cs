@@ -15,8 +15,9 @@ public class LookRotateComponent : Component
 		var inputVec = new Vector2( Input.AnalogLook.yaw, Input.AnalogLook.pitch );
 		var xInput = inputVec.x * XSpeed * Time.Delta * (InvertX ? -1 : 1);
 		var yInput = inputVec.y * YSpeed * Time.Delta * (InvertY ? -1 : 1);
-		var upRotation = Rotation.FromAxis( Camera.Main.Rotation.Up, xInput );
-		var rightRotation = Rotation.FromAxis( Camera.Main.Rotation.Right, yInput );
+		var cameraTx = Scene.Camera.Transform.World;
+		var upRotation = Rotation.FromAxis( cameraTx.Rotation.Up, xInput );
+		var rightRotation = Rotation.FromAxis( cameraTx.Rotation.Right, yInput );
 		Transform.Rotation = Transform.World
 			.RotateAround( Transform.Position, upRotation )
 			.RotateAround( Transform.Position, rightRotation )

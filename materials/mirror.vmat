@@ -6,9 +6,4 @@ Layer0
 
 	//---- Color ----
 	Texture ""
-
-	DynamicParams
-	{
-		Texture "$MonitorTexture"
-	}
 }

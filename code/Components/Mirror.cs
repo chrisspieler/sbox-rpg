@@ -24,8 +24,8 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 	private Color _tint = Color.White;
 	private bool _castShadows = true;
 	private SceneObject _sceneObject;
-	private ScenePortal _scenePortal;
 	private SceneCamera _sceneCamera;
+	private Texture _mirrorTexture;
 
 	public BBox Bounds
 	{
@@ -121,12 +121,6 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 		_sceneObject.Flags.CastShadows = _castShadows;
 		_sceneObject.Model = Model;
 
-		_scenePortal?.Delete();
-		_scenePortal = new ScenePortal( Scene.SceneWorld, Model, Transform.World, true, (int)Screen.Width )
-		{
-			RenderShadows = true,
-			RenderingEnabled = true
-		};
 		_sceneCamera = new SceneCamera()
 		{
 			World = Scene.SceneWorld
@@ -141,6 +135,8 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 		Assert.NotNull( Scene );
 		_sceneObject = new SceneObject( Scene.SceneWorld, Model, Transform.World );
 		_sceneObject.Tags.SetFrom( GameObject.Tags );
+		_mirrorTexture = Texture.CreateRenderTarget( "mirror", ImageFormat.Default, new Vector2( 512 ) );
+		_sceneObject.Attributes.Set( "Color", _mirrorTexture );
 		UpdateObject();
 	}
 
@@ -148,8 +144,6 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 	{
 		_sceneObject?.Delete();
 		_sceneObject = null;
-		_scenePortal?.Delete();
-		_scenePortal = null;
 		_sceneCamera?.Dispose();
 		_sceneCamera = null;
 	}
@@ -160,9 +154,6 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 			return;
 
 		_sceneObject.Transform = Transform.World;
-
-		if ( !_scenePortal.IsValid() )
-			return;
 
 		UpdateScenePortal();
 	}
@@ -175,11 +166,9 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 
 	private void DrawDebugInfo()
 	{
-		if ( !_scenePortal.IsValid() )
-			return;
 
 		var startPos = Transform.Position + Transform.Rotation.Up * 100f;
-		Gizmo.Draw.Sprite( startPos, 80f, _scenePortal.ColorTarget );
+		Gizmo.Draw.Sprite( startPos, 80f, _mirrorTexture );
 
 		if ( _sceneCamera is null )
 			return;
@@ -191,30 +180,25 @@ public sealed class Mirror : Component, Component.ExecuteInEditor, Component.ITi
 
 	private void UpdateScenePortal()
 	{
-		_scenePortal.RenderingEnabled = true;
-		_scenePortal.Transform = Transform.World;
 		Plane p = new( Transform.Position, Transform.Rotation.Up );
-		var viewMatrix = Matrix.CreateWorld( Camera.Main.Position, Camera.Main.Rotation.Forward, Camera.Main.Rotation.Up );
+		var cameraTx = Scene.Camera.Transform;
+		var viewMatrix = Matrix.CreateWorld( cameraTx.Position, cameraTx.Rotation.Forward, cameraTx.Rotation.Up );
 		var reflectMatrix = ReflectMatrix( viewMatrix, p );
 
-		_scenePortal.ViewPosition = reflectMatrix.Transform( Camera.Main.Position ); ;
-		_scenePortal.ViewRotation = ReflectRotation( Camera.Main.Rotation, Transform.Rotation.Up );
-		_scenePortal.Aspect = Screen.Width / Screen.Height;
-		_scenePortal.FieldOfView = MathF.Atan( MathF.Tan( Camera.Main.FieldOfView.DegreeToRadian() * 0.41f ) * (_scenePortal.Aspect * 0.75f ) ).RadianToDegree() * 2.0f;
+		var aspect = Screen.Width / Screen.Height;
+		var fov = MathF.Atan( MathF.Tan( Scene.Camera.FieldOfView.DegreeToRadian() * 0.41f ) * ( aspect * 0.75f ) ).RadianToDegree() * 2.0f;
 
-		var clipPlane = new Plane( Transform.Position - _scenePortal.ViewPosition, Transform.Rotation.Up );
+		if ( _sceneCamera is null ) return;
+
+		_sceneCamera.Position = reflectMatrix.Transform( cameraTx.Position );
+		_sceneCamera.Rotation = ReflectRotation( cameraTx.Rotation, Transform.Rotation.Up );
+		_sceneCamera.FieldOfView = fov;
+		_sceneCamera.Attributes.Set("EnableClipPlane", true );
+		var clipPlane = new Plane( Transform.Position - _sceneCamera.Position, Transform.Rotation.Up );
 		clipPlane.Distance -= ClipPlaneOffset;
+		_sceneCamera.Attributes.Set( "ClipPlane0", new Vector4( clipPlane.Normal, clipPlane.Distance ) );
 
-		if ( _sceneCamera is not null )
-		{
-			_sceneCamera.Position = _scenePortal.ViewPosition;
-			_sceneCamera.Rotation = _scenePortal.ViewRotation;
-			_sceneCamera.FieldOfView = _scenePortal.FieldOfView;
-			_sceneCamera.Attributes.Set("EnableClipPlane", true );
-			_sceneCamera.Attributes.Set( "ClipPlane0", new Vector4( clipPlane.Normal, clipPlane.Distance ) );
-		}
-
-		Graphics.RenderToTexture( _sceneCamera, _scenePortal.ColorTarget );
+		Graphics.RenderToTexture( _sceneCamera, _mirrorTexture );
 	}
 
 	protected override void OnTagsChanged()
